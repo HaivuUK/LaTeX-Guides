@@ -293,6 +293,26 @@
   
   
     <li class="md-nav__item">
+      <a href="quickstart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="installation.html" class="md-nav__link">
         
   
@@ -398,6 +418,26 @@
   
   <span class="md-ellipsis">
     Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="equations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Equations
   </span>
   
 
@@ -654,12 +694,27 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Pandoc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#citations-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Citations styles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#tex4ht" class="md-nav__link">
+  <a href="#tex4ht-and-make4ht" class="md-nav__link">
     <span class="md-ellipsis">
-      TeX4ht
+      TeX4ht and make4ht
     </span>
   </a>
   
@@ -738,8 +793,59 @@ converter, but it is not as accurate as Adobe's. It is free, however, so it is w
 to Adobe Acrobat Pro. You can find this feature under the <code>File</code> menu, then <code>Open</code>, and select the PDF file you want 
 to convert. The accuracy of this tool is highly dependent on the complexity of the document, so you may need to do 
 some manual editing afterward.</p>
-<h2 id="pandoc">Pandoc</h2>
-<h2 id="tex4ht">TeX4ht</h2>
+<h2 id="pandoc"><a href="https://pandoc.org/">Pandoc</a></h2>
+<p>Pandoc is a universal document converter that can convert between a wide range of formats. It is a command-line tool,
+so it is not as user-friendly as some other tools, but it is very powerful and flexible. It can convert between LaTeX,
+Word, HTML, Markdown, and many other formats.</p>
+<p>Using it can be as simple as running the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pandoc<span class="w"> </span>input.tex<span class="w"> </span>-o<span class="w"> </span>output.docx
+</span></code></pre></div>
+<p>Where the document becomes more complex, you may need to provide additional options to get the desired output. The
+<a href="https://pandoc.org/MANUAL.html">Pandoc documentation</a> is very comprehensive and provides a lot of information on how
+to use the tool. However, here is a general command that works very well for most complex LaTeX documents:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pandoc<span class="w"> </span>--mathjax<span class="w"> </span>--filter<span class="w"> </span>pandoc-crossref<span class="w"> </span>--toc<span class="w"> </span>--citeproc<span class="w"> </span>--bibliography<span class="w"> </span><span class="s2">&quot;refs.bib&quot;</span><span class="w"> </span>--csl<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/citation-style-language/styles/master/vancouver.csl&quot;</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;input.tex&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;output.docx&quot;</span><span class="w"> </span>-t<span class="w"> </span>docx+native_numbering+smart
+</span></code></pre></div>
+<p>And if you build a multi-file document, you can use the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pandoc<span class="w"> </span>--mathjax<span class="w"> </span>--filter<span class="w"> </span>pandoc-crossref<span class="w"> </span>--toc<span class="w"> </span>--citeproc<span class="w"> </span>--bibliography<span class="w"> </span><span class="s2">&quot;refs.bib&quot;</span><span class="w"> </span>--csl<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/citation-style-language/styles/master/vancouver.csl&quot;</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;input.tex&quot;</span><span class="w"> </span>--resource-path<span class="o">=</span><span class="s2">&quot;folder1&quot;</span><span class="w"> </span>--resource-path<span class="o">=</span><span class="s2">&quot;folder2&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;output.docx&quot;</span><span class="w"> </span>-t<span class="w"> </span>docx+native_numbering+smart
+</span></code></pre></div>
+<p>Where the additions are the <code>--resource-path</code> flags, which tell Pandoc where to look for the additional files.</p>
+<p>It should be noted that Pandoc does not support all LaTeX packages, specifically TikZ and PGFPlots. If you use these
+packages, you will need to convert the TikZ code to an image and include it in the document manually. This can be done
+using the <code>standalone</code> package and the <code>convert</code> option. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\documentclass</span><span class="na">[convert={density=300,outext=.png}]</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">\draw</span> (0,0) circle (1in);
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>Or there are pandoc filters available that can convert TikZ code to images, but these are not as reliable as the
+standalone method.</p>
+<h3 id="citations-styles">Citations styles</h3>
+<p>Pandoc uses CSL (Citation Style Language) files to format citations and bibliographies. You can find a wide range of
+styles on the <a href="https://github.com/citation-style-language/styles">CSL repository</a>. To use a CSL file, you can provide
+the URL to the file using the <code>--csl</code> flag, as shown in the command above. You can also provide a local file if you
+have one.</p>
+<p>Ensure that if you are providing a link to the git repository, you use the raw link to the file, not the HTML page.</p>
+<h2 id="tex4ht-and-make4ht"><a href="https://tug.org/tex4ht/">TeX4ht</a> and <a href="https://ctan.org/pkg/make4ht">make4ht</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>make4ht cannot directly convert to docx (word documents), but it can convert to odt (Open Document Text) files,
+which can be opened in Word.</p>
+</div>
+<p>TeX4ht is another LaTeX to HTML converter that can convert LaTeX documents to a wide range of formats, including HTML,
+XML, and ePub. It is a very powerful tool, but it is not as user-friendly as Pandoc.</p>
+<p>There is an extension to TeX4ht called <code>make4ht</code> that provides a more user-friendly interface and additional features.
+It is worth looking into if you are interested in using TeX4ht as it is the current best way to use the tool.</p>
+<p>Make4ht can natively convert TikZ code to SVG images, which is a big advantage over Pandoc. However, it struggles with
+image scaling and positioning which requires you to run an additional command to ensure they are correctly placed in
+the document.</p>
+<p>The basic command to convert a LaTeX document to odt using make4ht is:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make4ht<span class="w"> </span>-f<span class="w"> </span>odt<span class="w"> </span>filename.tex
+</span></code></pre></div>
+<p>Converting more complex documents may require additional options, but the make4ht documentation is very comprehensive
+and provides a lot of information on how to use the tool.</p>
 
 
 

@@ -293,6 +293,26 @@
   
   
     <li class="md-nav__item">
+      <a href="quickstart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="installation.html" class="md-nav__link">
         
   
@@ -398,6 +418,26 @@
   
   <span class="md-ellipsis">
     Tables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="equations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Equations
   </span>
   
 
@@ -757,6 +797,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Alternatives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latex-picture-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      LaTeX Picture Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      PSTricks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metapost" class="md-nav__link">
+    <span class="md-ellipsis">
+      METAPOST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asymptote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asymptote
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnuplot" class="md-nav__link">
+    <span class="md-ellipsis">
+      gnuplot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -841,11 +932,13 @@ to producing graphics in a report, it will not cover every aspect of TikZ and PG
 a lower-level language for producing graphics in LaTeX. TikZ is a more user-friendly interface for PGF, and it is what
 most people use when creating graphics in LaTeX. However, PGF is more powerful and can be used to create more complex
 graphics than TikZ. For the purposes of this guide, we will be using TikZ, but it is worth noting that PGF is also
-available if you need more power.</p>
+available if you need more power. And then there is PGFPlots which is a package built on top of TikZ and PGF that is
+specifically designed for creating plots and charts.</p>
 <p>Additionally, while these use to be separate packages, they are now bundled together in the same package, so you only
 need to include <code>\usepackage{tikz}</code> in your preamble. But libraries can be loaded with either 
 <code>\usetikzlibrary{&lt;library&gt;}</code> or <code>\usepgflibrary{&lt;library&gt;}</code>.</p>
-<p>The following will show you how to create graphics using the data visulization tool and PGFPlots</p>
+<p>If you want to use PGFPlots, you will need to include <code>\usepackage{pgfplots}</code> in your preamble.</p>
+<p>The following will show you how to create graphics using the <code>datavisulization</code> tool and <code>PGFPlots</code>.</p>
 <h3 id="getting-data-in-to-tikz">Getting Data in to TikZ</h3>
 <p>There are a few ways to get data in to TikZ, the most common are:</p>
 <ul>
@@ -871,12 +964,16 @@ CSV file is a good alternative, as it allows you to keep the data separate from 
 \begin{document}
 \begin{tikzpicture}
 \datavisualization [
-    scientific axes=clean,
-    x axis={length=3cm, ticks=few},
+    scientific axes={clean, width=.55\textwidth, height=5.25cm},
+    x axis={ticks=few},
+    y axis={max value=250, min value=-20},
     all axes={grid},
-    visualize as smooth line
+    visualize as smooth line/.list={explt},
+    text=gray,
+    visualizer color=red!90,
+    explt={style={red,line width=2pt}}
     ] 
-    data {
+    data [set=explt] {
         x, y
         0, 0
         1, 3
@@ -894,7 +991,55 @@ CSV file is a good alternative, as it allows you to keep the data separate from 
 \end{document}
 </script>
 
-<p>Which is part of the TikZ package. This package allows you to read data from a CSV file and</p>
+<p>Alternatively you can use <code>pgfplotstable</code> and <code>pgfplots</code> packages to read in data from a file:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplotstable<span class="nb">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\pgfplotstableread</span><span class="nb">{</span>&lt;filename.csv&gt;<span class="nb">}</span><span class="k">\data</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[grid=both]
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">\addplot</span><span class="na">[smooth]</span> table <span class="nb">{</span><span class="k">\data</span><span class="nb">}</span>;
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+\addplot [smooth, color=red!90, line width=2pt] coordinates {
+        (0, 0)
+        (1, 3)
+        (2, 9)
+        (3, 17)
+        (4, 90)
+        (5, 21)
+        (6, 2)
+        (7, 229)
+        (8, 3)
+        (9, 81)
+        (10, 2)
+    };
+\end{axis}
+\end{tikzpicture}
+\end{document}
+</script>
+
+<p>As you will notice this is a lot more verbose than the datavisualization method. Datavisualization is a newer package
+and is more user-friendly to most users, it additionally should solve some of the legacy issues with the older <code>pgfplots</code>
+package. However, <code>pgfplots</code> is still a very powerful package and is still widely used and has a wealth of documentation
+due to its age while data visualization is still relatively new in the scheme of LaTeX packages.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PGFPlots has not been updated since 2021. While PGF (which contains Datavisualization) is still actively
+updated. This is not to say that PGFPlots is not a good package, it is still widely used and has a wealth of
+documentation available.</p>
+</div>
 <h3 id="scatter-plots">Scatter Plots</h3>
 <h3 id="line-plots">Line Plots</h3>
 <h3 id="bar-plots">Bar Plots</h3>
@@ -908,7 +1053,7 @@ CSV file is a good alternative, as it allows you to keep the data separate from 
 <p>PGF has extensive math capabilities, and you can use it to create complex mathematical expressions. This is particularly
 useful if you need to perform operations on data or create complex mathematical diagrams.</p>
 <p>For example polynomial approximation can be done with the following code:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\pgfmathveclen</span><span class="nb">{</span>x<span class="nb">}{</span>y<span class="nb">}</span> <span class="k">\pgfmathresult</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\pgfmathveclen</span><span class="nb">{</span>x<span class="nb">}{</span>y<span class="nb">}</span> <span class="k">\pgfmathresult</span>
 </span></code></pre></div>
 <script type="text/tikz">
 \begin{document}
@@ -946,29 +1091,30 @@ extension(ipelets) to export TikZ code. The extension is called <a href="https:/
 , although it has been out of development for a while it still works well, there is a more recently active fork
 available <a href="https://github.com/ThexXTURBOXx/ipe2tikz">here</a>.</p>
 <h2 id="alternatives">Alternatives</h2>
-<ol>
-<li>The standard LATEX {picture} environment allows you to create simple graphics, but little more. This
-is certainly not due to a lack of knowledge or imagination on the part of LATEX’s designer(s). Rather,
-this is the price paid for the {picture} environment’s portability: It works together with all backend
-drivers.</li>
-<li>The pstricks package is certainly powerful enough to create any conceivable kind of graphic, but it
-is not really portable. Most importantly, it does not work with pdftex nor with any other driver that
-produces anything but PostScript code.
-Compared to TikZ, pstricks has a similar support base. There are many nice extra packages for
+<h3 id="latex-picture-environment">LaTeX Picture Environment</h3>
+<p>The standard LaTeX {picture} environment allows you to create simple graphics, but little more.</p>
+<h3 id="pstricks">PSTricks</h3>
+<p>PSTricks package is powerful enough to create any kind of graphic, but it is not really portable. 
+It has more limited driver compatibility than TikZ and is not as widely used.</p>
+<p>Compared to TikZ, PSTricks has a similar support base. There are many nice extra packages for
 special purpose situations that have been contributed by users over the last decade. The TikZ syntax
 is more consistent than the pstricks syntax as TikZ was developed “in a more centralized manner”
-and also “with the shortcomings on pstricks in mind”.</li>
-<li>The xypic package is an older package for creating graphics. However, it is more difficult to use and
-to learn because the syntax and the documentation are a bit cryptic.</li>
-<li>The dratex package is a small graphic package for creating a graphics. Compared to the other package,
-including TikZ, it is very small, which may or may not be an advantage.</li>
-<li>The metapost program is a powerful alternative to TikZ. It used to be an external program, which
-entailed a bunch of problems, but in LuaTEX it is now built in. An obstacle with metapost is the
-inclusion of labels. This is much easier to achieve using pgf.</li>
-<li>The xfig program is an important alternative to TikZ for users who do not wish to “program” their
-graphics as is necessary with TikZ and the other packages above. There is a conversion program that
-will convert xfig graphics to TikZ.</li>
-</ol>
+and also “with the shortcomings on pstricks in mind”.</p>
+<h3 id="metapost">METAPOST</h3>
+<p>METAPOST is a powerful alternative to TikZ. It used to be an external program, which entailed a bunch of problems, 
+but it is now built in.</p>
+<p>The main advantage of METAPOST is that it is a programming language, so you can do anything you want with it.
+The main disadvantage is that it is a programming language, so you have to learn it. </p>
+<p>More information on it can be found in the <a href="https://www.tug.org/docs/metapost/mpman.pdf">METAPOST manual</a>. Or additionally in the METAFUN manual from context
+and the creator of LuaLaTeX and context Hans Hagen. <a href="https://www.pragma-ade.nl/general/manuals/metafun-s.pdf">METAFUN manual</a></p>
+<h3 id="asymptote"><a href="https://asymptote.sourceforge.io/">Asymptote</a></h3>
+<p>Asymptote is a powerful vector graphics language that is particularly well-suited for creating complex graphics.
+It is similar to METAPOST in that it is a programming language, but it additionally requires a separate program to
+compile the code.</p>
+<h3 id="gnuplot"><a href="http://www.gnuplot.info/">gnuplot</a></h3>
+<p>Gnuplot is a powerful plotting program that can be used to create graphics in LaTeX. It is particularly useful for
+creating 2D and 3D plots, but it can also be used to create other types of graphics. It is not as powerful as TikZ or
+PGF, but it is easier to use and can be used to create complex graphics. However, it also requires a separate program.</p>
 
 
 
