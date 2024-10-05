@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guides for using LaTeX for acadaemic writing">
+        <meta name="description" content="Guides for using LaTeX for academic writing">
       
       
         <meta name="author" content="George Allison">
@@ -24,7 +24,7 @@
     
     
       
-        <title>TikZ/PGF - LaTeX Guides</title>
+        <title>TikZ/PGF LaTeX Graphics - LaTeX Guides</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-tikzpgf-to-create-graphics" class="md-skip">
+        <a href="#using-tikzpgf-to-create-latex-graphics" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TikZ/PGF
+              TikZ/PGF LaTeX Graphics
             
           </span>
         </div>
@@ -453,6 +453,46 @@
   
   
     <li class="md-nav__item">
+      <a href="crossref.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-Referencing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="units.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Units
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="code-display.html" class="md-nav__link">
         
   
@@ -626,7 +666,7 @@
           
   
   <span class="md-ellipsis">
-    TikZ/PGF
+    TikZ/PGF LaTeX Graphics
   </span>
   
 
@@ -637,7 +677,7 @@
         
   
   <span class="md-ellipsis">
-    TikZ/PGF
+    TikZ/PGF LaTeX Graphics
   </span>
   
 
@@ -674,6 +714,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Scatter Plots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datavisualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datavisualization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgfplots" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGFPlots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -682,6 +746,30 @@
       Line Plots
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Line Plots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datavisualization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datavisualization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pgfplots_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGFPlots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -695,9 +783,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pie-charts" class="md-nav__link">
+  <a href="#stacked-plots" class="md-nav__link">
     <span class="md-ellipsis">
-      Pie Charts
+      Stacked Plots
     </span>
   </a>
   
@@ -707,6 +795,15 @@
   <a href="#box-plots" class="md-nav__link">
     <span class="md-ellipsis">
       Box Plots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#histograms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histograms
     </span>
   </a>
   
@@ -731,15 +828,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vector-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Fields
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#3d-plots" class="md-nav__link">
     <span class="md-ellipsis">
       3D Plots
@@ -749,9 +837,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#math-capabilities" class="md-nav__link">
+  <a href="#pgf-math-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
-      Math Capabilities
+      PGF Math Capabilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-pgf-graphics-from-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing PGF Graphics from Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-graphics-from-matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing Graphics from MATLAB
     </span>
   </a>
   
@@ -916,15 +1022,16 @@
   
 
 
-<h1 id="using-tikzpgf-to-create-graphics">Using TikZ/PGF to Create Graphics</h1>
+<h1 id="using-tikzpgf-to-create-latex-graphics">Using TikZ/PGF to Create LaTeX Graphics</h1>
 <p>TikZ and PGF can produce highly complex code and graphics, but in doing so, they require more time and effort to
-learn and use effectively. This guide will provide a brief overview of how to use TikZ and PGF to create graphics
-in LaTeX documents. However, I would strongly recommend reading the following resources for a fantastic guide on how 
-to use them that will be far more comprehensive than this guide:</p>
+learn and use effectively. This guide will provide a brief overview of how to use TikZ/PGF and PGFPlots to create 
+graphics in LaTeX documents. However, I would strongly recommend reading the following resources for a fantastic guide 
+on how to use them that will be far more comprehensive than this guide:</p>
 <ul>
 <li><a href="https://latex-graphics.com/">Unlocking LaTeX Graphics</a> - Dr Tamara G. Kolda</li>
 <li><a href="https://ctan.org/pkg/pgf">TikZ &amp; PGF Manual</a></li>
-<li><a href="https://tikz.dev/pgfplots/">Online Manual</a> - Unofficial HTML manual but very helpful</li>
+<li><a href="https://tikz.dev/pgfplots/">PGFPlots Online Manual</a> - Unofficial HTML manual but very helpful</li>
+<li><a href="https://ctan.org/pkg/pgfplots">PGFPlots Manual</a></li>
 </ul>
 <p>Like in Kolda's guide this page will focus on the most used features of TikZ and PGF and most relevant elements
 to producing graphics in a report, it will not cover every aspect of TikZ and PGF.</p>
@@ -932,8 +1039,10 @@ to producing graphics in a report, it will not cover every aspect of TikZ and PG
 a lower-level language for producing graphics in LaTeX. TikZ is a more user-friendly interface for PGF, and it is what
 most people use when creating graphics in LaTeX. However, PGF is more powerful and can be used to create more complex
 graphics than TikZ. For the purposes of this guide, we will be using TikZ, but it is worth noting that PGF is also
-available if you need more power. And then there is PGFPlots which is a package built on top of TikZ and PGF that is
-specifically designed for creating plots and charts.</p>
+available if you need more power. </p>
+<p>There is also PGFPlots which is a package built on top of TikZ and PGF that is specifically designed for creating 
+plots and charts. It features plot types that are not natively available in TikZ/PGF, such as box plots. It is
+maintained by the same team that maintains TikZ and PGF, so it is well-integrated with the rest of the LaTeX ecosystem.</p>
 <p>Additionally, while these use to be separate packages, they are now bundled together in the same package, so you only
 need to include <code>\usepackage{tikz}</code> in your preamble. But libraries can be loaded with either 
 <code>\usetikzlibrary{&lt;library&gt;}</code> or <code>\usepgflibrary{&lt;library&gt;}</code>.</p>
@@ -964,7 +1073,7 @@ CSV file is a good alternative, as it allows you to keep the data separate from 
 \begin{document}
 \begin{tikzpicture}
 \datavisualization [
-    scientific axes={clean, width=.55\textwidth, height=5.25cm},
+    scientific axes={clean, width=.55\textwidth, height=5.5cm},
     x axis={ticks=few},
     y axis={max value=250, min value=-20},
     all axes={grid},
@@ -1037,28 +1146,526 @@ due to its age while data visualization is still relatively new in the scheme of
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>PGFPlots has not been updated since 2021. While PGF (which contains Datavisualization) is still actively
-updated. This is not to say that PGFPlots is not a good package, it is still widely used and has a wealth of
-documentation available.</p>
+updated. This is not to say that PGFPlots is not a good package, it is still widely use and can plot things that
+Datavisualization cannot. But it is worth noting that Datavisualization is the newer package and is more 
+user-friendly when a simpler plot is needed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following sections will include examples of both <code>pgfplots</code> and <code>datavisualization</code> to show the differences
+between the two packages, where applicable.
+Some plots may not be available in <code>datavisualization</code> and will be shown using <code>pgfplots</code> only.</p>
 </div>
 <h3 id="scatter-plots">Scatter Plots</h3>
+<h4 id="datavisualization">Datavisualization</h4>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\usetikzlibrary</span><span class="nb">{</span>datavisualization<span class="nb">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">\datavisualization</span> [
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    scientific axes=<span class="nb">{</span>clean, width=.55<span class="k">\textwidth</span>, height=5.5cm<span class="nb">}</span>,
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    x axis=<span class="nb">{</span>ticks=few<span class="nb">}</span>,
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    y axis=<span class="nb">{</span>max value=250, min value=-20<span class="nb">}</span>,
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    all axes=<span class="nb">{</span>grid<span class="nb">}</span>,
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    visualize as scatter/.list=<span class="nb">{</span>explt<span class="nb">}</span>,
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    text=gray,
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    visualizer color=red!90,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    explt=<span class="nb">{</span>style=<span class="nb">{</span>red,line width=2pt<span class="nb">}}</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    ] 
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    data [set=explt] <span class="nb">{</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        x, y
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        0, 0
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        1, 3
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        2, 9
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        3, 17
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        4, 90
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        5, 21
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        6, 2
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        7, 229
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        8, 3
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        9, 81
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        10, 2
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="nb">}</span>;
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usetikzlibrary{datavisualization}
+\begin{document}
+\begin{tikzpicture}
+\datavisualization [
+    scientific axes={clean, width=.55\textwidth, height=5.5cm},
+    x axis={ticks=few},
+    y axis={max value=250, min value=-20},
+    all axes={grid},
+    visualize as scatter/.list={explt},
+    text=gray,
+    visualizer color=red!90,
+    explt={style={red,line width=2pt}}
+    ] 
+    data [set=explt] {
+        x, y
+        0, 0
+        1, 3
+        2, 9
+        3, 17
+        4, 90
+        5, 21
+        6, 2
+        7, 229
+        8, 3
+        9, 81
+        10, 2
+    };
+\end{tikzpicture}
+\end{document}
+</script>
+
+<h4 id="pgfplots">PGFPlots</h4>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">\addplot</span> [only marks, color=red!90, line width=2pt] coordinates <span class="nb">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        (0, 0)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        (1, 3)
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        (2, 9)
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        (3, 17)
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        (4, 90)
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        (5, 21)
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        (6, 2)
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        (7, 229)
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        (8, 3)
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        (9, 81)
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        (10, 2)
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="nb">}</span>;
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+\addplot [only marks, color=red!90, line width=2pt] coordinates {
+        (0, 0)
+        (1, 3)
+        (2, 9)
+        (3, 17)
+        (4, 90)
+        (5, 21)
+        (6, 2)
+        (7, 229)
+        (8, 3)
+        (9, 81)
+        (10, 2)
+    };
+\end{axis}
+\end{tikzpicture}
+\end{document}
+</script>
+
 <h3 id="line-plots">Line Plots</h3>
+<h4 id="datavisualization_1">Datavisualization</h4>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\usetikzlibrary</span><span class="nb">{</span>datavisualization<span class="nb">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">\datavisualization</span> [
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    scientific axes=<span class="nb">{</span>clean, width=.55<span class="k">\textwidth</span>, height=5.5cm<span class="nb">}</span>,
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    x axis=<span class="nb">{</span>ticks=few<span class="nb">}</span>,
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    y axis=<span class="nb">{</span>max value=250, min value=-20<span class="nb">}</span>,
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    all axes=<span class="nb">{</span>grid<span class="nb">}</span>,
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    visualize as smooth line/.list=<span class="nb">{</span>explt<span class="nb">}</span>,
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    text=gray,
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    visualizer color=red!90,
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    explt=<span class="nb">{</span>style=<span class="nb">{</span>red,line width=2pt<span class="nb">}}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    ] 
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    data [set=explt] <span class="nb">{</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        x, y
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        0, 0
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        1, 3
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        2, 9
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        3, 17
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        4, 90
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        5, 21
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        6, 2
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        7, 229
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>        8, 3
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>        9, 81
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>        10, 2
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    <span class="nb">}</span>;
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usetikzlibrary{datavisualization}
+\begin{document}
+\begin{tikzpicture}
+\datavisualization [
+    scientific axes={clean, width=.55\textwidth, height=5.5cm},
+    x axis={ticks=few},
+    y axis={max value=250, min value=-20},
+    all axes={grid},
+    visualize as smooth line/.list={explt},
+    text=gray,
+    visualizer color=red!90,
+    explt={style={red,line width=2pt}}
+    ] 
+    data [set=explt] {
+        x, y
+        0, 0
+        1, 3
+        2, 9
+        3, 17
+        4, 90
+        5, 21
+        6, 2
+        7, 229
+        8, 3
+        9, 81
+        10, 2
+    };
+\end{tikzpicture}
+\end{document}
+</script>
+
+<h4 id="pgfplots_1">PGFPlots</h4>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">\addplot</span> [smooth, color=red!90, line width=2pt] coordinates <span class="nb">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        (0, 0)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        (1, 3)
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        (2, 9)
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        (3, 17)
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        (4, 90)
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        (5, 21)
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        (6, 2)
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        (7, 229)
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        (8, 3)
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        (9, 81)
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        (10, 2)
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="nb">}</span>;
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+\addplot [smooth, color=red!90, line width=2pt] coordinates {
+        (0, 0)
+        (1, 3)
+        (2, 9)
+        (3, 17)
+        (4, 90)
+        (5, 21)
+        (6, 2)
+        (7, 229)
+        (8, 3)
+        (9, 81)
+        (10, 2)
+    };
+\end{axis}
+\end{tikzpicture}
+\end{document}
+</script>
+
 <h3 id="bar-plots">Bar Plots</h3>
-<h3 id="pie-charts">Pie Charts</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">\addplot</span> [ybar, color=red!90, fill=red!90, fill opacity=0.2, line width=2pt] coordinates <span class="nb">{</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        (0, 0)
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        (1, 3)
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        (2, 9)
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        (3, 17)
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        (4, 90)
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        (5, 21)
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        (6, 2)
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        (7, 229)
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        (8, 3)
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        (9, 81)
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        (10, 2)
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="nb">}</span>;
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[grid=both, axis line style=gray, text=gray, xmin=0, xmax=10, xtick distance=2.5]
+\addplot [ybar, color=red!90, fill=red!90, fill opacity=0.2, line width=2pt] coordinates {
+        (0, 0)
+        (1, 3)
+        (2, 9)
+        (3, 17)
+        (4, 90)
+        (5, 21)
+        (6, 2)
+        (7, 229)
+        (8, 3)
+        (9, 81)
+        (10, 2)
+    };
+\end{axis}
+\end{tikzpicture}
+\end{document}
+</script>
+
+<h3 id="stacked-plots">Stacked Plots</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">\pgfsetblendmode</span><span class="nb">{</span>screen<span class="nb">}</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    stack plots=y,
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    text=gray, 
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    area style,
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    enlarge x limits=false,
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    smooth,
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    fill opacity=0.7,
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    grid=both, 
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    axis line style=gray,
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    xmin=0, 
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    xmax=10,    
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    xtick distance=2.5
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>]
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="k">\addplot</span> coordinates
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>        <span class="nb">{</span>(0,1) (1,1) (2,2) (3,2) (4, 20) (5, 21) (6, 2) (7, 19) (8, 20) (9, 1) (10, 2)<span class="nb">}</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>            <span class="k">\closedcycle</span>;
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    <span class="k">\addplot</span> coordinates
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>        <span class="nb">{</span>(0,1) (1,3) (2,7) (3,2) (4, 3) (5, 25) (6, 2) (7, 19) (8, 4) (9, 10) (10, 8)<span class="nb">}</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>            <span class="k">\closedcycle</span>;
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>    <span class="k">\addplot</span> coordinates
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>        <span class="nb">{</span>(0,1) (1,4) (2,2) (3,2) (4, 13) (5, 11) (6, 20) (7, 12) (8, 15) (9, 23) (10, 12)<span class="nb">}</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>            <span class="k">\closedcycle</span>;
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>    <span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span> 
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\pgfsetblendmode{screen}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    stack plots=y,
+    text=gray, 
+    area style,
+    enlarge x limits=false,
+    smooth,
+    fill opacity=0.7,
+    grid=both, 
+    axis line style=gray,
+    xmin=0, 
+    xmax=10,    
+    xtick distance=2.5
+]
+    \addplot coordinates
+        {(0,1) (1,1) (2,2) (3,2) (4, 20) (5, 21) (6, 2) (7, 19) (8, 20) (9, 1) (10, 2)}
+            \closedcycle;
+    \addplot coordinates
+        {(0,1) (1,3) (2,7) (3,2) (4, 3) (5, 25) (6, 2) (7, 19) (8, 4) (9, 10) (10, 8)}
+            \closedcycle;
+    \addplot coordinates
+        {(0,1) (1,4) (2,2) (3,2) (4, 13) (5, 11) (6, 20) (7, 12) (8, 15) (9, 23) (10, 12)}
+            \closedcycle;
+    \end{axis}
+\end{tikzpicture} 
+\end{document}
+</script>
+
 <h3 id="box-plots">Box Plots</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">\usepgfplotslibrary</span><span class="nb">{</span>statistics<span class="nb">}</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[grid=both, axis line style=gray, text=gray, xtick distance=2.5]
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            <span class="k">\addplot</span>+ [boxplot, color=red!90, fill=red!90, fill opacity=0.2, line width=2pt] table [row sep=<span class="k">\\</span>,y index=0] <span class="nb">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>                data<span class="k">\\</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>                0<span class="k">\\</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>                3<span class="k">\\</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>                9<span class="k">\\</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>                17<span class="k">\\</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>                21<span class="k">\\</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>                2<span class="k">\\</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>                3<span class="k">\\</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>                2<span class="k">\\</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            <span class="nb">}</span>;
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        <span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><a href="images/boxplot.svg"><img src="images/boxplot.svg" width="500"/></a></p>
+<h3 id="histograms">Histograms</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">\usepgfplotslibrary</span><span class="nb">{</span>statistics<span class="nb">}</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[ybar interval, grid=both, axis line style=gray, text=gray, xtick distance=2.5]
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>            <span class="k">\addplot</span>+ [hist=<span class="nb">{</span>bins=5<span class="nb">}</span>, color=red!90, fill=red!90, fill opacity=0.2, line width=2pt] table [row sep=<span class="k">\\</span>,y index=0] <span class="nb">{</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>                data<span class="k">\\</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>                0<span class="k">\\</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>                3<span class="k">\\</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>                9<span class="k">\\</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>                17<span class="k">\\</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>                21<span class="k">\\</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>                2<span class="k">\\</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>                3<span class="k">\\</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>                2<span class="k">\\</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>            <span class="nb">}</span>;
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>        <span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><a href="images/histo.svg"><img src="images/histo.svg" width="300"/></a></p>
 <h3 id="heat-maps">Heat Maps</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[enlargelimits=false,colorbar, axis line style=gray, text=gray, colormap/viridis, colorbar style=<span class="nb">{</span>text=gray<span class="nb">}</span>]
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">\addplot</span> [matrix plot,
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        point meta=explicit,
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    ] coordinates <span class="nb">{</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        (0,0) [0] (1,0) [1] (2,0) [2] (3,0) [1] (4,0) [2] (5,0) [1]
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        (0,1) [3] (1,1) [43] (2,1) [51] (3,1) [12] (4,1) [2] (5,1) [13]
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        (0,2) [36] (1,2) [7] (2,2) [28] (3,2) [31] (4,2) [42] (5,2) [1]
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>        (0,3) [0] (1,3) [41] (2,3) [2] (3,3) [1] (4,3) [2] (5,3) [9]
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>        (0,4) [3] (1,4) [4] (2,4) [5] (3,4) [1] (4,4) [32] (5,4) [1]
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>        (0,5) [6] (1,5) [72] (2,5) [68] (3,5) [1] (4,5) [2] (5,5) [1]
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>    <span class="nb">}</span>;
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span> 
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[enlargelimits=false,colorbar, axis line style=gray, text=gray, colormap/viridis, colorbar style={text=gray}]
+    \addplot [matrix plot,
+        point meta=explicit,
+    ] coordinates {
+        (0,0) [0] (1,0) [1] (2,0) [2] (3,0) [1] (4,0) [2] (5,0) [1]
+
+        (0,1) [3] (1,1) [43] (2,1) [51] (3,1) [12] (4,1) [2] (5,1) [13]
+
+        (0,2) [36] (1,2) [7] (2,2) [28] (3,2) [31] (4,2) [42] (5,2) [1]
+
+        (0,3) [0] (1,3) [41] (2,3) [2] (3,3) [1] (4,3) [2] (5,3) [9]
+
+        (0,4) [3] (1,4) [4] (2,4) [5] (3,4) [1] (4,4) [32] (5,4) [1]
+
+        (0,5) [6] (1,5) [72] (2,5) [68] (3,5) [1] (4,5) [2] (5,5) [1]
+    };
+\end{axis}
+\end{tikzpicture} 
+\end{document}
+</script>
+
 <h3 id="contour-plots">Contour Plots</h3>
-<h3 id="vector-fields">Vector Fields</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only. Requires LuaLaTeX.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">\pgfplotsset</span><span class="nb">{</span>height=5.5cm,compat=1.18<span class="nb">}</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[view=<span class="nb">{</span>0<span class="nb">}{</span>90<span class="nb">}</span>, axis line style=gray, text=gray]
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>            <span class="k">\addplot</span>3 [
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>            contour lua=<span class="nb">{</span>number=14, labels=false<span class="nb">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>            ] <span class="nb">{</span>x*y<span class="nb">}</span>;
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span> 
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><a href="images/contour.svg"><img src="images/contour.svg" width="300"/></a></p>
 <h3 id="3d-plots">3D Plots</h3>
-<h3 id="math-capabilities">Math Capabilities</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Shown using <code>pgfplots</code> only. This can be very resource intensive and may not work on all systems.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>[
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        3d box=complete,
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        grid=major,
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        samples=5, domain=-5:5,
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        xtick=data, ytick=data,
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        axis line style=gray, 
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        text=gray, 
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>        colormap/viridis
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    ]
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="k">\addplot</span>3 [surf] <span class="nb">{</span>x*y<span class="nb">}</span>;
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span><span class="c">%</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<script type="text/tikz">
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        3d box=complete,
+        grid=major,
+        samples=5, domain=-5:5,
+        xtick=data, ytick=data,
+        axis line style=gray, 
+        text=gray, 
+        colormap/viridis
+    ]
+        \addplot3 [surf] {x*y};
+    \end{axis}
+\end{tikzpicture}%
+\end{document}
+</script>
+
+<h2 id="pgf-math-capabilities">PGF Math Capabilities</h2>
 <p>PGF has extensive math capabilities, and you can use it to create complex mathematical expressions. This is particularly
 useful if you need to perform operations on data or create complex mathematical diagrams.</p>
 <p>For example polynomial approximation can be done with the following code:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\pgfmathveclen</span><span class="nb">{</span>x<span class="nb">}{</span>y<span class="nb">}</span> <span class="k">\pgfmathresult</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">\pgfmathveclen</span><span class="nb">{</span>x<span class="nb">}{</span>y<span class="nb">}</span> <span class="k">\pgfmathresult</span>
 </span></code></pre></div>
 <script type="text/tikz">
 \begin{document}
 \begin{tikzpicture}
-\draw[] (0,0) node[right] {If the following values are set to x=12 and y=5, the result will be: \pgfmathparse{veclen(12,5)} \pgfmathresult};
+\draw[color=gray] (0,0) node[right] {If the following values are set to x=12 and y=5, the result will be: \pgfmathparse{veclen(12,5)} \pgfmathresult};
 \end{tikzpicture}
 \end{document}
 </script>
@@ -1071,6 +1678,137 @@ under <em>section <strong>94</strong></em>.</p>
 <p class="admonition-title">Note</p>
 <p>For more comprehensive mathematical operations and manipulations please refer to <a href="extending-latex.html">Extending LaTeX</a>.</p>
 </div>
+<h2 id="importing-pgf-graphics-from-python">Importing PGF Graphics from Python</h2>
+<p>If you are more comfortable with Python and MatPlotlib, you can create your graphics in Python and then import them in to
+LaTeX using the <code>pgf</code> backend in MatPlotlib. This will allow you to create complex graphics in Python and then use them
+in your LaTeX document.</p>
+<p>To do this, you will need to install the <code>matplotlib</code> package in Python. You can do this using <code>pip</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>pip<span class="w"> </span>install<span class="w"> </span>matplotlib
+</span></code></pre></div>
+<p>Then you can create your graphics in Python using MatPlotlib and save them as a <code>pgf</code> file:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">import</span> <span class="nn">matplotlib</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;pgf&quot;</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="s2">&quot;pgf.texsystem&quot;</span><span class="p">:</span> <span class="s2">&quot;pdflatex&quot;</span><span class="p">,</span>       <span class="c1"># pdflatex, XeLaTeX, or LuaLaTeX for processing</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="c1"># use serif/main font for text elements</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>    <span class="s1">&#39;font.size&#39;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>  <span class="c1"># use 11 point font </span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="s1">&#39;text.usetex&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>   <span class="c1"># use LaTeX to write all text </span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    <span class="s1">&#39;pgf.rcfonts&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="c1"># Do not set up fonts from rc parameters</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>    <span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.7747</span><span class="p">,</span><span class="mf">3.5</span><span class="p">],</span> <span class="c1"># figure size in inches</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    <span class="s1">&#39;axes.edgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="c1"># Axis line color</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>    <span class="s1">&#39;xtick.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>      <span class="c1"># Color of the tick labels</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="s1">&#39;ytick.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>       <span class="c1"># Color of the tick labels</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    <span class="s1">&#39;text.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>        <span class="c1"># Color of the text</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>    <span class="s1">&#39;axes.labelcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="c1"># Color of the x and y labels</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>    <span class="s1">&#39;grid.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>         <span class="c1"># Grid line color</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>    <span class="s1">&#39;grid.linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span>       <span class="c1"># Grid line style</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>    <span class="s1">&#39;grid.linewidth&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>        <span class="c1"># Grid line width</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>    <span class="s1">&#39;axes.grid&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>            <span class="c1"># Enable grid by default</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>    <span class="s1">&#39;grid.alpha&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>            <span class="c1"># Transparency of grid</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>    <span class="s1">&#39;axes.axisbelow&#39;</span><span class="p">:</span> <span class="kc">True</span>      <span class="c1"># Show grid below all plots</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="p">})</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="c1"># example data</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="n">mu</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># mean of distribution</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="n">sigma</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># standard deviation of distribution</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="n">x</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">437</span><span class="p">)</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">50</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="c1"># the histogram of the data</span>
+</span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>
+</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="c1"># add a &#39;best fit&#39; line</span>
+</span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="n">y</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">))</span> <span class="o">*</span>
+</span><span id="__span-16-42"><a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>     <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sigma</span> <span class="o">*</span> <span class="p">(</span><span class="n">bins</span> <span class="o">-</span> <span class="n">mu</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-16-43"><a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</span><span id="__span-16-44"><a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Smarts&#39;</span><span class="p">)</span>
+</span><span id="__span-16-45"><a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability density&#39;</span><span class="p">)</span>
+</span><span id="__span-16-46"><a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Histogram of IQ: $\mu=100$, $\sigma=15$&#39;</span><span class="p">)</span>
+</span><span id="__span-16-47"><a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a>
+</span><span id="__span-16-48"><a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a><span class="c1"># Tweak spacing to prevent clipping of ylabel</span>
+</span><span id="__span-16-49"><a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-16-50"><a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;D:/George/Downloads/tempfigs/hist.pgf&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Then you can import the <code>pgf</code> file in to your LaTeX document using the <code>\input</code> command:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="k">\input</span><span class="nb">{</span>hist.pgf<span class="nb">}</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span></code></pre></div>
+<p>This produced the following output:</p>
+<p><a href="images/pyhist.svg"><img src="images/pyhist.svg" width="300"/></a></p>
+<p>Another plot can be created using the following code:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span> <span class="nn">matplotlib</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;pgf&quot;</span><span class="p">)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="s2">&quot;pgf.texsystem&quot;</span><span class="p">:</span> <span class="s2">&quot;pdflatex&quot;</span><span class="p">,</span>       <span class="c1"># pdflatex, XeLaTeX, or LuaLaTeX for processing</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;serif&#39;</span><span class="p">,</span> <span class="c1"># use serif/main font for text elements</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    <span class="s1">&#39;font.size&#39;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>  <span class="c1"># use 11 point font </span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    <span class="s1">&#39;text.usetex&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>   <span class="c1"># use LaTeX to write all text </span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    <span class="s1">&#39;pgf.rcfonts&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="c1"># Do not set up fonts from rc parameters</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.7747</span><span class="p">,</span><span class="mf">3.5</span><span class="p">],</span> <span class="c1"># figure size in inches</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="s1">&#39;axes.edgecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="c1"># Axis line color</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    <span class="s1">&#39;xtick.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>      <span class="c1"># Color of the tick labels</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>    <span class="s1">&#39;ytick.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>       <span class="c1"># Color of the tick labels</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>    <span class="s1">&#39;text.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>        <span class="c1"># Color of the text</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>    <span class="s1">&#39;axes.labelcolor&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="c1"># Color of the x and y labels</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>    <span class="s1">&#39;grid.color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>         <span class="c1"># Grid line color</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>    <span class="s1">&#39;grid.linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span>       <span class="c1"># Grid line style</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>    <span class="s1">&#39;grid.linewidth&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>        <span class="c1"># Grid line width</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>    <span class="s1">&#39;axes.grid&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>            <span class="c1"># Enable grid by default</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    <span class="s1">&#39;grid.alpha&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>            <span class="c1"># Transparency of grid</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>    <span class="s1">&#39;axes.axisbelow&#39;</span><span class="p">:</span> <span class="kc">True</span>      <span class="c1"># Show grid below all plots</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="p">})</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;some numbers&#39;</span><span class="p">)</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;D:/George/Downloads/tempfigs/test.pgf&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>And then imported in to LaTeX:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>        <span class="k">\input</span><span class="nb">{</span>test.pgf<span class="nb">}</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span></code></pre></div>
+<p>This produced the following output:</p>
+<p><a href="images/pyplot.svg"><img src="images/pyplot.svg" width="300"/></a></p>
+<p>This is a powerful way to create complex graphics in LaTeX, as it allows you to use the full power of MatPlotlib to
+create your graphics. This is not just limited to MatPlotlib, you can use any Python package that uses MatPlotlib as a
+backend to create your graphics, such as Seaborn or Plotly. This can be particularly useful if you are trying to import
+statistical graphics in to your LaTeX document.</p>
+<h2 id="importing-graphics-from-matlab">Importing Graphics from MATLAB</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I do not use MATLAB and have not tested this method. This is based on the documentation available.</p>
+</div>
+<p>It is possible to import graphics from MATLAB in to LaTeX using <code>matlab2tikz</code> script. This script will convert your
+MATLAB graphics in to TikZ code that you can then import in to your LaTeX document. This is particularly useful if you
+are more comfortable with MATLAB and want to create complex graphics in MATLAB and then import them in to LaTeX.</p>
+<p>To use <code>matlab2tikz</code>, you will need to install it in MATLAB. You can do this by downloading the script from the
+<a href="https://uk.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz">Mathworks File exchange matlab2tikz</a> 
+and then adding it to your MATLAB path. You can then use the <code>matlab2tikz</code> function to convert your MATLAB graphics in 
+to TikZ code.</p>
+<p>For example, you can create a simple plot in MATLAB:</p>
+<div class="language-matlab highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+<p>And then convert it to TikZ code using <code>matlab2tikz</code>:</p>
+<div class="language-matlab highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">matlab2tikz</span><span class="p">(</span><span class="s">&#39;test.tikz&#39;</span><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="tikz-without-the-tikz">TikZ without the TikZ</h2>
 <p>For those that do not want to learn TikZ, there are a few tools that can be used to create TikZ code without actually
 writing it. These tools are:</p>

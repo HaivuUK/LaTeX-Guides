@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guides for using LaTeX for acadaemic writing">
+        <meta name="description" content="Guides for using LaTeX for academic writing">
       
       
         <meta name="author" content="George Allison">
@@ -80,6 +80,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#spellchecking" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -448,6 +453,46 @@
   
   
     <li class="md-nav__item">
+      <a href="crossref.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-Referencing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="units.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Units
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="code-display.html" class="md-nav__link">
         
   
@@ -554,6 +599,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="spellchecking.html" class="md-nav__link md-nav__link--active">
         
@@ -620,7 +667,7 @@
         
   
   <span class="md-ellipsis">
-    TikZ/PGF
+    TikZ/PGF LaTeX Graphics
   </span>
   
 
@@ -687,9 +734,23 @@
   
 
 
-  <h1>Spellchecking</h1>
-
-
+<h1 id="spellchecking">Spellchecking</h1>
+<p>Spellchecking is generally dependent on the editor you are using. Most editors have built-in spellchecking, but if 
+you are using a simple text editor, you can use a spellchecker like <code>aspell</code> or <code>hunspell</code>. </p>
+<p>With more feature-rich editors like TeXstudio and Visual Studio Code, you can full grammar checking and spellchecking
+as you type using the LanguageTool extension.</p>
+<p>Information for how to do this in Visual Studio Code can be found <a href="https://valentjn.github.io/ltex/">here</a>.</p>
+<p>For TeXstudio:</p>
+<p>Note You need TeXstudio 2.12.2 or later to work with LT 3.6 or later</p>
+<p>You need have the standalone LanguageTool java application installed on your system. You can download it from
+<a href="https://languagetool.org/">here</a>.</p>
+<p>In TeXstudio navigate to Options &gt; Configure TexStudio… &gt; Language Checking &gt; LanguageTool (near the bottom as of 4.8.4).</p>
+<p>You should start the LanguageTool stand-alone version, languagetool.jar. Then simply open Options and select the 
+option to run it as HTTP server. By default, it uses port 8081. You can change this in the options. But you need to 
+change this in TeXstudio as well.</p>
+<p>If TexStudio is configured to use inline grammar checking (which is the default, see Options &gt; Configure TexStudio… &gt; 
+Editor &gt; Inline Checking &gt; Grammar), you should see grammar checks immediately.</p>
+<p>Occasionally it will flag LaTeX commands as errors.</p>
 
 
 

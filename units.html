@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="quickstart.html">
+        <link rel="prev" href="crossref.html">
       
       
-        <link rel="next" href="templates.html">
+        <link rel="next" href="code-display.html">
       
       
       <link rel="icon" href="images/logo.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Installing LaTeX - LaTeX Guides</title>
+        <title>Units - LaTeX Guides</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#units-in-latex" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing LaTeX
+              Units
             
           </span>
         </div>
@@ -310,30 +310,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Installing LaTeX
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="installation.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="installation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -342,44 +322,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tex-live" class="md-nav__link">
-    <span class="md-ellipsis">
-      TeX Live
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#miktex" class="md-nav__link">
-    <span class="md-ellipsis">
-      MiKTeX
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -528,10 +470,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="units.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Units
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="units.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -540,6 +502,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#siunitx" class="md-nav__link">
+    <span class="md-ellipsis">
+      siunitx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="siunitx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing units
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Units
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#units" class="md-nav__link">
+    <span class="md-ellipsis">
+      units
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="units">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -782,60 +830,72 @@
   
 
 
-<h1 id="installation">Installation</h1>
+<h1 id="units-in-latex">Units in LaTeX</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are using <a href="https://www.overleaf.com/">Overleaf</a>, you do not need to have a local installation of LaTeX.</p>
+<p><strong>TLDR:</strong> It is recommended to use the <code>siunitx</code> package for typesetting units in LaTeX. The <code>units</code> package is simpler
+and easier to use, but it is also less powerful and flexible.</p>
 </div>
-<p>There are two main ways to install LaTeX on your system:</p>
-<ol>
-<li><strong><a href="https://www.tug.org/texlive/">TeX Live</a></strong>: A comprehensive distribution of LaTeX for Windows, macOS, and Linux.</li>
-<li><strong><a href="https://miktex.org/">MiKTeX</a></strong>: A distribution of LaTeX for Windows.</li>
-</ol>
-<p><a href="https://tectonic-typesetting.github.io/en-US/">Tectonic</a> is also and option but not recommended for beginners.</p>
+<p>There are a few ways to typeset units in LaTeX. The two most common ways are to use the <code>siunitx</code> package or to use 
+the <code>units</code> package. The <code>siunitx</code> package is more powerful and flexible, but the <code>units</code> package is simpler and 
+easier to use. This document will cover both methods.</p>
+<h2 id="siunitx"><a href="https://ctan.org/pkg/siunitx">siunitx</a></h2>
+<p>The <code>siunitx</code> provides a wide range of options for formatting units, including the ability to control the spacing 
+between the number and the unit, the ability to automatically convert units, and the ability to define custom units.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<p>To use the <code>siunitx</code> package, you must first include it in your document preamble:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\usepackage</span><span class="nb">{</span>siunitx<span class="nb">}</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>TeX Live is recommended for most users.</p>
+<p>Since version 3 it is no longer recommended to use <code>\si</code> or <code>\SI</code> anymore as they are deprecated. Instead, 
+use <code>\qty</code>, <code>\unit</code>, etc.</p>
 </div>
-<p>Both distributions provide a package manager to install and update packages. They also provide a GUI for managing the
-installation. They additionally both provide TeXworks, a simple LaTeX editor which is discussed in more detail in the
-<a href="editors.html">Editors</a> section.</p>
-<h2 id="tex-live"><a href="https://www.tug.org/texlive/">TeX Live</a></h2>
-<p>TeX Live is a comprehensive distribution of LaTeX for Windows, macOS, and Linux maintained by the TeX Users Group (TUG).
-It is available for free from the <a href="https://www.tug.org/texlive/">TeX Live website</a>.</p>
-<p>They provide a <a href="https://www.tug.org/texlive/doc/texlive-en/texlive-en.html">detailed installation guide</a> 
-for all operating systems. And offer a <a href="https://www.tug.org/texlive/quickinstall.html">quick installation guide</a>.</p>
-<p>TeX Live is provided as a single installer for most operating systems and as an 
-<a href="https://www.tug.org/texlive/acquire-iso.html">ISO</a> image.</p>
-<p>Due to the size and volume of packages in modern LaTeX distributions, using the installer can be time-consuming as it
-downloads all the packages from the internet. The ISO image is recommended for users with slow or unreliable internet.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The ISO image is a large file (approximately 5.6 GB) but the installation will be quicker as most packages will be
-installed from the image.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The installer takes between 30 minutes and 2 hour+ to complete depending on your internet connection and the mirror 
-quality.</p>
-</div>
-<p>Once installed TeX Live has  a package manager called <code>tlmgr</code> (with a gui available) which can be used to install and 
-update packages.</p>
-<p>TeX Live is frozen and updated annually and a new version must be installed each year if you want the latest packages.</p>
-<p>TeX Live often provides the most stable experience for users and is recommended for most users.</p>
-<h2 id="miktex"><a href="https://miktex.org/">MiKTeX</a></h2>
-<p>MiKTeX is a distribution of LaTeX for Windows maintained by Christian Schenk. It is available for free from the 
-<a href="https://miktex.org/">MiKTeX website</a>. They provide a <a href="https://miktex.org/howto/install-miktex">detailed installation guide</a>
-for all operating systems.</p>
-<p>MiKTeX is provided as a single installer for Windows and as a portable version for USB sticks. The installer is 
-recommended for most users. The portable version is recommended for users who do not have administrator rights on their
-computer. The portable version can be installed on a USB stick and run from there.</p>
-<p>A package manager called <code>mpm</code> which can be used to install and update packages. MiKTeX is updated regularly
-and packages are updated as needed.</p>
-<p>MikTeX differs from TeX Live in that it installs packages on the fly as they are needed. This can be useful for users
-who do not want to download the entire distribution at once. However, it can be slower than TeX Live for users with
-slow or unreliable internet connections. It can also be less stable than TeX Live as packages are updated more
-frequently, which can lead to compatibility issues.</p>
+<p>Numbers can be typeset with <code>\num</code>:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\num</span><span class="nb">{</span>3.14159e-21<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the output <span class="arithmatex">\(3.14159 \times 10^{-21}\)</span>.</p>
+<p>Units can be typeset with <code>\unit</code>:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\unit</span><span class="nb">{</span>kg<span class="nb">}</span>
+</span></code></pre></div>
+<p>Quantities can be typeset with <code>\qty</code>:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\qty</span><span class="nb">{</span>3.14159<span class="nb">}{</span>kg<span class="nb">}</span>
+</span></code></pre></div>
+<p>And angles can be typeset with <code>\ang</code>:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\ang</span><span class="nb">{</span>90<span class="nb">}</span>
+</span></code></pre></div>
+<h3 id="writing-units">Writing units</h3>
+<p>The <code>siunitx</code> package provides a number of options for calling units. For example you can use full names or 
+abbreviations:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\unit</span><span class="nb">{</span>kg.m.s<span class="nb">^{</span>-1<span class="nb">}}</span>
+</span></code></pre></div>
+<p>or</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\unit</span><span class="nb">{</span><span class="k">\kilogram\meter\per\second</span><span class="nb">}</span>
+</span></code></pre></div>
+<p>These will both produce the output <span class="arithmatex">\(\text{kg m s}^{-1}\)</span>.</p>
+<p>If you use the option <code>per-mode=symbol</code> you will instead get the output <span class="arithmatex">\(\text{kg m/s}\)</span>.</p>
+<h3 id="custom-units">Custom Units</h3>
+<p>The <code>siunitx</code> package also allows you to define custom units using the <code>\DeclareSIUnit</code> command:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\DeclareSIUnit</span><span class="nb">{</span><span class="k">\lightyear</span><span class="nb">}{</span>ly<span class="nb">}</span>
+</span></code></pre></div>
+<p>You can then use this custom unit in the same way as the built-in units:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">\qty</span><span class="nb">{</span>1<span class="nb">}{</span><span class="k">\lightyear</span><span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the output <span class="arithmatex">\(1 \text{ ly}\)</span>.</p>
+<h2 id="units"><a href="https://ctan.org/pkg/units">units</a></h2>
+<p>The <code>units</code> package is simpler and easier to use than the <code>siunitx</code> package, but it is also less powerful and flexible.</p>
+<h3 id="basic-usage_1">Basic Usage</h3>
+<p>To use the <code>units</code> package, you must first include it in your document preamble:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\usepackage</span><span class="nb">{</span>units<span class="nb">}</span>
+</span></code></pre></div>
+<p>Numbers can be typeset with <code>\unit</code>:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\unit</span><span class="na">[3.14159e-21]</span><span class="nb">{</span>kg<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the output <span class="arithmatex">\(3.14159\text{e}^{-21} \text{ kg}\)</span>.</p>
+<p>Fractional units can be typeset with:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">\unitfrac</span><span class="na">[3.14159]</span><span class="nb">{</span>kg<span class="nb">}{</span>m<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the output <span class="arithmatex">\(3.14159 \text{ kg/m}\)</span>.</p>
 
 
 
@@ -873,7 +933,7 @@ frequently, which can lead to compatibility issues.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="quickstart.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start">
+          <a href="crossref.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cross-Referencing">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -883,20 +943,20 @@ frequently, which can lead to compatibility issues.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Quick Start
+                Cross-Referencing
               </div>
             </div>
           </a>
         
         
           
-          <a href="templates.html" class="md-footer__link md-footer__link--next" aria-label="Next: Templates">
+          <a href="code-display.html" class="md-footer__link md-footer__link--next" aria-label="Next: Code Display">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Templates
+                Code Display
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="quickstart.html">
+        <link rel="prev" href="equations.html">
       
       
-        <link rel="next" href="templates.html">
+        <link rel="next" href="units.html">
       
       
       <link rel="icon" href="images/logo.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Installing LaTeX - LaTeX Guides</title>
+        <title>Cross-Referencing - LaTeX Guides</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#cross-referencing" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing LaTeX
+              Cross-Referencing
             
           </span>
         </div>
@@ -310,30 +310,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Installing LaTeX
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="installation.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="installation.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -342,44 +322,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tex-live" class="md-nav__link">
-    <span class="md-ellipsis">
-      TeX Live
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#miktex" class="md-nav__link">
-    <span class="md-ellipsis">
-      MiKTeX
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -508,10 +450,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="crossref.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cross-Referencing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="crossref.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -520,6 +482,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#zref" class="md-nav__link">
+    <span class="md-ellipsis">
+      zref
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zref-xr" class="md-nav__link">
+    <span class="md-ellipsis">
+      zref-xr
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zref-clever" class="md-nav__link">
+    <span class="md-ellipsis">
+      zref-clever
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -782,60 +791,50 @@
   
 
 
-<h1 id="installation">Installation</h1>
+<h1 id="cross-referencing">Cross-referencing</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are using <a href="https://www.overleaf.com/">Overleaf</a>, you do not need to have a local installation of LaTeX.</p>
+<p>It is recommended to use all these packages together to get the best cross-referencing experience in LaTeX.</p>
 </div>
-<p>There are two main ways to install LaTeX on your system:</p>
-<ol>
-<li><strong><a href="https://www.tug.org/texlive/">TeX Live</a></strong>: A comprehensive distribution of LaTeX for Windows, macOS, and Linux.</li>
-<li><strong><a href="https://miktex.org/">MiKTeX</a></strong>: A distribution of LaTeX for Windows.</li>
-</ol>
-<p><a href="https://tectonic-typesetting.github.io/en-US/">Tectonic</a> is also and option but not recommended for beginners.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>TeX Live is recommended for most users.</p>
-</div>
-<p>Both distributions provide a package manager to install and update packages. They also provide a GUI for managing the
-installation. They additionally both provide TeXworks, a simple LaTeX editor which is discussed in more detail in the
-<a href="editors.html">Editors</a> section.</p>
-<h2 id="tex-live"><a href="https://www.tug.org/texlive/">TeX Live</a></h2>
-<p>TeX Live is a comprehensive distribution of LaTeX for Windows, macOS, and Linux maintained by the TeX Users Group (TUG).
-It is available for free from the <a href="https://www.tug.org/texlive/">TeX Live website</a>.</p>
-<p>They provide a <a href="https://www.tug.org/texlive/doc/texlive-en/texlive-en.html">detailed installation guide</a> 
-for all operating systems. And offer a <a href="https://www.tug.org/texlive/quickinstall.html">quick installation guide</a>.</p>
-<p>TeX Live is provided as a single installer for most operating systems and as an 
-<a href="https://www.tug.org/texlive/acquire-iso.html">ISO</a> image.</p>
-<p>Due to the size and volume of packages in modern LaTeX distributions, using the installer can be time-consuming as it
-downloads all the packages from the internet. The ISO image is recommended for users with slow or unreliable internet.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The ISO image is a large file (approximately 5.6 GB) but the installation will be quicker as most packages will be
-installed from the image.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The installer takes between 30 minutes and 2 hour+ to complete depending on your internet connection and the mirror 
-quality.</p>
-</div>
-<p>Once installed TeX Live has  a package manager called <code>tlmgr</code> (with a gui available) which can be used to install and 
-update packages.</p>
-<p>TeX Live is frozen and updated annually and a new version must be installed each year if you want the latest packages.</p>
-<p>TeX Live often provides the most stable experience for users and is recommended for most users.</p>
-<h2 id="miktex"><a href="https://miktex.org/">MiKTeX</a></h2>
-<p>MiKTeX is a distribution of LaTeX for Windows maintained by Christian Schenk. It is available for free from the 
-<a href="https://miktex.org/">MiKTeX website</a>. They provide a <a href="https://miktex.org/howto/install-miktex">detailed installation guide</a>
-for all operating systems.</p>
-<p>MiKTeX is provided as a single installer for Windows and as a portable version for USB sticks. The installer is 
-recommended for most users. The portable version is recommended for users who do not have administrator rights on their
-computer. The portable version can be installed on a USB stick and run from there.</p>
-<p>A package manager called <code>mpm</code> which can be used to install and update packages. MiKTeX is updated regularly
-and packages are updated as needed.</p>
-<p>MikTeX differs from TeX Live in that it installs packages on the fly as they are needed. This can be useful for users
-who do not want to download the entire distribution at once. However, it can be slower than TeX Live for users with
-slow or unreliable internet connections. It can also be less stable than TeX Live as packages are updated more
-frequently, which can lead to compatibility issues.</p>
+<h2 id="zref">zref</h2>
+<p>zref provides flexible and extensible cross-referencing capabilities in LaTeX. It allows you to create custom labels 
+and references, and provides better support for complex cross-referencing in your document. It also provides better 
+support for custom reference styles, allowing you to easily create your own reference styles. It provides the base 
+for two more advanced packages, <code>zref-xr</code> and <code>zref-clever</code>.</p>
+<h2 id="zref-xr">zref-xr</h2>
+<p>zref-xr provides better support for cross-referencing between multiple documents. It allows you to easily reference
+labels in other documents, and provides better support for complex cross-referencing between multiple documents. This
+is fundamental for creating complex documents with multiple parts, chapters, or sections that need to reference each
+other.</p>
+<p>To set up cross document cross-referencing it is recommended to create a document list file that contains the paths to
+the documents you want to cross-reference. The code to include in your document is as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\ProvidesPackage</span><span class="nb">{</span>doc-list<span class="nb">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\RequirePackage</span><span class="nb">{</span>zref-xr<span class="nb">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">\RequirePackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\zexternaldocument</span><span class="nb">{</span>chapter1<span class="nb">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">\zexternaldocument</span><span class="nb">{</span>chapter2<span class="nb">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\zexternaldocument</span><span class="nb">{</span>section1<span class="nb">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">\zexternaldocument</span><span class="nb">{</span>appendix<span class="nb">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">\zexternaldocument</span><span class="nb">{</span>conclusion<span class="nb">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">\zexternaldocument</span><span class="nb">{</span>chapter3<span class="nb">}</span>
+</span></code></pre></div>
+<p>In this example, the <code>doc-list</code> package is created to include the documents you want to cross-reference. The
+<code>\zexternaldocument</code> command is used to include the paths to the documents you want to cross-reference. This file would
+need to be saved as <code>doc-list.sty</code> and included in all your documents that you want to cross-reference.</p>
+<h2 id="zref-clever">zref-clever</h2>
+<p>zref-clever provides better support for clever cross-referencing in LaTeX. It allows you to easily reference labels
+with additional information, such as the page number, section number, or chapter number. This allows you to keep your
+cross-references consistent and informative, and removes the need to manually think about the formatting of your
+cross-references.</p>
+<p>To use zref-clever, you need to include the following code in your preamble:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-clever<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will load the zref-clever package and provide you with the additional cross-referencing capabilities it offers.</p>
+<p>You will then be able to use the <code>\zcref</code> command to reference labels with additional information. For example,
+<code>\zcref{label}</code> will reference the label with the page number, section number, or chapter number, depending on the
+context of the reference. If you need to capitalize the reference you can use <code>\zcref[S]{label}</code>.</p>
 
 
 
@@ -873,7 +872,7 @@ frequently, which can lead to compatibility issues.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="quickstart.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start">
+          <a href="equations.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Equations">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -883,20 +882,20 @@ frequently, which can lead to compatibility issues.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Quick Start
+                Equations
               </div>
             </div>
           </a>
         
         
           
-          <a href="templates.html" class="md-footer__link md-footer__link--next" aria-label="Next: Templates">
+          <a href="units.html" class="md-footer__link md-footer__link--next" aria-label="Next: Units">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Templates
+                Units
               </div>
             </div>
             <div class="md-footer__button md-icon">
