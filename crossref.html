@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="equations.html">
+        <link rel="prev" href="python-graphics.html">
       
       
         <link rel="next" href="units.html">
       
       
-      <link rel="icon" href="images/logo.png">
+      <link rel="icon" href="images/favi.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="index.html" title="LaTeX Guides" class="md-header__button md-logo" aria-label="LaTeX Guides" data-md-component="logo">
       
-  <img src="images/logo.png" alt="logo">
+  <img src="images/logoadpat.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -246,7 +246,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="LaTeX Guides" class="md-nav__button md-logo" aria-label="LaTeX Guides" data-md-component="logo">
       
-  <img src="images/logo.png" alt="logo">
+  <img src="images/logoadpat.svg" alt="logo">
 
     </a>
     LaTeX Guides
@@ -393,6 +393,26 @@
   
   
     <li class="md-nav__item">
+      <a href="preamble.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preamble
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="figures.html" class="md-nav__link">
         
   
@@ -438,6 +458,46 @@
   
   <span class="md-ellipsis">
     Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tikz.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TikZ/PGF LaTeX Graphics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python-graphics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PGF Graphics in Python
   </span>
   
 
@@ -525,6 +585,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#calling-cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calling cross-references
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -580,6 +649,26 @@
   
   
     <li class="md-nav__item">
+      <a href="glossaries.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="bibliographies.html" class="md-nav__link">
         
   
@@ -605,6 +694,26 @@
   
   <span class="md-ellipsis">
     Extending LaTeX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="multifile-docs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-File Projects
   </span>
   
 
@@ -680,51 +789,11 @@
   
   
     <li class="md-nav__item">
-      <a href="alternatives.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Alternatives
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="ctan.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     CTAN
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tikz.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    TikZ/PGF LaTeX Graphics
   </span>
   
 
@@ -765,6 +834,26 @@
   
   <span class="md-ellipsis">
     Magic Comments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="alternatives.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alternatives
   </span>
   
 
@@ -835,6 +924,24 @@ cross-references.</p>
 <p>You will then be able to use the <code>\zcref</code> command to reference labels with additional information. For example,
 <code>\zcref{label}</code> will reference the label with the page number, section number, or chapter number, depending on the
 context of the reference. If you need to capitalize the reference you can use <code>\zcref[S]{label}</code>.</p>
+<h2 id="calling-cross-references">Calling cross-references</h2>
+<p>To be able to cross-reference back to an item you need to have a label on the item you want to reference. When using
+<code>zref</code> you can use the <code>\zlabel</code> command to create a label. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">\centering</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">\includegraphics</span><span class="nb">{</span>example.png<span class="nb">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">\caption</span><span class="nb">{</span>An example image<span class="nb">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">\zlabel</span><span class="nb">{</span>fig:example<span class="nb">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>As seen in Figure <span class="k">\zcref</span><span class="nb">{</span>fig:example<span class="nb">}</span>, this is an example image.
+</span></code></pre></div>
+<p>In this example, the <code>\zlabel</code> command is used to create a label for the figure. The <code>\zcref</code> command is then used to
+reference the label in the text. This will automatically insert the correct reference information, in this case it
+would insert <span class="arithmatex">\(\text{Figure 1}\)</span> into the text.</p>
+<p>It is generally good practice to use a consistent naming convention for your labels to make it easier to remember and
+reference them. For example, using <code>fig:</code> for figures, <code>tab:</code> for tables, <code>sec:</code> for sections, <code>ch:</code> for chapters, 
+<code>eq:</code> for equations, etc.</p>
 
 
 
@@ -872,7 +979,7 @@ context of the reference. If you need to capitalize the reference you can use <c
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="equations.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Equations">
+          <a href="python-graphics.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: PGF Graphics in Python">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -882,7 +989,7 @@ context of the reference. If you need to capitalize the reference you can use <c
                 Previous
               </span>
               <div class="md-ellipsis">
-                Equations
+                PGF Graphics in Python
               </div>
             </div>
           </a>
