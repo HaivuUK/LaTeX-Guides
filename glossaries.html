@@ -24,7 +24,7 @@
     
     
       
-        <title>Glossaries - LaTeX Guides</title>
+        <title>Glossaries and Acronyms - LaTeX Guides</title>
       
     
     
@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#glossaries-and-acronyms" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -112,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Glossaries
+              Glossaries and Acronyms
             
           </span>
         </div>
@@ -313,26 +318,6 @@
   
   <span class="md-ellipsis">
     Installing LaTeX
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="templates.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Templates
   </span>
   
 
@@ -574,12 +559,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="glossaries.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Glossaries
+    Glossaries and Acronyms
   </span>
   
 
@@ -656,11 +643,71 @@
   
   
     <li class="md-nav__item">
+      <a href="ctan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CTAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="suggested-packages.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Suggested Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom-packages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conversion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Converting LaTeX
   </span>
   
 
@@ -701,46 +748,6 @@
   
   <span class="md-ellipsis">
     Spellchecking
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ctan.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CTAN
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="conversion.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Converting LaTeX
   </span>
   
 
@@ -807,9 +814,56 @@
   
 
 
-  <h1>Glossaries</h1>
-
-
+<h1 id="glossaries-and-acronyms">Glossaries and Acronyms</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The recommended package for creating glossaries and lists of acronyms is 
+<a href="https://ctan.org/pkg/glossaries">glossaries</a>.</p>
+</div>
+<p>LaTeX has a package for elegant handling of glossaries and acronyms, called <code>glossaries</code>. It is a powerful package 
+that can be used to create a glossary or list of acronyms. The package is highly customizable and can be used to 
+create a glossary or list of acronyms in different styles. </p>
+<p>Use the following code to create a glossary or list of acronyms:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\usepackage</span><span class="nb">{</span>glossaries<span class="nb">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">\makeglossaries</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\newglossaryentry</span><span class="nb">{</span>latex<span class="nb">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    name=LaTeX,
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    description=<span class="nb">{</span>A document preparation system<span class="nb">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">\newglossaryentry</span><span class="nb">{</span>maths<span class="nb">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    name=mathematics,
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    description=<span class="nb">{</span>Mathematics is the study of numbers, quantities, and shapes<span class="nb">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">\newacronym</span><span class="nb">{</span>gcd<span class="nb">}{</span>GCD<span class="nb">}{</span>Greatest Common Divisor<span class="nb">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">\newacronym</span><span class="nb">{</span>lcm<span class="nb">}{</span>LCM<span class="nb">}{</span>Least Common Multiple<span class="nb">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">\printglossaries</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">\gls</span><span class="nb">{</span>latex<span class="nb">}</span> is a typesetting system commonly used for mathematical documents. If you want to find the <span class="k">\gls</span><span class="nb">{</span>gcd<span class="nb">}</span> of 
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>two numbers, you need to find the <span class="k">\gls</span><span class="nb">{</span>lcm<span class="nb">}</span> first.
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>In the above code, the <code>\newglossaryentry</code> command is used to define a new glossary entry. The <code>name</code> key is used to
+specify the term, and the <code>description</code> key is used to provide a description of the term. The <code>\newacronym</code> command is
+used to define a new acronym. The first argument is the label, the second argument is the short form of the acronym, 
+and the third argument is the long form of the acronym.</p>
+<p>The <code>\printglossaries</code> command is used to print the glossary or list of acronyms in the document. The <code>\gls</code> command is
+used to reference a glossary entry or acronym in the text. The first time a glossary entry or acronym is referenced,
+the full term is displayed along with the abbreviation in parentheses. Subsequent references only display the
+abbreviation.</p>
+<p>Using the <code>glossaries</code> package, you can easily create and manage glossaries and lists of acronyms in your LaTeX
+documents, without ever having to worry about where you first defined them in the document. The package takes care of
+sorting and formatting the glossary or list of acronyms for you.</p>
 
 
 

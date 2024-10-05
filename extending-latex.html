@@ -333,26 +333,6 @@
   
   
     <li class="md-nav__item">
-      <a href="templates.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Templates
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="editors.html" class="md-nav__link">
         
   
@@ -577,7 +557,7 @@
         
   
   <span class="md-ellipsis">
-    Glossaries
+    Glossaries and Acronyms
   </span>
   
 
@@ -665,6 +645,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Lua Code through LuaLaTeX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-lua-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Lua Stats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -711,11 +706,71 @@
   
   
     <li class="md-nav__item">
+      <a href="ctan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CTAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="suggested-packages.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Suggested Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom-packages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conversion.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Converting LaTeX
   </span>
   
 
@@ -756,46 +811,6 @@
   
   <span class="md-ellipsis">
     Spellchecking
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="ctan.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    CTAN
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="conversion.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Converting LaTeX
   </span>
   
 
@@ -864,8 +879,221 @@
 
 <h1 id="extending-latex">Extending LaTeX</h1>
 <h2 id="lua-code-through-lualatex">Lua Code through LuaLaTeX</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I recommend not using the <code>luacode</code> package. Use the <code>directlua</code> command instead as shown below.</p>
+</div>
+<p>LuaLaTeX is a LaTeX engine that allows you to run Lua code in your LaTeX document. Lua is a powerful scripting language
+that is easy to learn and use (somewhat similar to python). LuaLaTeX is included in most LaTeX distributions and does 
+not require any additional installation.</p>
+<p>To use LuaLaTeX, you need use LuaLaTeX instead of pdfLaTeX, enable it though a <a href="magic-coms.html">magic comment</a>. 
+For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">% !TeX program = lualatex</span>
+</span></code></pre></div>
+<p>Then you can use Lua code in your LaTeX document. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">\directlua</span><span class="nb">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        local x = 5
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        local y = 10
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        tex.print(x + y)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="nb">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>This would print <span class="arithmatex">\(15\)</span> in the LaTeX document as if it were written in LaTeX.</p>
+<p>LuaLaTeX can be used for a variety of tasks such as generating tables, plots, and other LaTeX code. As LuaLaTeX is
+moving to be the standard LaTeX engine certain packages may require LuaLaTeX to work properly.</p>
+<p>And example of using LuaLaTeX to generate a table is shown below:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">\directlua</span><span class="nb">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        tex.print(&quot;<span class="k">\\</span>begin<span class="nb">{</span>tabular<span class="nb">}{</span>|c|c|c|<span class="nb">}</span>&quot;)
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        tex.print(&quot;<span class="k">\\</span>hline&quot;)
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        tex.print(&quot;1 <span class="nb">&amp;</span> 2 <span class="nb">&amp;</span> 3 <span class="k">\\\\</span>&quot;)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        tex.print(&quot;<span class="k">\\</span>hline&quot;)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        tex.print(&quot;4 <span class="nb">&amp;</span> 5 <span class="nb">&amp;</span> 6 <span class="k">\\\\</span>&quot;)
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        tex.print(&quot;<span class="k">\\</span>hline&quot;)
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        tex.print(&quot;7 <span class="nb">&amp;</span> 8 <span class="nb">&amp;</span> 9 <span class="k">\\\\</span>&quot;)
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        tex.print(&quot;<span class="k">\\</span>hline&quot;)
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        tex.print(&quot;<span class="k">\\</span>end<span class="nb">{</span>tabular<span class="nb">}</span>&quot;)
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="nb">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>This would print the following table in the LaTeX document as if it were written in LaTeX.</p>
+<div class="arithmatex">\[
+\begin{array}{|c|c|c|}
+    \hline
+    1 &amp; 2 &amp; 3 \\
+    \hline
+    4 &amp; 5 &amp; 6 \\
+    \hline 
+    7 &amp; 8 &amp; 9 \\
+    \hline
+\end{array}
+\]</div>
+<p>LuaLaTeX can additionally be used for plotting through the luaplot package or using it to pass variables back. It uses
+metapost to generate the plots.
+See an example of using <code>luaplot</code> below:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\usepackage</span><span class="nb">{</span>luaplot<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">\luaplot</span>[
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    xmin=-10,
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    xmax=20,
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    plotpts=300,
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    hor=&#39;6cm&#39;,
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    ver=&#39;5cm&#39;,
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    clr=<span class="nb">{</span>&#39;red; blue&#39;<span class="nb">}</span>,
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    plotsty=<span class="nb">{</span>&#39;dashed evenly&#39;<span class="nb">}</span>,
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    plotoptions=<span class="nb">{</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        [[
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        autogrid(grid.bot,grid.lft) withcolor .85white;
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        glabel(btex <span class="s">$</span><span class="nb">{sin</span><span class="o">(</span><span class="nb">x</span><span class="o">)+</span><span class="nb">x}</span><span class="s">$</span> etex,(7,11.5)) withcolor (0,1,0);
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        glabel(btex <span class="s">$</span><span class="nb">{cos</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb">}</span><span class="s">$</span> etex,(12,2)) withcolor (0,1,0);
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        ]]
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="nb">}</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    ]
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="nb">{</span>sin(x)+x,cos(x)<span class="nb">}</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>Which produces the following plot:</p>
+<p><img alt="LuaPlot" src="images/luaplot.svg" /></p>
+<h3 id="basic-lua-stats">Basic Lua Stats</h3>
+<p>LuaLaTeX can be used to generate basic statistics. For example, the following code will generate the mean, median, mode,
+and standard deviation of a list of numbers.</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">\directlua</span><span class="nb">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    function mean(t)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        local sum = 0
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        for i = 1, #t do
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            sum = sum + t[i]
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        end
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        return sum / #t
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    end
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    function median(t)
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        table.sort(t)
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        if #t <span class="c">% 2 == 0 then</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            return (t[#t / 2] + t[#t / 2 + 1]) / 2
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        else
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>            return t[math.ceil(#t / 2)]
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        end
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    end
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    function mode(t)
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        local counts = <span class="nb">{}</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        for i = 1, #t do
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>            if counts[t[i]] == nil then
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>                counts[t[i]] = 1
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>            else
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>                counts[t[i]] = counts[t[i]] + 1
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>            end
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>        end
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>        local max = 0
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        local mode = nil
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        for k, v in pairs(counts) do
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>            if v &gt; max then
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>                max = v
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>                mode = k
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>            end
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>        end
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>        return mode
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>    end
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>    function std(t)
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>        local m = mean(t)
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>        local sum = 0
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>        for i = 1, #t do
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>            sum = sum + (t[i] - m)<span class="nb">^</span>2
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>        end
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>        return math.sqrt(sum / #t)
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>    end
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>    local t = <span class="nb">{</span>1, 2, 3, 4, 5, 6, 7, 8, 9, 10<span class="nb">}</span>
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>    tex.print(&quot;Mean: &quot; .. mean(t) .. &quot;<span class="k">\string\\</span>par&quot;)
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>    tex.print(&quot;Median: &quot; .. median(t) .. &quot;<span class="k">\string\\</span>par&quot;)
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>    tex.print(&quot;Mode: &quot; .. mode(t) .. &quot;<span class="k">\string\\</span>par&quot;)
+</span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>    tex.print(&quot;Standard Deviation: &quot; .. std(t) .. &quot;<span class="k">\string\\</span>par&quot;)
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="nb">}</span>
+</span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>Occasionally you may run in to issues with closing } in the lua code. Here it can be better to save the code as a
+<code>*.lua</code> file and input it into the document. Or use the <code>luacode</code> package.</p>
 <h2 id="python-code-through-pythontex">Python Code through PythonTeX</h2>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PythonTeX does not require you to use -shell-escape.</p>
+</div>
+<p>PythonTeX requires a Python installation and the <code>pythontex</code> package. The package can be installed through the 
+<a href="installation.html">package manager</a> of your LaTeX distribution or manually from <a href="ctan.html">CTAN</a>. </p>
+<p>Once the package is installed you need to add the following to your build instructions for your document:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pythontex %.tex
+</span></code></pre></div>
+<p>So your build instructions might look like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pdflatex %.tex | pythontex %.tex | pdflatex %.tex | view-pdf %.pdf
+</span></code></pre></div>
+<p>or in TeXstudio would put the following in the user command:</p>
+<p>name: <code>pythontex:pythontex</code></p>
+<p>command: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pythontex %.tex
+</span></code></pre></div></p>
+<p>then you can run your build command as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>txs:///compile | txs:///pythontex | txs:///compile | txs:///view-pdf
+</span></code></pre></div>
+<p>Now you can use Python code in your LaTeX document. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">\begin</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        import numpy as np
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        x = np.linspace(0, 2*np.pi, 100)
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        y = np.sin(x)
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        print(f&#39;y=<span class="nb">{</span>y[1]<span class="nb">}</span> and x=<span class="nb">{</span>x[43]<span class="nb">}</span>&#39;)
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="k">\end</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I recommend using the <code>gobble=auto</code> option in the <code>pythontex</code> package. This will handle your indentation for you.</p>
+</div>
+<p>This would print the value of <code>y</code> at index 1 and <code>x</code> at index 43.
+in the LaTeX document as if it were written in LaTeX.</p>
+<p>It would look like this in the output:</p>
+<div class="arithmatex">\[
+y=0.0634239196565645 \text{ and } x=2.729060284936588
+\]</div>
+<p>There is generally no limit to the Python code you can run in your LaTeX document. You can even use PythonTeX to
+generate tables, plots, and other LaTeX code. However, be aware that PythonTeX has not been updated in a while and
+may have some stability issues.</p>
+<p>PythonTeX can additionally be use for plotting like shown in <a href="python-graphics.html">PGF Graphics in Python</a>. However, you
+still need to input the <code>pgf</code> file after the PythonTeX code.</p>
+<p>For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="k">\begin</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        import matplotlib.pyplot as plt
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        import numpy as np
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        x = np.linspace(0, 2*np.pi, 100)
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        y = np.sin(x)
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        plt.plot(x, y)
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        plt.savefig(&#39;plot.pgf&#39;)
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="k">\end</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        <span class="k">\centering</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>        <span class="k">\input</span><span class="nb">{</span>plot.pgf<span class="nb">}</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 
 
