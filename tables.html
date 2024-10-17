@@ -422,6 +422,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tables
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="tables.html" class="md-nav__link md-nav__link--active">
         
   
@@ -431,6 +442,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#auto-generating-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-generating tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csvreader-verbose-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      csvreader (Verbose Method)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csvautotabularray-simple-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      csvautotabularray (Simple Method)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-row-and-multi-column-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Row and Multi-Column Cells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -819,6 +903,152 @@
 <p class="admonition-title">Note</p>
 <p>The recommended package for creating tables is <a href="https://ctan.org/pkg/tabularray">tabularray</a>.</p>
 </div>
+<p>Tables can be created using the <code>\begin{table}</code> environment or the <code>\begin{tblr}</code> environment from the <code>tabularray</code> 
+package. The difference between the two is that the former is a floating environment, while the latter is not.</p>
+<p>Table with <code>tabularray</code> package:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\usepackage</span><span class="nb">{</span>tabularray<span class="nb">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">\begin</span><span class="nb">{</span>tblr<span class="nb">}{</span>hlines,vlines<span class="nb">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  Alpha <span class="nb">&amp;</span> Beta <span class="nb">&amp;</span> Gamma <span class="k">\\</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  Epsilon <span class="nb">&amp;</span> Zeta <span class="nb">&amp;</span> Eta <span class="k">\\</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\end</span><span class="nb">{</span>tblr<span class="nb">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>Table with <code>table</code> environment:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This still requires the <code>tabularray</code> package.</p>
+</div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\usepackage</span><span class="nb">{</span>tabularray<span class="nb">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="k">\centering</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">\begin</span><span class="nb">{</span>tblr<span class="nb">}{</span>hlines,vlines<span class="nb">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      Alpha <span class="nb">&amp;</span> Beta <span class="nb">&amp;</span> Gamma <span class="k">\\</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      Epsilon <span class="nb">&amp;</span> Zeta <span class="nb">&amp;</span> Eta <span class="k">\\</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">\end</span><span class="nb">{</span>tblr<span class="nb">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">\caption</span><span class="nb">{</span>A table<span class="nb">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>Using floating tables is recommended when you want LaTeX to decide where to place the table. If you want to place the
+table at a specific location, you can use the <code>[H]</code> option from the <code>float</code> package.</p>
+<p>You can additionally caption the table using the <code>\caption</code> command and label it using <code>\zlabel</code> or <code>\label</code> (depending
+on whether you are using the <code>zref</code> package mentioned in <a href="crossref.html">Cross-Referencing</a>).</p>
+<h2 id="auto-generating-tables">Auto-generating tables</h2>
+<p>If you have a CSV file or dat file you can auto-generate tables for your data. This uses the <code>csvsimple</code> package in
+combination with the <code>tabularray</code> package. There are a few ways to do this, but here are the most common ones:</p>
+<p>You can load the package <code>csvsimple</code> with <code>\usepackage{csvsimple}</code> or <code>\usepackage[l3]{csvsimple}</code>.</p>
+<p>If you have a CSV file with the following data:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Givenname</th>
+<th style="text-align: center;">Matriculation</th>
+<th style="text-align: center;">Gender</th>
+<th style="text-align: center;">Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Maier</td>
+<td style="text-align: center;">Hans</td>
+<td style="text-align: center;">12345</td>
+<td style="text-align: center;">m</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">Huber</td>
+<td style="text-align: center;">Anna</td>
+<td style="text-align: center;">23456</td>
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">2.3</td>
+</tr>
+<tr>
+<td style="text-align: center;">Weißback</td>
+<td style="text-align: center;">Werner</td>
+<td style="text-align: center;">34567</td>
+<td style="text-align: center;">m</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">Bauer</td>
+<td style="text-align: center;">Maria</td>
+<td style="text-align: center;">19202</td>
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">3.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="csvreader-verbose-method">csvreader (Verbose Method)</h2>
+<p>The most complex read in is the following, This allows for alot of customisation but due to the verbosity it is not
+always easy to get right:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\csvreader</span>[<span class="c">%</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    head to column names,
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    centered tabularray=<span class="nb">{</span><span class="c">%</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        width=<span class="k">\textwidth</span>, 
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        hline<span class="nb">{</span>1,2,Z<span class="nb">}</span>=<span class="nb">{</span>1pt, solid<span class="nb">}</span>, 
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        colspec=<span class="nb">{</span>X[l] X[c] X[c] X[c] X[c]<span class="nb">}</span>,
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="nb">}</span>,
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    table head=<span class="nb">{</span>Name <span class="nb">&amp;</span> Givenname <span class="nb">&amp;</span> Matric <span class="nb">&amp;</span> Gender <span class="nb">&amp;</span> Grade<span class="k">\\</span><span class="nb">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    ]<span class="nb">{</span>data.csv<span class="nb">}{}{</span><span class="c">%</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">\Name</span> <span class="nb">&amp;</span> <span class="k">\Givenname</span> <span class="nb">&amp;</span> <span class="k">\Matriculation</span> <span class="nb">&amp;</span> <span class="k">\Gender</span> <span class="nb">&amp;</span> <span class="k">\Grade</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="nb">}</span>
+</span></code></pre></div>
+<h2 id="csvautotabularray-simple-method">csvautotabularray (Simple Method)</h2>
+<p>The following is a simpler version of the above, using the <code>csvautotabularray</code> it can be as simple as a single line:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\csvautotabularray</span><span class="na">[table centered]</span><span class="nb">{</span>data.csv<span class="nb">}</span>
+</span></code></pre></div>
+<p>This is still customisable through the following two additions of optional arguments.</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\csvautotabularray</span><span class="na">[table centered]</span><span class="nb">{</span>data.csv<span class="nb">}</span>[<span class="c">%</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    width=<span class="k">\textwidth</span>,
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    hline<span class="nb">{</span>1,2,Z<span class="nb">}</span>=<span class="nb">{</span>1pt,solid<span class="nb">}</span>,
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    colspec=<span class="nb">{</span>X[l] X[c] X[c] X[c] X[c]<span class="nb">}</span>,
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    row<span class="nb">{</span>1<span class="nb">}</span>=<span class="nb">{</span>font=<span class="k">\bfseries</span><span class="nb">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    ]
+</span></code></pre></div>
+<p>To add a caption to the table you just need to add caption to the first set of optional arguments:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\csvautotabularray</span><span class="na">[table centered]</span><span class="nb">{</span>data.csv<span class="nb">}</span>[tall,caption=<span class="nb">{</span>This is a table<span class="nb">}</span>,remark<span class="nb">{</span>Note<span class="nb">}</span>=<span class="nb">{</span>This a remark on the table<span class="nb">}</span>,][<span class="c">%</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    width=<span class="k">\textwidth</span>,
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    hline<span class="nb">{</span>1,2,Z<span class="nb">}</span>=<span class="nb">{</span>1pt,solid<span class="nb">}</span>,
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    colspec=<span class="nb">{</span>X[l] X[c] X[c] X[c] X[c]<span class="nb">}</span>,
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    row<span class="nb">{</span>1<span class="nb">}</span>=<span class="nb">{</span>font=<span class="k">\bfseries</span><span class="nb">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    ]
+</span></code></pre></div>
+<h2 id="column-types">Column Types</h2>
+<p>The <code>tabularray</code> package has a number of column types that can be used to format the data in the table. Here are some
+examples:</p>
+<ul>
+<li><code>X[l]</code>: Left-aligned column</li>
+<li><code>X[c]</code>: Centered column</li>
+<li><code>X[r]</code>: Right-aligned column</li>
+<li><code>X[p]</code>: Paragraph column</li>
+</ul>
+<p>The X column type allows for the column to be stretched to fit the width of the table. This is useful when you have a
+lot of data in a column, and you want it to wrap and do not want to manually set the width of the column.</p>
+<h2 id="multi-row-and-multi-column-cells">Multi-Row and Multi-Column Cells</h2>
+<p>The <code>tabularray</code> package also has support for multi-row and multi-column cells. Here are some examples:</p>
+<ul>
+<li><code>\SetCell[r=2]{c}</code>: Multi-row cell spanning 2 rows and centered</li>
+<li><code>\SetCell[c=2]{c}</code>: Multi-column cell spanning 2 columns and centered</li>
+<li><code>\SetCell[r=2,c=2]{c}</code>: Multi-row and multi-column cell spanning 2 rows and 2 columns and centered</li>
+</ul>
+<p>This would look like:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\begin</span><span class="nb">{</span>tblr<span class="nb">}{</span>hlines,vlines<span class="nb">}</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  Alpha <span class="nb">&amp;</span> Beta <span class="nb">&amp;</span> Gamma <span class="k">\\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="k">\SetCell</span><span class="na">[r=2]</span><span class="nb">{</span>c<span class="nb">}</span> Epsilon <span class="nb">&amp;</span> Zeta <span class="nb">&amp;</span> Eta <span class="k">\\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  Iota <span class="nb">&amp;</span> Kappa <span class="nb">&amp;</span> Lambda <span class="k">\\</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">\end</span><span class="nb">{</span>tblr<span class="nb">}</span>
+</span></code></pre></div>
+<h2 id="further-information">Further Information</h2>
+<p>For more information on the <code>tabularray</code> package, you can refer to the <a href="https://ctan.org/pkg/tabularray">documentation</a>.</p>
 
 
 

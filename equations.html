@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#equationsmathsformulae" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -434,6 +439,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Equations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="equations.html" class="md-nav__link md-nav__link--active">
         
@@ -444,6 +462,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Equations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-line-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-line Equations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greek-and-special-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greek and Special Characters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -807,9 +898,349 @@
   
 
 
-  <h1>Equations</h1>
-
-
+<h1 id="equationsmathsformulae">Equations/Maths/Formulae</h1>
+<div class="admonition not">
+<p class="admonition-title">Not</p>
+<p>LaTeX Equations do not break across pages. If you have a long equation that needs to break across pages, you can use
+the <code>breqn</code> package. This package will automatically break equations across pages. To use the <code>breqn</code> package, you
+can add the following line to the preamble of your document:
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\usepackage</span><span class="nb">{</span>breqn<span class="nb">}</span>
+</span></code></pre></div></p>
+</div>
+<p>Writing equations is one of the most powerful features of LaTeX. 
+It is one of the main reasons that people use LaTeX for academic writing and one of its largest advantages over
+processors like word. 
+This section will cover the basics of writing equations in LaTeX and some particular cases.</p>
+<p>For most mathematical writing, you will want to use the <code>amsmath</code> package.
+This package provides a number of useful tools for writing equations and is the most commonly used package for writing
+equations in LaTeX.
+To use the <code>amsmath</code> package, you can add the following line to the preamble of your document:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</span></code></pre></div>
+<p>If you want to write matrices, you can use the <code>amsmath</code> package with the <code>amssymb</code> package.
+The <code>amssymb</code> package provides a number of useful symbols for writing equations.
+To use the <code>amssymb</code> package, you can add the following line to the preamble of your document:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span></code></pre></div>
+<p>If you want to write piecewise functions, you can use the <code>cases</code> package.
+The <code>cases</code> package provides the <code>numcases</code> environments for writing piecewise functions.
+To use the <code>cases</code> package, you can add the following line to the preamble of your document:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\usepackage</span><span class="nb">{</span>cases<span class="nb">}</span>
+</span></code></pre></div>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<p>The basic syntax for writing equations in LaTeX is to use the <code>$</code> symbol to denote the start and end of the maths
+environment.
+For example, to write the equation <span class="arithmatex">\(E = mc^2\)</span> you would write:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="s">$</span><span class="nb">E </span><span class="o">=</span><span class="nb"> mc^</span><span class="m">2</span><span class="s">$</span>
+</span></code></pre></div>
+<p>This will produce the following equation:</p>
+<div class="arithmatex">\[
+E = mc^2
+\]</div>
+<p>If you want to write an equation that is displayed on its own line, you can use the <code>\[</code> and <code>\]</code> symbols.
+For example, to write the equation <span class="arithmatex">\(E = mc^2\)</span> on its own line you would write:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="sb">\[</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">    E </span><span class="o">=</span><span class="nb"> mc^</span><span class="m">2</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="s">\]</span>
+</span></code></pre></div>
+<p>To make particular elements of maths please refer to the following table:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Element</th>
+<th style="text-align: center;">Syntax</th>
+<th style="text-align: center;">Example</th>
+<th style="text-align: center;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Subscript</td>
+<td style="text-align: center;"><code>_</code></td>
+<td style="text-align: center;"><code>x_1</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(x_1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Superscript</td>
+<td style="text-align: center;"><code>^</code></td>
+<td style="text-align: center;"><code>x^2</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(x^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Fraction</td>
+<td style="text-align: center;"><code>\frac{numerator}{denominator}</code></td>
+<td style="text-align: center;"><code>\frac{1}{2}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Square Root</td>
+<td style="text-align: center;"><code>\sqrt{expression}</code></td>
+<td style="text-align: center;"><code>\sqrt{2}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sqrt{2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Root</td>
+<td style="text-align: center;"><code>\sqrt[n]{expression}</code></td>
+<td style="text-align: center;"><code>\sqrt[3]{2}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sqrt[3]{2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Summation</td>
+<td style="text-align: center;"><code>\sum_{start}^{end}</code></td>
+<td style="text-align: center;"><code>\sum_{i=1}^{n}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\sum_{i=1}^{n}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Product</td>
+<td style="text-align: center;"><code>\prod_{start}^{end}</code></td>
+<td style="text-align: center;"><code>\prod_{i=1}^{n}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\prod_{i=1}^{n}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Integral</td>
+<td style="text-align: center;"><code>\int_{start}^{end}</code></td>
+<td style="text-align: center;"><code>\int_{0}^{1}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\int_{0}^{1}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Contour Integral</td>
+<td style="text-align: center;"><code>\oint_{start}^{end}</code></td>
+<td style="text-align: center;"><code>\oint_{0}^{1}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\oint_{0}^{1}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Limit</td>
+<td style="text-align: center;"><code>\lim_{x \to a}</code></td>
+<td style="text-align: center;"><code>\lim_{x \to 0}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\lim_{x \to 0}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Matrix</td>
+<td style="text-align: center;"><code>\begin{matrix} ... \end{matrix}</code></td>
+<td style="text-align: center;"><code>\begin{matrix} 1 &amp; 2 \\ 3 &amp; 4 \end{matrix}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\begin{matrix} 1 &amp; 2 \\ 3 &amp; 4 \end{matrix}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Cases</td>
+<td style="text-align: center;"><code>\begin{cases} ... \end{cases}</code></td>
+<td style="text-align: center;"><code>\begin{cases} 1 &amp; x &gt; 0 \\ 0 &amp; x = 0 \\ -1 &amp; x &lt; 0 \end{cases}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\begin{cases} 1 &amp; x &gt; 0 \\ 0 &amp; x = 0 \\ -1 &amp; x &lt; 0 \end{cases}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Binomial Coefficient</td>
+<td style="text-align: center;"><code>\binom{n}{k}</code></td>
+<td style="text-align: center;"><code>\binom{n}{k}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\binom{n}{k}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Derivative</td>
+<td style="text-align: center;"><code>\frac{d}{dx}</code></td>
+<td style="text-align: center;"><code>\frac{d}{dx}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{d}{dx}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Partial Derivative</td>
+<td style="text-align: center;"><code>\frac{\partial}{\partial x}</code></td>
+<td style="text-align: center;"><code>\frac{\partial}{\partial x}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{\partial}{\partial x}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Vector</td>
+<td style="text-align: center;"><code>\vec{v}</code></td>
+<td style="text-align: center;"><code>\vec{v}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\vec{v}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Bold Symbol</td>
+<td style="text-align: center;"><code>\mathbf{v}</code></td>
+<td style="text-align: center;"><code>\mathbf{v}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathbf{v}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Bracket</td>
+<td style="text-align: center;"><code>\left( ... \right)</code></td>
+<td style="text-align: center;"><code>\left( \frac{1}{2} \right)</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left( \frac{1}{2} \right)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Curly Bracket</td>
+<td style="text-align: center;"><code>\left\{ ... \right\}</code></td>
+<td style="text-align: center;"><code>\left\{ \frac{1}{2} \right\}</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left\{ \frac{1}{2} \right\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Square Bracket</td>
+<td style="text-align: center;"><code>\left[ ... \right]</code></td>
+<td style="text-align: center;"><code>\left[ \frac{1}{2} \right]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left[ \frac{1}{2} \right]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Angle Bracket</td>
+<td style="text-align: center;"><code>\left\langle ... \right\rangle</code></td>
+<td style="text-align: center;"><code>\left\langle \frac{1}{2} \right\rangle</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left\langle \frac{1}{2} \right\rangle\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Single Vertical Bar</td>
+<td style="text-align: center;"><code>\left\| ... \right\|</code></td>
+<td style="text-align: center;"><code>\left\| \frac{1}{2} \right\|</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left\lvert \frac{1}{2} \right\rvert\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Double Vertical Bar</td>
+<td style="text-align: center;"><code>\left\\| ... \right\\|</code></td>
+<td style="text-align: center;"><code>\left\\| \frac{1}{2} \right\\|</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left\| \frac{1}{2} \right\|\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Floor</td>
+<td style="text-align: center;"><code>\left\lfloor ... \right\rfloor</code></td>
+<td style="text-align: center;"><code>\left\lfloor \frac{1}{2} \right\rfloor</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left\lfloor \frac{1}{2} \right\rfloor\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Ceiling</td>
+<td style="text-align: center;"><code>\left\lceil ... \right\rceil</code></td>
+<td style="text-align: center;"><code>\left\lceil \frac{1}{2} \right\rceil</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(\left\lceil \frac{1}{2} \right\rceil\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>For more information on writing equations in LaTeX, please refer to the 
+<a href="https://www.overleaf.com/learn/latex/Mathematical_expressions">Overleaf documentation</a>.</p>
+<p>If you want to practice writing equations in LaTeX, you can use the fun online game <a href="https://texnique.xyz/">TeXnique</a>.
+And if there is something you want to write but you are not sure how to do it, you can use the 
+<a href="http://detexify.kirelabs.org/classify.html">Detexify</a> tool to find the LaTeX command for the symbol you want to write.</p>
+<h2 id="basic-equations">Basic Equations</h2>
+<p>The most basic way to write an equation in LaTeX is to use the <code>equation</code> environment.
+This will automatically number the equation and place it in the centre of the page.
+Here is an example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    E = mc<span class="nb">^</span>2
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the following equation:</p>
+<div class="arithmatex">\[
+E = mc^2 \tag{1}
+\]</div>
+<p>If you want to write an equation without a number, you can use the <code>equation*</code> environment.</p>
+<h2 id="multi-line-equations">Multi-line Equations</h2>
+<p>If you want to write a multi-line equation, you can use the <code>align</code> environment.
+This will align the equations at the <code>&amp;</code> symbol.
+Here is an example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    E <span class="nb">&amp;</span>= mc<span class="nb">^</span>2 <span class="k">\\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    F <span class="nb">&amp;</span>= ma
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the following equations:</p>
+<div class="arithmatex">\[
+\begin{align}
+    E &amp;= mc^2 \tag{2} \\
+    F &amp;= ma \tag{3}
+\end{align}
+\]</div>
+<p>You can place the <code>&amp;</code> symbol at different points in the equation to align the equations at that point.
+And if you do not want numbers you can use the <code>align*</code> environment to write multi-line equations without numbers. </p>
+<h2 id="matrices">Matrices</h2>
+<p>If you want to write a matrix, you can use the <code>bmatrix</code> environment.
+Here is an example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sb">\[</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">    </span><span class="nv">\begin</span><span class="nb">{bmatrix}</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">        </span><span class="m">1</span><span class="nb"> &amp; </span><span class="m">2</span><span class="nb"> </span><span class="nv">\\</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">        </span><span class="m">3</span><span class="nb"> &amp; </span><span class="m">4</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">    </span><span class="nv">\end</span><span class="nb">{bmatrix}</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s">\]</span>
+</span></code></pre></div>
+<p>This will produce the following matrix:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+    1 &amp; 2 \\
+    3 &amp; 4
+\end{bmatrix}
+\]</div>
+<p>You can use the <code>pmatrix</code>, <code>vmatrix</code>, <code>Vmatrix</code>, <code>Bmatrix</code>, and <code>smallmatrix</code> environments to write different types 
+of matrices.</p>
+<h2 id="cases">Cases</h2>
+<p>If you want to write a piecewise function, you can use the <code>cases</code> environment.
+Here is an example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="sb">\[</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">    f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">    </span><span class="nv">\begin</span><span class="nb">{cases}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">        </span><span class="m">1</span><span class="nb"> &amp; x &gt; </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">        </span><span class="m">0</span><span class="nb"> &amp; x </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">        </span><span class="o">-</span><span class="m">1</span><span class="nb"> &amp; x &lt; </span><span class="m">0</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">    </span><span class="nv">\end</span><span class="nb">{cases}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="s">\]</span>
+</span></code></pre></div>
+<p>This will produce the following piecewise function:</p>
+<div class="arithmatex">\[
+f(x) =
+\begin{cases}\tag{1}
+    1 &amp; x &gt; 0 \\
+    0 &amp; x = 0 \\
+    -1 &amp; x &lt; 0
+\end{cases}
+\]</div>
+<p>Some time you will want to write a piecewise function with a single equation number.
+To do this you can use the <code>numcases</code> environment from the <code>cases</code> package.
+Here is an example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\begin</span><span class="nb">{</span>numcases<span class="nb">}{</span>f(x)<span class="nb">}</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    1 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">x &gt; </span><span class="m">0</span><span class="s">$</span> <span class="k">\\</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    0 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="s">$</span> <span class="k">\\</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    -1 <span class="nb">&amp;</span> <span class="s">$</span><span class="nb">x &lt; </span><span class="m">0</span><span class="s">$</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">\end</span><span class="nb">{</span>numcases<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the following piecewise function with a single equation number:</p>
+<div class="arithmatex">\[
+\require{amsmath}
+\require{cases}
+\begin{numcases}{f(x)}
+    1 &amp; x &gt; 0 \tag{1} \\
+    0 &amp; x = 0 \tag{2} \\
+    -1 &amp; x &lt; 0 \tag{3}
+\end{numcases}
+\]</div>
+<p>When you are using cases with complex equations you may find the equation gets too small to read. In this case you can
+use the <code>dcases</code> environment from the <code>mathtools</code> package. This will make the equations larger and easier to read.
+Here is an example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>f(x) = 
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">\begin</span><span class="nb">{</span>dcases<span class="nb">}</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="k">\frac</span><span class="nb">{</span>1<span class="nb">}{</span>x<span class="nb">}</span> <span class="nb">&amp;</span> x <span class="k">\neq</span> 0 <span class="k">\\</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">\frac</span><span class="nb">{</span>1<span class="nb">}{</span><span class="k">\frac</span><span class="nb">{</span>1-3<span class="nb">}{</span>x<span class="nb">}</span>+3.313<span class="nb">}</span> <span class="nb">&amp;</span> x <span class="k">\neq</span> 0 <span class="k">\\</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    0 <span class="nb">&amp;</span> x = 0
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">\end</span><span class="nb">{</span>dcases<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will produce the following piecewise function:</p>
+<div class="arithmatex">\[
+\require{amsmath}
+\require{mathtools}
+f(x) =
+\begin{dcases}
+    \frac{1}{x} &amp; x \neq 0 \\
+    \frac{1}{\frac{1-3}{x}+3.313} &amp; x \neq 0 \\
+    0 &amp; x = 0
+\end{dcases}
+\]</div>
+<h2 id="greek-and-special-characters">Greek and Special Characters</h2>
+<p>To write Greek letters and special characters in LaTeX, you can use the following syntax:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">\alpha</span> <span class="k">\beta</span> <span class="k">\gamma</span> <span class="k">\delta</span> <span class="k">\epsilon</span> <span class="k">\varepsilon</span> <span class="k">\zeta</span> <span class="k">\eta</span> <span class="k">\theta</span> <span class="k">\vartheta</span> <span class="k">\iota</span> <span class="k">\kappa</span> <span class="k">\lambda</span> <span class="k">\mu</span> <span class="k">\nu</span> <span class="k">\xi</span> <span class="k">\pi</span> 
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">\Gamma</span> <span class="k">\Delta</span> <span class="k">\Theta</span> <span class="k">\Lambda</span> <span class="k">\Xi</span> <span class="k">\Pi</span> <span class="k">\Sigma</span> <span class="k">\Upsilon</span> <span class="k">\Phi</span> <span class="k">\Psi</span> <span class="k">\Omega</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">\infty</span> <span class="k">\partial</span> <span class="k">\hbar</span> <span class="k">\imath</span> <span class="k">\jmath</span> <span class="k">\ell</span> <span class="k">\Re</span> <span class="k">\Im</span> <span class="k">\wp</span> <span class="k">\aleph</span> <span class="k">\forall</span> <span class="k">\exists</span> <span class="k">\neg</span> <span class="k">\flat</span> <span class="k">\natural</span> <span class="k">\sharp</span> <span class="k">\backslash</span> 
+</span></code></pre></div>
+<p>This will produce the following Greek letters and special characters:</p>
+<div class="arithmatex">\[
+\begin{align}
+&amp;\alpha \beta \gamma \delta \epsilon \varepsilon \zeta \eta \theta \vartheta \iota \kappa \lambda \mu \nu \xi \pi \\
+&amp;\Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omega \\
+&amp;\infty \partial \hbar \imath \jmath \ell \Re \Im \wp \aleph \forall \exists \neg \flat \natural \sharp \backslash
+\end{align}
+\]</div>
+<p>This is just a small selection of the Greek letters and special characters that you can write in LaTeX. For a full list
+of Greek letters and special characters, please refer to the
+<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX WikiBook</a>.</p>
 
 
 
