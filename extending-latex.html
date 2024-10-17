@@ -657,6 +657,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lua-math-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lua Math Calculations
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -666,6 +675,15 @@
   <a href="#python-code-through-pythontex" class="md-nav__link">
     <span class="md-ellipsis">
       Python Code through PythonTeX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-numerica-for-math-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Numerica for Math Calculations
     </span>
   </a>
   
@@ -1024,8 +1042,45 @@ and standard deviation of a list of numbers.</p>
 </span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="nb">}</span>
 </span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
-<p>Occasionally you may run in to issues with closing } in the lua code. Here it can be better to save the code as a
+<p>Occasionally you may run in to issues with closing <code>}</code> in the lua code. Here it can be better to save the code as a
 <code>*.lua</code> file and input it into the document. Or use the <code>luacode</code> package.</p>
+<h3 id="lua-math-calculations">Lua Math Calculations</h3>
+<p>As already shown in the basic stats example, Lua can be used to perform math calculations. However, it can be a bit of 
+a hassle to code each function you may ever want to use in Lua. Instead, you can use the <code>luacas</code> package to make
+math calculations easier. It comes with a variety of functions that can be used to perform math calculations.</p>
+<p>For example, the following code will perform evaluation on an expression of an equation using the <code>luacas</code> package.</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\usepackage</span><span class="nb">{</span>luacas<span class="nb">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">\begin</span><span class="nb">{</span>CAS<span class="nb">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        vars(&#39;x&#39;)
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        y = diff(x<span class="nb">^</span>2+x,x)+diff(2*x,x)
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        y = y:evaluate()
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        y = y:autosimplify()
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">\end</span><span class="nb">{</span>CAS<span class="nb">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="sb">\[</span><span class="nb"> y </span><span class="o">=</span><span class="nb"> </span><span class="nv">\print</span><span class="nb">{y} </span><span class="s">\]</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">\begin</span><span class="nb">{</span>CAS<span class="nb">}</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        vars(&#39;x&#39;, &#39;y&#39;)
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        z = diff(x<span class="nb">^</span>2+x*2*y<span class="nb">^</span>2,x)
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        z = z:evaluate()
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        z = z:autosimplify()
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="k">\end</span><span class="nb">{</span>CAS<span class="nb">}</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="sb">\[</span><span class="nb"> z </span><span class="o">=</span><span class="nb"> </span><span class="nv">\print</span><span class="nb">{z} </span><span class="s">\]</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>This would print the following in the LaTeX document as if it were written in LaTeX.</p>
+<div class="arithmatex">\[
+y = 3 + 2x
+\]</div>
+<div class="arithmatex">\[
+z = 2x + 2y^2
+\]</div>
+<p>You may still need to make your own functions for more complex calculations, that the <code>luacas</code> package does not cover.</p>
 <h2 id="python-code-through-pythontex">Python Code through PythonTeX</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1034,31 +1089,31 @@ and standard deviation of a list of numbers.</p>
 <p>PythonTeX requires a Python installation and the <code>pythontex</code> package. The package can be installed through the 
 <a href="installation.html">package manager</a> of your LaTeX distribution or manually from <a href="ctan.html">CTAN</a>. </p>
 <p>Once the package is installed you need to add the following to your build instructions for your document:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pythontex %.tex
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pythontex %.tex
 </span></code></pre></div>
 <p>So your build instructions might look like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pdflatex %.tex | pythontex %.tex | pdflatex %.tex | view-pdf %.pdf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pdflatex %.tex | pythontex %.tex | pdflatex %.tex | view-pdf %.pdf
 </span></code></pre></div>
 <p>or in TeXstudio would put the following in the user command:</p>
 <p>name: <code>pythontex:pythontex</code></p>
 <p>command: 
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pythontex %.tex
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pythontex %.tex
 </span></code></pre></div></p>
 <p>then you can run your build command as:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>txs:///compile | txs:///pythontex | txs:///compile | txs:///view-pdf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>txs:///compile | txs:///pythontex | txs:///compile | txs:///view-pdf
 </span></code></pre></div>
 <p>Now you can use Python code in your LaTeX document. For example:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">\begin</span><span class="nb">{</span>pycode<span class="nb">}</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        import numpy as np
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        x = np.linspace(0, 2*np.pi, 100)
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        y = np.sin(x)
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        print(f&#39;y=<span class="nb">{</span>y[1]<span class="nb">}</span> and x=<span class="nb">{</span>x[43]<span class="nb">}</span>&#39;)
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="k">\end</span><span class="nb">{</span>pycode<span class="nb">}</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="k">\begin</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        import numpy as np
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        x = np.linspace(0, 2*np.pi, 100)
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        y = np.sin(x)
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        print(f&#39;y=<span class="nb">{</span>y[1]<span class="nb">}</span> and x=<span class="nb">{</span>x[43]<span class="nb">}</span>&#39;)
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="k">\end</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1076,25 +1131,66 @@ may have some stability issues.</p>
 <p>PythonTeX can additionally be use for plotting like shown in <a href="python-graphics.html">PGF Graphics in Python</a>. However, you
 still need to input the <code>pgf</code> file after the PythonTeX code.</p>
 <p>For example:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="k">\begin</span><span class="nb">{</span>pycode<span class="nb">}</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        import matplotlib.pyplot as plt
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        import numpy as np
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        x = np.linspace(0, 2*np.pi, 100)
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        y = np.sin(x)
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        plt.plot(x, y)
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        plt.savefig(&#39;plot.pgf&#39;)
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="k">\end</span><span class="nb">{</span>pycode<span class="nb">}</span>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        <span class="k">\centering</span>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>        <span class="k">\input</span><span class="nb">{</span>plot.pgf<span class="nb">}</span>
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">\usepackage</span><span class="na">[gobble=auto]</span><span class="nb">{</span>pythontex<span class="nb">}</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="k">\begin</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        import matplotlib.pyplot as plt
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        import numpy as np
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        x = np.linspace(0, 2*np.pi, 100)
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        y = np.sin(x)
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        plt.plot(x, y)
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        plt.savefig(&#39;plot.pgf&#39;)
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="k">\end</span><span class="nb">{</span>pycode<span class="nb">}</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        <span class="k">\centering</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>        <span class="k">\input</span><span class="nb">{</span>plot.pgf<span class="nb">}</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
+<h2 id="using-numerica-for-math-calculations">Using Numerica for Math Calculations</h2>
+<p>Numerica is a package that allows you to perform math calculations in LaTeX. It offer a non LuaTeX alternative to
+performing math calculations in LaTeX. It is not as powerful as PythonTeX but it is a good alternative.</p>
+<p>Numerica is included in most LaTeX distributions and does not require any additional installation. To use Numerica, you
+need to include the package in your LaTeX document. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">\usepackage</span><span class="nb">{</span>numerica<span class="nb">}</span>
+</span></code></pre></div>
+<p>Then you can use Numerica code in your LaTeX document. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="k">\begin</span><span class="nb">{</span>align<span class="nb">}</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        x <span class="nb">&amp;</span>= 5 <span class="k">\\</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        y <span class="nb">&amp;</span>= 10 <span class="k">\\</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        z <span class="nb">&amp;</span>= x<span class="nb">^</span>2 <span class="k">\times</span> 4y <span class="k">\\</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="k">\therefore</span> z <span class="nb">&amp;</span>= <span class="k">\eval*</span><span class="nb">{</span>x<span class="nb">^</span>2 * 4y<span class="nb">}</span>[x=5,y=10]
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>This would print the value of <span class="arithmatex">\(z\)</span> in the LaTeX document as if it were written in LaTeX.</p>
+<p>It would look like this in the output:</p>
+<div class="arithmatex">\[
+\begin{align}
+    x &amp;= 5 \\
+    y &amp;= 10 \\
+    z &amp;= x^2 \times 4y \\
+    \therefore z &amp;= 1000
+\end{align}
+\]</div>
+<p>Numerica will also work inline, for example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">\eval</span><span class="nb">{</span><span class="s">$</span><span class="nb">x^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\times</span><span class="nb"> </span><span class="m">4</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>[x=5,y=10] 
+</span></code></pre></div>
+<p>Displaying the following: <span class="arithmatex">\(x^2 \times 4y = 1000\)</span> <span class="arithmatex">\((x=5,y=10)\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use the <code>env=$</code> option instead to make the output inline. But can confuse your editor's syntax highlighting 
+until you start a new line. However, it should not cause any other issues.</p>
+</div>
+<p>For more information on Numerica and its full capabilities see the <a href="https://ctan.org/pkg/numerica">documentation</a>.</p>
 
 
 
