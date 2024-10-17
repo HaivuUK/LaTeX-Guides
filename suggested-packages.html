@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#feats" class="md-skip">
+        <a href="#suggested-packages" class="md-skip">
           Skip to content
         </a>
       
@@ -814,8 +814,61 @@
   
 
 
-<h1 id="feats">Feats</h1>
-<p>This is feats.</p>
+<h1 id="suggested-packages">Suggested Packages</h1>
+<p>This is a list of suggested packages that you can install to enhance your experience with LaTeX or have a base preamble
+to start with.</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\usepackage</span><span class="nb">{</span>standalone<span class="nb">}</span> <span class="c">% Required for including standalone files</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span> <span class="c">% Required for adjusting page dimensions and margins</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">\geometry</span><span class="nb">{</span>verbose,tmargin=2.54cm,bmargin=2.54cm,lmargin=2.54cm,rmargin=2.54cm<span class="nb">}</span> <span class="c">% Set the margins</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\usepackage</span><span class="nb">{</span>amssymb<span class="nb">}</span> <span class="c">% For math symbols</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span> <span class="c">% For math extended mode</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\usepackage</span><span class="nb">{</span>amstext<span class="nb">}</span> <span class="c">% For text in math mode</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">\usepackage</span><span class="nb">{</span>arevmath<span class="nb">}</span> <span class="c">% For math symbols</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">\usepackage</span><span class="nb">{</span>mathtools<span class="nb">}</span> <span class="c">% Allows for additional math symbols</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span> <span class="c">% Required for including images</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">\usepackage</span><span class="nb">{</span>float<span class="nb">}</span> <span class="c">% Allows putting an [H] in \begin{figure} to specify the exact location of the figure</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">\usetikzlibrary</span><span class="nb">{</span>arrows.meta,patterns.meta,shapes<span class="nb">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">\usetikzlibrary</span><span class="nb">{</span>matrix,positioning<span class="nb">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplots<span class="nb">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">\pgfplotsset</span><span class="nb">{</span>compat=1.18<span class="nb">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">\usepackage</span><span class="nb">{</span>pgfplotstable<span class="nb">}</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">\usepgfplotslibrary</span><span class="nb">{</span>groupplots<span class="nb">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">\usepgfplotslibrary</span><span class="nb">{</span>colormaps,statistics<span class="nb">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\familydefault</span><span class="nb">}{</span><span class="k">\sfdefault</span><span class="nb">}</span> <span class="c">% Define the default font family</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="k">\usepackage</span><span class="na">[l3]</span><span class="nb">{</span>csvsimple<span class="nb">}</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="k">\usepackage</span><span class="nb">{</span>booktabs<span class="nb">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="k">\usepackage</span><span class="nb">{</span>array<span class="nb">}</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">\usepackage</span><span class="na">[fitting,most]</span><span class="nb">{</span>tcolorbox<span class="nb">}</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="k">\usepackage</span><span class="nb">{</span>subcaption<span class="nb">}</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">\usepackage</span><span class="nb">{</span>refstyle<span class="nb">}</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="k">\usepackage</span><span class="nb">{</span>siunitx<span class="nb">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-clever<span class="nb">}</span> <span class="c">% Clever zref support</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-xr<span class="nb">}</span> <span class="c">% Cross-referencing between documents</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span> <span class="c">% Hyperlinks</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="k">\usepackage</span><span class="nb">{</span>tabularray<span class="nb">}</span> <span class="c">% Current preferred package for tables</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="k">\usepackage</span><span class="nb">{</span>etoolbox<span class="nb">}</span> <span class="c">% Provdies a list of tools for programming in LaTeX</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="k">\usepackage</span><span class="nb">{</span>setspace<span class="nb">}</span> <span class="c">% Provides the \onehalfspacing command</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="k">\onehalfspacing</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="k">\usepackage</span><span class="nb">{</span>polyglossia<span class="nb">}</span> <span class="c">% Required for multilingual documents</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="k">\usepackage</span><span class="nb">{</span>glossaries<span class="nb">}</span> <span class="c">% Required for creating glossaries</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="k">\setacronymstyle</span><span class="nb">{</span>long-sc-short<span class="nb">}</span> <span class="c">% Set the acronym style</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="k">\setdefaultlanguage</span><span class="na">[variant=british]</span><span class="nb">{</span>english<span class="nb">}</span> <span class="c">% Set the default language</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="k">\usepackage</span><span class="na">[obeyFinal,textsize=scriptsize]</span><span class="nb">{</span>todonotes<span class="nb">}</span> <span class="c">% Required for adding todo notes/comments</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="k">\usepackage</span><span class="nb">{</span>pdfpages<span class="nb">}</span> <span class="c">% Required for including PDFs</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="k">\usepackage</span><span class="nb">{</span>datetime2<span class="nb">}</span> <span class="c">% Required for date and time formatting</span>
+</span></code></pre></div>
 
 
 

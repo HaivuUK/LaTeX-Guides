@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#multifile-documents-in-latex" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -614,6 +619,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Multi-File Projects
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="multifile-docs.html" class="md-nav__link md-nav__link--active">
         
@@ -624,6 +642,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-subfiles-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the subfiles Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-standalone-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the standalone Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using \input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-include" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using \include
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -807,9 +880,124 @@
   
 
 
-  <h1>Multi-File Projects</h1>
-
-
+<h1 id="multifile-documents-in-latex">MultiFile Documents in LaTeX</h1>
+<p>One of the very fun features of LaTeX is the ability to split your document into multiple files and work on each of
+them separately or even include them in multiple documents. This is particularly useful when you are working on a large
+document, such as a book or a thesis, and you want to keep your files organized or use certain chapters/sections for 
+other things.</p>
+<p>There are a few ways to do this in LaTeX, with two in built methods (using <code>\input</code> and <code>\include</code>) and a few package
+based methods (such as <code>subfiles</code> and <code>standalone</code>).</p>
+<p>The in-built methods are simpler and work well for most cases, but lack the elegance and flexibility of the package
+based methods. The package based methods are more powerful and provide additional features, such as the ability to
+handle folder structures and preamble sharing for you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>standalone</code> and <code>subfiles</code> packages should work together but may sometimes have issues.</p>
+</div>
+<h2 id="using-the-subfiles-package">Using the <code>subfiles</code> Package</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>subfiles</code> sometimes seems to struggle when you have your preamble in a <code>.sty</code> file. If you are having trouble
+with this, try saving your preamble as a <code>.tex</code> file instead.</p>
+</div>
+<p>The <code>subfiles</code> package is a popular choice for creating multi-file documents in LaTeX. It allows you to create a main
+document that includes multiple subfiles, each of which can be compiled independently, and pull their preamble from the
+main document. This makes it easy to work on different parts of a document separately and combine them later maintaining
+only one preamble.</p>
+<p>To use the <code>subfiles</code> package, you need to include it in your main document and use the <code>\subfile</code> command in each of
+your subfiles. Here is an example of how to use the <code>subfiles</code> package:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">% main.tex</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\subfile</span><span class="nb">{</span>chapter1<span class="nb">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">\subfile</span><span class="nb">{</span>chapter2<span class="nb">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">% chapter1.tex</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\documentclass</span><span class="na">[main.tex]</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 1<span class="nb">}</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>This is chapter 1.
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>The <code>subfiles</code> package provides the <code>\subfile</code> command, which is used to include a subfile in the main document. The
+subfile should be a standalone LaTeX document that can be compiled on its own. When you compile the main document, the
+contents of the subfiles will be included in the output. It additionally provides the <code>\subfileinclude</code> which behave
+similar to <code>\include</code> but with the added benefit of being able to compile the subfile independently.</p>
+<p>If using a bibliography or some other external files, you may need to place them inside a special command in the main
+document to ensure they are included in the subfiles. This can be done using the <code>\subfix</code> command as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">% main.tex</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\addbibresource</span><span class="nb">{</span><span class="k">\subfix</span><span class="nb">{</span>references.bib<span class="nb">}}</span>
+</span></code></pre></div>
+<p>This should allow all child documents to access the bibliography file.</p>
+<p>For more information on the <code>subfiles</code> package, see the <a href="https://ctan.org/pkg/subfiles">documentation</a>.</p>
+<h2 id="using-the-standalone-package">Using the <code>standalone</code> Package</h2>
+<p>The <code>standalone</code> package is another popular choice for creating multi-file documents in LaTeX. It allows you to create
+standalone versions of your subfiles that can be compiled independently and included in the main document. I find the
+focus of <code>standalone</code> to be on creating images and figures that can be included in multiple documents, but it can be
+used for other things as well.</p>
+<p>To use the <code>standalone</code> package, you need to include it in your main document and use the <code>\input</code> command to include
+the standalone versions of your subfiles. Here is an example of how to use the <code>standalone</code> package:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% main.tex</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\usepackage</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\input</span><span class="nb">{</span>chapter1<span class="nb">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">\input</span><span class="nb">{</span>diagram1<span class="nb">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">\input</span><span class="nb">{</span>chapter2<span class="nb">}</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">% chapter1.tex</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">\documentclass</span><span class="na">[class=article]</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 1<span class="nb">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>This is chapter 1.
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">% diagram1.tex</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\documentclass</span><span class="na">[class=article,crop,tikz]</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\draw</span> (0,0) -- (1,1);
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>The <code>standalone</code> package provides the <code>standalone</code> document class, which is used to create standalone versions of your
+subfiles. The <code>class</code> option is used to specify the class of the main document, and the <code>crop</code> option is used to crop the
+output to the size of the content. The <code>tikz</code> option is used to load the <code>tikz</code> package, which is commonly used for
+creating diagrams and figures.</p>
+<p>For more information on the <code>standalone</code> package, see the <a href="https://ctan.org/pkg/standalone">documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the methods listed below you will need to make sure the document preamble is included in each file. This is
+because each file is compiled separately and does not have access to the preamble of the main document.
+The main document should also contain any packages that are used in the included files.</p>
+</div>
+<h2 id="using-input">Using <code>\input</code></h2>
+<p>The <code>\input</code> command is the simplest way to include another file in your document. It is used as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\input</span><span class="nb">{</span>filename<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will include the contents of <code>filename.tex</code> in your document at the point where the command is called. The file
+extension (<code>.tex</code>) is optional, and if not provided, LaTeX will look for a file with the given name and a <code>.tex</code> 
+extension.</p>
+<p>The <code>\input</code> command is useful when you want to include the contents of another file as is, without any additional
+formatting or separation. It is commonly used to include chapters or sections of a larger document.</p>
+<h2 id="using-include">Using <code>\include</code></h2>
+<p>The <code>\include</code> command is similar to <code>\input</code> but provides some additional features. It is used as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\include</span><span class="nb">{</span>filename<span class="nb">}</span>
+</span></code></pre></div>
+<p>The main difference between <code>\input</code> and <code>\include</code> is that <code>\include</code> forces a page break before and after the included
+file. This can be useful when you want to include chapters or sections that should start on a new page, but can sometimes
+be undesirable if you want to include smaller snippets of text.</p>
+<p>Another feature of <code>\include</code> is that it allows you to use the <code>\includeonly</code> command to include only specific files in
+your document. This can be useful when working on a large document, and you only want to compile certain parts.</p>
 
 
 
