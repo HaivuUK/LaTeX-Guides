@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="extending-latex.html">
+        <link rel="prev" href="custom-packages.html">
       
       
-        <link rel="next" href="suggested-packages.html">
+        <link rel="next" href="conversion.html">
       
       
       <link rel="icon" href="images/favi.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Multi-File Projects - LaTeX Guides</title>
+        <title>Custom Commands - LaTeX Guides</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#multifile-documents-in-latex" class="md-skip">
+        <a href="#custom-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Multi-File Projects
+              Custom Commands
             
           </span>
         </div>
@@ -630,30 +630,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Multi-File Projects
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="multifile-docs.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="multifile-docs.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -662,62 +642,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-subfiles-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the subfiles Package
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-standalone-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the standalone Package
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-input" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using \input
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-include" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using \include
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -766,10 +690,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="custom-commands.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Custom Commands
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="custom-commands.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -778,6 +722,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -920,124 +911,81 @@
   
 
 
-<h1 id="multifile-documents-in-latex">MultiFile Documents in LaTeX</h1>
-<p>One of the very fun features of LaTeX is the ability to split your document into multiple files and work on each of
-them separately or even include them in multiple documents. This is particularly useful when you are working on a large
-document, such as a book or a thesis, and you want to keep your files organized or use certain chapters/sections for 
-other things.</p>
-<p>There are a few ways to do this in LaTeX, with two in built methods (using <code>\input</code> and <code>\include</code>) and a few package
-based methods (such as <code>subfiles</code> and <code>standalone</code>).</p>
-<p>The in-built methods are simpler and work well for most cases, but lack the elegance and flexibility of the package
-based methods. The package based methods are more powerful and provide additional features, such as the ability to
-handle folder structures and preamble sharing for you.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>standalone</code> and <code>subfiles</code> packages should work together but may sometimes have issues.</p>
-</div>
-<h2 id="using-the-subfiles-package">Using the <code>subfiles</code> Package</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>subfiles</code> sometimes seems to struggle when you have your preamble in a <code>.sty</code> file. If you are having trouble
-with this, try saving your preamble as a <code>.tex</code> file instead.</p>
-</div>
-<p>The <code>subfiles</code> package is a popular choice for creating multi-file documents in LaTeX. It allows you to create a main
-document that includes multiple subfiles, each of which can be compiled independently, and pull their preamble from the
-main document. This makes it easy to work on different parts of a document separately and combine them later maintaining
-only one preamble.</p>
-<p>To use the <code>subfiles</code> package, you need to include it in your main document and use the <code>\subfile</code> command in each of
-your subfiles. Here is an example of how to use the <code>subfiles</code> package:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">% main.tex</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\subfile</span><span class="nb">{</span>chapter1<span class="nb">}</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">\subfile</span><span class="nb">{</span>chapter2<span class="nb">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<h1 id="custom-commands">Custom Commands</h1>
+<p>Sometimes in LaTeX there is not a package that does exactly what you want, or you want to make a specific action
+repeatable. In these cases, you can define your own commands. This is done using the <code>\newcommand</code> command or the
+<code>\newenvironment</code> command. </p>
+<p>When defining new commands or environments you will want to add in <code>\makeatletter</code> and <code>\makeatother</code> to allow for the
+use of <code>@</code> and other special characters in the command. This is done as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\makeatletter</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c">% Define new commands here</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\makeatother</span>
 </span></code></pre></div>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">% chapter1.tex</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\documentclass</span><span class="na">[main.tex]</span><span class="nb">{</span>subfiles<span class="nb">}</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 1<span class="nb">}</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>This is chapter 1.
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<h2 id="new-commands">New Commands</h2>
+<p>The syntax for <code>\newcommand</code> is:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\commandname</span><span class="nb">}</span>[num]<span class="nb">{</span>definition<span class="nb">}</span>
 </span></code></pre></div>
-<p>The <code>subfiles</code> package provides the <code>\subfile</code> command, which is used to include a subfile in the main document. The
-subfile should be a standalone LaTeX document that can be compiled on its own. When you compile the main document, the
-contents of the subfiles will be included in the output. It additionally provides the <code>\subfileinclude</code> which behave
-similar to <code>\include</code> but with the added benefit of being able to compile the subfile independently.</p>
-<p>If using a bibliography or some other external files, you may need to place them inside a special command in the main
-document to ensure they are included in the subfiles. This can be done using the <code>\subfix</code> command as follows:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">% main.tex</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\addbibresource</span><span class="nb">{</span><span class="k">\subfix</span><span class="nb">{</span>references.bib<span class="nb">}}</span>
+<p>where <code>\commandname</code> is the name of the command, <code>num</code> is the number of arguments the command takes (up to 9), and
+<code>definition</code> is what the command does. For example, if you wanted to define a command that bolds text, you could use:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\bold</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\textbf</span><span class="nb">{</span>#1<span class="nb">}}</span>
 </span></code></pre></div>
-<p>This should allow all child documents to access the bibliography file.</p>
-<p>For more information on the <code>subfiles</code> package, see the <a href="https://ctan.org/pkg/subfiles">documentation</a>.</p>
-<h2 id="using-the-standalone-package">Using the <code>standalone</code> Package</h2>
-<p>The <code>standalone</code> package is another popular choice for creating multi-file documents in LaTeX. It allows you to create
-standalone versions of your subfiles that can be compiled independently and included in the main document. I find the
-focus of <code>standalone</code> to be on creating images and figures that can be included in multiple documents, but it can be
-used for other things as well.</p>
-<p>To use the <code>standalone</code> package, you need to include it in your main document and use the <code>\input</code> command to include
-the standalone versions of your subfiles. Here is an example of how to use the <code>standalone</code> package:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% main.tex</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\usepackage</span><span class="nb">{</span>standalone<span class="nb">}</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\input</span><span class="nb">{</span>chapter1<span class="nb">}</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">\input</span><span class="nb">{</span>diagram1<span class="nb">}</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">\input</span><span class="nb">{</span>chapter2<span class="nb">}</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<p>This would allow you to use <code>\bold{some text}</code> to bold the text "some text". If you wanted to define a command that
+takes two arguments, you could use:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\add</span><span class="nb">}</span>[2]<span class="nb">{</span>#1 + #2<span class="nb">}</span>
 </span></code></pre></div>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">% chapter1.tex</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">\documentclass</span><span class="na">[class=article]</span><span class="nb">{</span>standalone<span class="nb">}</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 1<span class="nb">}</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>This is chapter 1.
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<p>This would allow you to use <code>\add{2}{3}</code> to get "2 + 3".</p>
+<p>These are simple examples, but you can define more complex commands. For example, you could define a command that
+creates a new section with a label and a reference:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\newsection</span><span class="nb">}</span>[2]<span class="nb">{</span><span class="k">\section</span><span class="nb">{</span>#1<span class="nb">}</span><span class="k">\label</span><span class="nb">{</span>#2<span class="nb">}</span><span class="k">\ref</span><span class="nb">{</span>#2<span class="nb">}}</span>
 </span></code></pre></div>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">% diagram1.tex</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\documentclass</span><span class="na">[class=article,crop,tikz]</span><span class="nb">{</span>standalone<span class="nb">}</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\draw</span> (0,0) -- (1,1);
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<p>This would allow you to use <code>\newsection{Introduction}{sec:intro}</code> to create a new section titled "Introduction" with
+the label "sec:intro" and a reference to it.</p>
+<p>A particularly useful command may be extending the roman numeral command to be more inline with your needs. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\Rom</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\textrm</span><span class="nb">{</span><span class="k">\MakeUppercase</span><span class="nb">{</span><span class="k">\romannumeral</span> #1<span class="nb">}}}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\rom</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\textrm</span><span class="nb">{</span><span class="k">\romannumeral</span> #1<span class="nb">}}</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\Romit</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\textit</span><span class="nb">{</span><span class="k">\textrm</span><span class="nb">{</span><span class="k">\MakeUppercase</span><span class="nb">{</span><span class="k">\romannumeral</span> #1<span class="nb">}}}}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\romit</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\textit</span><span class="nb">{</span><span class="k">\textrm</span><span class="nb">{</span><span class="k">\romannumeral</span> #1<span class="nb">}}}</span>
 </span></code></pre></div>
-<p>The <code>standalone</code> package provides the <code>standalone</code> document class, which is used to create standalone versions of your
-subfiles. The <code>class</code> option is used to specify the class of the main document, and the <code>crop</code> option is used to crop the
-output to the size of the content. The <code>tikz</code> option is used to load the <code>tikz</code> package, which is commonly used for
-creating diagrams and figures.</p>
-<p>For more information on the <code>standalone</code> package, see the <a href="https://ctan.org/pkg/standalone">documentation</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For the methods listed below you will need to make sure the document preamble is included in each file. This is
-because each file is compiled separately and does not have access to the preamble of the main document.
-The main document should also contain any packages that are used in the included files.</p>
-</div>
-<h2 id="using-input">Using <code>\input</code></h2>
-<p>The <code>\input</code> command is the simplest way to include another file in your document. It is used as follows:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\input</span><span class="nb">{</span>filename<span class="nb">}</span>
+<p>This would allow you to use <code>\Rom{1}</code> to get "I", <code>\rom{1}</code> to get "i", <code>\Romit{1}</code> to get "<em>I</em>", and 
+<code>\romit{1}</code> to get "<em>i</em>".</p>
+<p>However, you may find it impractical to define a new command for each case here, in this case you can define a command
+with optional arguments instead. This is done by using the following syntax:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\roms</span><span class="nb">}</span>[2][n]<span class="nb">{</span><span class="c">%</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">\if</span> S#1 <span class="k">\textrm</span><span class="nb">{</span><span class="k">\MakeUppercase</span><span class="nb">{</span><span class="k">\romannumeral</span> #2<span class="nb">}}</span><span class="c">%</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">\else</span> <span class="k">\if</span> I#1 <span class="k">\textit</span><span class="nb">{</span><span class="k">\textrm</span><span class="nb">{</span><span class="k">\MakeUppercase</span><span class="nb">{</span><span class="k">\romannumeral</span> #2<span class="nb">}}}</span><span class="c">%</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">\else</span> <span class="k">\if</span> i#1 <span class="k">\textit</span><span class="nb">{</span><span class="k">\textrm</span><span class="nb">{</span><span class="k">\romannumeral</span> #2<span class="nb">}}</span><span class="c">%</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="k">\else</span> <span class="k">\textrm</span><span class="nb">{</span><span class="k">\romannumeral</span> #2<span class="nb">}</span><span class="c">%</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">\fi</span> <span class="k">\fi</span> <span class="k">\fi</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">}</span>
 </span></code></pre></div>
-<p>This will include the contents of <code>filename.tex</code> in your document at the point where the command is called. The file
-extension (<code>.tex</code>) is optional, and if not provided, LaTeX will look for a file with the given name and a <code>.tex</code> 
-extension.</p>
-<p>The <code>\input</code> command is useful when you want to include the contents of another file as is, without any additional
-formatting or separation. It is commonly used to include chapters or sections of a larger document.</p>
-<h2 id="using-include">Using <code>\include</code></h2>
-<p>The <code>\include</code> command is similar to <code>\input</code> but provides some additional features. It is used as follows:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\include</span><span class="nb">{</span>filename<span class="nb">}</span>
+<p>This would allow you to use <code>\roms{1}</code> to get "i", <code>\roms[I]{1}</code> to get "<em>I</em>", <code>\roms[i]{1}</code> to get "<em>i</em>", and
+<code>\roms[S]{1}</code> to get "I".</p>
+<h2 id="new-environments">New Environments</h2>
+<p>The syntax for <code>\newenvironment</code> is:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\newenvironment</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>before<span class="nb">}{</span>after<span class="nb">}</span>
 </span></code></pre></div>
-<p>The main difference between <code>\input</code> and <code>\include</code> is that <code>\include</code> forces a page break before and after the included
-file. This can be useful when you want to include chapters or sections that should start on a new page, but can sometimes
-be undesirable if you want to include smaller snippets of text.</p>
-<p>Another feature of <code>\include</code> is that it allows you to use the <code>\includeonly</code> command to include only specific files in
-your document. This can be useful when working on a large document, and you only want to compile certain parts.</p>
+<p>where <code>name</code> is the name of the environment, <code>num</code> is the number of arguments the environment takes (up to 9), <code>before</code>
+is what happens before the environment, and <code>after</code> is what happens after the environment. For example, if you wanted to
+define an environment that bolds text, you could use:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">\newenvironment</span><span class="nb">{</span>boldenv<span class="nb">}{</span><span class="k">\textbf\bgroup</span><span class="nb">}{</span><span class="k">\egroup</span><span class="nb">}</span>
+</span></code></pre></div>
+<p>This would allow you to use:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\begin</span><span class="nb">{</span>boldenv<span class="nb">}</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>some text
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">\end</span><span class="nb">{</span>boldenv<span class="nb">}</span>
+</span></code></pre></div>
+<p>This gives you large levels of control over your documents and gives you the ability to create tools to make your time
+writing LaTeX easier.</p>
+<h2 id="additional-notes">Additional Notes</h2>
+<ul>
+<li>When defining new commands or environments, you should be careful not to overwrite existing commands or environments.</li>
+<li>You can use <code>\renewcommand</code> to redefine an existing command.</li>
+<li>You can use <code>\providecommand</code> to define a command only if it does not already exist.</li>
+<li>You can use <code>\newcommand*</code> to define a command that does not allow for paragraph breaks in its arguments.</li>
+<li>You can use <code>\newenvironment*</code> to define an environment that does not allow for paragraph breaks in its contents.</li>
+</ul>
+<p>You may want to save your custom commands in a separate file like a <code>.sty</code> file and include it in your main document,
+if this is stored in your <code>texmf</code> directory you can use it in any document you write and call it as a package.</p>
 
 
 
@@ -1075,7 +1023,7 @@ your document. This can be useful when working on a large document, and you only
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="extending-latex.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Extending LaTeX">
+          <a href="custom-packages.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Custom Packages">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1085,20 +1033,20 @@ your document. This can be useful when working on a large document, and you only
                 Previous
               </span>
               <div class="md-ellipsis">
-                Extending LaTeX
+                Custom Packages
               </div>
             </div>
           </a>
         
         
           
-          <a href="suggested-packages.html" class="md-footer__link md-footer__link--next" aria-label="Next: Suggested Packages">
+          <a href="conversion.html" class="md-footer__link md-footer__link--next" aria-label="Next: Converting LaTeX">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Suggested Packages
+                Converting LaTeX
               </div>
             </div>
             <div class="md-footer__button md-icon">
