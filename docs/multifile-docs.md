@@ -13,7 +13,9 @@ based methods. The package based methods are more powerful and provide additiona
 handle folder structures and preamble sharing for you.
 
 !!! Note
-    The `standalone` and `subfiles` packages should work together but may sometimes have issues.
+    The `standalone` and `subfiles` packages should work together but may sometimes have issues. Make sure the
+    `standalone` package is loaded before the `subfiles` package. And you need to call the standalone files with
+    `\subfile` or `\subfileinclude` instead of `\input` or `\include`.
 
 ## Using the `subfiles` Package
 
@@ -27,7 +29,13 @@ main document. This makes it easy to work on different parts of a document separ
 only one preamble.
 
 To use the `subfiles` package, you need to include it in your main document and use the `\subfile` command in each of
-your subfiles. Here is an example of how to use the `subfiles` package:
+your subfiles. Here is an example of how to use the `subfiles` package if you have the following file structure:
+
+```tree
+├─ main.tex                                 # Main document
+├─ chapter1/                                # Subfolder for chapter 1
+│   └─ chapter1.tex                         # Subfile for chapter 1
+```
 
 ```latex
 % main.tex
@@ -42,7 +50,7 @@ your subfiles. Here is an example of how to use the `subfiles` package:
 
 ```latex
 % chapter1.tex
-\documentclass[main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles} % Note the path to the main document ../ takes you up one level
 \begin{document}
 \chapter{Chapter 1}
 This is chapter 1.
@@ -67,6 +75,53 @@ document to ensure they are included in the subfiles. This can be done using the
 ```
 
 This should allow all child documents to access the bibliography file.
+
+Or for example if you have a central data folder and want to access it from subfiles. For example if you had the
+following file structure:
+
+```tree
+├─ main.tex                                 # Main document
+├─ preamble.tex                             # Preamble file
+├─ data/                                    # Subfolder for data
+│   └─ data.csv                             # Data file
+├─ chapter1/                                # Subfolder for chapter 1
+│   ├─ chapter1.tex                         # Subfile for chapter 1
+│   ├─ digarams/                            # Subfolder for diagrams for chapter 1
+│   │   └─ diagram1.tex                     # Subfile for diagram 1
+```
+
+You can access the data file from the subfiles by using the `\subfix` command as follows:
+
+```latex
+% diagram1.tex
+\documentclass[../../main.tex]{subfiles}    % Note the path to the main document ../../ takes you up two levels
+\begin{document}
+
+\def\datafile{\subfix{../../data/data.csv}} % Defines the path as a command so we only need to subfix once
+
+\pgfplotstableread[col sep=comma]{\datafile}\data   % Reads the data file into a table
+
+\begin{tikzpicture}
+
+\begin{axis}
+\addplot table {\data};                     % Plots the data
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}
+```
+
+If you wanted to make your diagram using the subfile package you would want to keep the formatting of the diagram
+document the same including the use of `\subfix` but you would need to change the preamble and class to the following:
+
+```latex
+% diagram1.tex
+\documentclass[tikz,crop]{standalone}
+
+\input{../../preamble.tex}                  % Include the preamble from the main document
+....Rest of the document....
+```
 
 For more information on the `subfiles` package, see the [documentation](https://ctan.org/pkg/subfiles).
 
@@ -115,6 +170,10 @@ The `standalone` package provides the `standalone` document class, which is used
 subfiles. The `class` option is used to specify the class of the main document, and the `crop` option is used to crop the
 output to the size of the content. The `tikz` option is used to load the `tikz` package, which is commonly used for
 creating diagrams and figures.
+
+You may want to look at using the `import` package if you have a more complex file structure that has multiple levels of
+folders. Or you can use the `subfiles` package in conjunction with the `standalone` package to get the best of both
+worlds.
 
 For more information on the `standalone` package, see the [documentation](https://ctan.org/pkg/standalone).
 
