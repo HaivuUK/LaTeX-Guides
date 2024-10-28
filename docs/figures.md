@@ -41,7 +41,30 @@ reference the figure in the text.
 The `\textwidth` command reads the size of the text field between the margins, so `0.5\textwidth` will make the image
 half the width of the text field.
 
-### TikZ Example
+
+### TikZ and TeX Figures
+
+When making figures in tikz or import a tex file sizing can be a bit more difficult. A solution to this is to use
+`resizebox` which is provided by the `graphicx` package and can be extended with the `adjustbox` package if required. 
+For example:
+
+```latex
+\begin{figure}[h]
+    \centering
+    \resizebox{0.5\textwidth}{!}{
+        \begin{tikzpicture}
+            \draw (0,0) -- (1,1);
+        \end{tikzpicture}
+    }
+    \caption{This is the caption of the figure}
+    \zlabel{fig:figure1}
+\end{figure}
+```
+
+This will make the tikz picture half the width of the text field. The `!` in the `resizebox` command will keep the 
+aspect ratio of the image. You can switch the `!` with the width field to make the image a sized based on height.
+
+#### TikZ Example
 
 If you wanted to include a tikz picture you would place your tikz code inside the `figure` environment. For example:
 
@@ -56,9 +79,10 @@ If you wanted to include a tikz picture you would place your tikz code inside th
 \end{figure}
 ```
 
-### TeX Example
+#### TeX Example
 
-And if you wanted to input a `tex` file you would use the `input` command. For example:
+And if you wanted to input a `tex` file you would use the `input` command. For example if you had written your tikz
+figure in a separate file:
 
 ```latex
 \begin{figure}[h]
