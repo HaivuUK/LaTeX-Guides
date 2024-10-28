@@ -478,6 +478,16 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tikz-and-tex-figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      TikZ and TeX Figures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TikZ and TeX Figures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#tikz-example" class="md-nav__link">
     <span class="md-ellipsis">
       TikZ Example
@@ -492,6 +502,11 @@
       TeX Example
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -999,25 +1014,43 @@ of the <code>includegraphics</code> command can be adjusted to change the size o
 reference the figure in the text.</p>
 <p>The <code>\textwidth</code> command reads the size of the text field between the margins, so <code>0.5\textwidth</code> will make the image
 half the width of the text field.</p>
-<h3 id="tikz-example">TikZ Example</h3>
-<p>If you wanted to include a tikz picture you would place your tikz code inside the <code>figure</code> environment. For example:</p>
+<h3 id="tikz-and-tex-figures">TikZ and TeX Figures</h3>
+<p>When making figures in tikz or import a tex file sizing can be a bit more difficult. A solution to this is to use
+<code>resizebox</code> which is provided by the <code>graphicx</code> package and can be extended with the <code>adjustbox</code> package if required. 
+For example:</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">\centering</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">\draw</span> (0,0) -- (1,1);
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">\caption</span><span class="nb">{</span>This is the caption of the figure<span class="nb">}</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">\zlabel</span><span class="nb">{</span>fig:figure1<span class="nb">}</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">\resizebox</span><span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}{</span>!<span class="nb">}{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="k">\draw</span> (0,0) -- (1,1);
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="nb">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">\caption</span><span class="nb">{</span>This is the caption of the figure<span class="nb">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">\zlabel</span><span class="nb">{</span>fig:figure1<span class="nb">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
 </span></code></pre></div>
-<h3 id="tex-example">TeX Example</h3>
-<p>And if you wanted to input a <code>tex</code> file you would use the <code>input</code> command. For example:</p>
+<p>This will make the tikz picture half the width of the text field. The <code>!</code> in the <code>resizebox</code> command will keep the 
+aspect ratio of the image. You can switch the <code>!</code> with the width field to make the image a sized based on height.</p>
+<h4 id="tikz-example">TikZ Example</h4>
+<p>If you wanted to include a tikz picture you would place your tikz code inside the <code>figure</code> environment. For example:</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">\centering</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">\input</span><span class="nb">{</span>path/to/tex/file<span class="nb">}</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">\caption</span><span class="nb">{</span>This is the caption of the figure<span class="nb">}</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">\zlabel</span><span class="nb">{</span>fig:figure1<span class="nb">}</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">\draw</span> (0,0) -- (1,1);
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">\caption</span><span class="nb">{</span>This is the caption of the figure<span class="nb">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">\zlabel</span><span class="nb">{</span>fig:figure1<span class="nb">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span></code></pre></div>
+<h4 id="tex-example">TeX Example</h4>
+<p>And if you wanted to input a <code>tex</code> file you would use the <code>input</code> command. For example if you had written your tikz
+figure in a separate file:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">\centering</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">\input</span><span class="nb">{</span>path/to/tex/file<span class="nb">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">\caption</span><span class="nb">{</span>This is the caption of the figure<span class="nb">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">\zlabel</span><span class="nb">{</span>fig:figure1<span class="nb">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
 </span></code></pre></div>
 <h2 id="sub-figures">Sub-Figures</h2>
 <div class="admonition note">
@@ -1029,27 +1062,27 @@ deprecated. And the <code>subfig</code> package is unsupported, but will still w
 allows you to add multiple sub-figures in a single figure environment.</p>
 <h3 id="subcaption-example">Subcaption Example</h3>
 <p>To add sub-figures to your document, you can use the following code:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-clever<span class="nb">}</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">\usepackage</span><span class="nb">{</span>subcaption<span class="nb">}</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\usepackage</span><span class="nb">{</span>mwe<span class="nb">}</span> <span class="c">% Provides example images</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="k">\centering</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">\begin</span><span class="nb">{</span>subcaptiongroup<span class="nb">}</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            <span class="k">\includegraphics</span><span class="na">[width=0.3\textwidth]</span><span class="nb">{</span>example-image-a<span class="nb">}</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="k">\caption</span><span class="nb">{</span>This is the caption of the first sub-figure<span class="nb">}</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="k">\zlabel</span><span class="nb">{</span>fig:subfigure1<span class="nb">}</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            <span class="k">\includegraphics</span><span class="na">[width=0.3\textwidth]</span><span class="nb">{</span>example-image-b<span class="nb">}</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>            <span class="k">\caption</span><span class="nb">{</span>This is the caption of the second sub-figure<span class="nb">}</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            <span class="k">\zlabel</span><span class="nb">{</span>fig:subfigure2<span class="nb">}</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="k">\end</span><span class="nb">{</span>subcaptiongroup<span class="nb">}</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">\captionsetup</span><span class="nb">{</span>subrefformat=parens<span class="nb">}</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="k">\caption</span><span class="nb">{</span>This is the caption of the <span class="k">\zcref</span><span class="nb">{</span>fig:subfigure1<span class="nb">}</span> and <span class="k">\zcref</span><span class="nb">{</span>fig:subfigure2<span class="nb">}}</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="k">\zlabel</span><span class="nb">{</span>fig:figure2<span class="nb">}</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-clever<span class="nb">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\usepackage</span><span class="nb">{</span>subcaption<span class="nb">}</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\usepackage</span><span class="nb">{</span>mwe<span class="nb">}</span> <span class="c">% Provides example images</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="k">\centering</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="k">\begin</span><span class="nb">{</span>subcaptiongroup<span class="nb">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            <span class="k">\includegraphics</span><span class="na">[width=0.3\textwidth]</span><span class="nb">{</span>example-image-a<span class="nb">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            <span class="k">\caption</span><span class="nb">{</span>This is the caption of the first sub-figure<span class="nb">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="k">\zlabel</span><span class="nb">{</span>fig:subfigure1<span class="nb">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="k">\includegraphics</span><span class="na">[width=0.3\textwidth]</span><span class="nb">{</span>example-image-b<span class="nb">}</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="k">\caption</span><span class="nb">{</span>This is the caption of the second sub-figure<span class="nb">}</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            <span class="k">\zlabel</span><span class="nb">{</span>fig:subfigure2<span class="nb">}</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">\end</span><span class="nb">{</span>subcaptiongroup<span class="nb">}</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="k">\captionsetup</span><span class="nb">{</span>subrefformat=parens<span class="nb">}</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">\caption</span><span class="nb">{</span>This is the caption of the <span class="k">\zcref</span><span class="nb">{</span>fig:subfigure1<span class="nb">}</span> and <span class="k">\zcref</span><span class="nb">{</span>fig:subfigure2<span class="nb">}}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">\zlabel</span><span class="nb">{</span>fig:figure2<span class="nb">}</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 <p>This would look like the following:</p>
 <p><img alt="Sub-Figures" src="images/subfigs.svg" /></p>
@@ -1057,42 +1090,42 @@ allows you to add multiple sub-figures in a single figure environment.</p>
 multiple sub-figures in it. This is useful if you have a single image file that has multiple sub-figures in it, and you
 want them to be referenced separately.</p>
 <h4 id="single-image-with-sub-figures-example">Single Image with Sub-Figures Example</h4>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\usepackage</span><span class="nb">{</span>subcaption<span class="nb">}</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-clever<span class="nb">}</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\usepackage</span><span class="nb">{</span>mwe<span class="nb">}</span> <span class="c">% Provides example images</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">\newsavebox</span><span class="nb">{</span><span class="k">\fourfigurebox</span><span class="nb">}</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    Lorem ipsum <span class="k">\zcref</span><span class="nb">{</span>subfig:a<span class="nb">}</span>  dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">\zcref</span><span class="nb">{</span>subfig:b<span class="nb">}</span> ut labore et dolore magna aliquyam erat, sed diam voluptua <span class="k">\zcref</span><span class="nb">{</span>subfig:c<span class="nb">}</span>. 
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    At vero eos et accusam et <span class="k">\zcref</span><span class="nb">{</span>subfig:d<span class="nb">}</span>.
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htp]
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">\sbox\fourfigurebox</span><span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span>foursquare.pdf<span class="nb">}}</span><span class="c">% change with your own image</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:a<span class="nb">}</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="c">%&lt;---- Don&#39;t forget</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:b<span class="nb">}</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\par\nointerlineskip</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:c<span class="nb">}</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="c">%&lt;---- Don&#39;t forget</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:d<span class="nb">}</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\par\nointerlineskip</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>        <span class="k">\smash</span><span class="nb">{</span><span class="k">\usebox</span><span class="nb">{</span><span class="k">\fourfigurebox</span><span class="nb">}}</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>        <span class="k">\caption</span><span class="nb">{</span>These are four images<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>fig:four<span class="nb">}</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\usepackage</span><span class="nb">{</span>subcaption<span class="nb">}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">\usepackage</span><span class="nb">{</span>zref-clever<span class="nb">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">\usepackage</span><span class="nb">{</span>mwe<span class="nb">}</span> <span class="c">% Provides example images</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">\newsavebox</span><span class="nb">{</span><span class="k">\fourfigurebox</span><span class="nb">}</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    Lorem ipsum <span class="k">\zcref</span><span class="nb">{</span>subfig:a<span class="nb">}</span>  dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="k">\zcref</span><span class="nb">{</span>subfig:b<span class="nb">}</span> ut labore et dolore magna aliquyam erat, sed diam voluptua <span class="k">\zcref</span><span class="nb">{</span>subfig:c<span class="nb">}</span>. 
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    At vero eos et accusam et <span class="k">\zcref</span><span class="nb">{</span>subfig:d<span class="nb">}</span>.
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htp]
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        <span class="k">\sbox\fourfigurebox</span><span class="nb">{</span><span class="k">\includegraphics</span><span class="na">[width=\textwidth]</span><span class="nb">{</span>foursquare.pdf<span class="nb">}}</span><span class="c">% change with your own image</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:a<span class="nb">}</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="c">%&lt;---- Don&#39;t forget</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:b<span class="nb">}</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\par\nointerlineskip</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:c<span class="nb">}</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="c">%&lt;---- Don&#39;t forget</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>        <span class="k">\begin</span><span class="nb">{</span>subfigure<span class="nb">}</span>[t][0.5<span class="k">\ht\fourfigurebox</span>]<span class="nb">{</span>0.5<span class="k">\textwidth</span><span class="nb">}</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>            <span class="k">\refstepcounter</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>subfig:d<span class="nb">}</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="k">\end</span><span class="nb">{</span>subfigure<span class="nb">}</span><span class="k">\par\nointerlineskip</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="k">\smash</span><span class="nb">{</span><span class="k">\usebox</span><span class="nb">{</span><span class="k">\fourfigurebox</span><span class="nb">}}</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>        <span class="k">\caption</span><span class="nb">{</span>These are four images<span class="nb">}</span><span class="k">\zlabel</span><span class="nb">{</span>fig:four<span class="nb">}</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 <p>This would look like the following:</p>
 <p><img alt="Single Image with Sub-Figures" src="images/subfigs-two.svg" /></p>
