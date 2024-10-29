@@ -973,15 +973,21 @@ subfile should be a standalone LaTeX document that can be compiled on its own. W
 contents of the subfiles will be included in the output. It additionally provides the <code>\subfileinclude</code> which behave
 similar to <code>\include</code> but with the added benefit of being able to compile the subfile independently.</p>
 <p>If using a bibliography or some other external files, you may need to place them inside a special command in the main
-document to ensure they are included in the subfiles. This can be done using the <code>\subfix</code> command as follows:</p>
+document to ensure they are included in the subfiles. This can be done using the <code>\subfix</code> and 
+<code>ifSubfilesClassLoaded</code> commands as follows:</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% main.tex</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\addbibresource</span><span class="nb">{</span><span class="k">\subfix</span><span class="nb">{</span>references.bib<span class="nb">}}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\ifSubfilesClassLoaded</span><span class="nb">{</span><span class="c">%</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">\addbibresource</span><span class="nb">{</span><span class="k">\subfix</span><span class="nb">{</span>references.bib<span class="nb">}}</span>    <span class="c">% True case</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="nb">}{</span><span class="c">%</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">\addbibresource</span><span class="nb">{</span>references.bib<span class="nb">}</span>             <span class="c">% False case</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="nb">}</span>
 </span></code></pre></div>
-<p>This should allow all child documents to access the bibliography file.</p>
+<p>This should allow all child documents to access the bibliography file and maintains autocomplete functionality.
+The <code>\subfix</code> command alone will also work. However, this has a tendency to break autocomplete functionality in some
+editors so play with it and find what works for your case.</p>
 <p>Or for example if you have a central data folder and want to access it from subfiles. For example if you had the
 following file structure:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>├─ main.tex                                 # Main document
