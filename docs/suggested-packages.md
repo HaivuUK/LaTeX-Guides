@@ -56,3 +56,7 @@ to start with.
 \usepackage{pdfpages} % Required for including PDFs
 \usepackage{datetime2} % Required for date and time formatting
 ```
+
+If you want to use subfiles make sure you load it after your bibliography and glossaries packages, but before 
+any files that require it. Such as a `subfix` command. More information on the `subfiles` package can be found
+in [Multi-file Documents](multifile-docs.md) and their [documentation](https://ctan.org/pkg/subfiles).

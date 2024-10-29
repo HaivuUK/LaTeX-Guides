@@ -63,18 +63,24 @@ contents of the subfiles will be included in the output. It additionally provide
 similar to `\include` but with the added benefit of being able to compile the subfile independently.
 
 If using a bibliography or some other external files, you may need to place them inside a special command in the main
-document to ensure they are included in the subfiles. This can be done using the `\subfix` command as follows:
+document to ensure they are included in the subfiles. This can be done using the `\subfix` and 
+`ifSubfilesClassLoaded` commands as follows:
 
 ```latex
 % main.tex
 \documentclass{article}
-\usepackage{subfiles}
-
 \usepackage{biblatex}
-\addbibresource{\subfix{references.bib}}
+\usepackage{subfiles}
+\ifSubfilesClassLoaded{%
+	\addbibresource{\subfix{references.bib}}    % True case
+	}{%
+	\addbibresource{references.bib}             % False case
+	}
 ```
 
-This should allow all child documents to access the bibliography file.
+This should allow all child documents to access the bibliography file and maintains autocomplete functionality.
+The `\subfix` command alone will also work. However, this has a tendency to break autocomplete functionality in some
+editors so play with it and find what works for your case.
 
 Or for example if you have a central data folder and want to access it from subfiles. For example if you had the
 following file structure:
