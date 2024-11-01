@@ -63,7 +63,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -962,7 +971,7 @@ supports multiple languages, as well as local custom package loading.</p>
 And simple engine and compiler configuration through the use of magic comments amongst others.</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">% !TeX program = lualatex</span>
 </span></code></pre></div>
-<p><img alt="TeXstudio" src="images/texstudio.png" /></p>
+<p><a class="glightbox" href="images/texstudio.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TeXstudio" src="images/texstudio.png" /></a></p>
 <h2 id="overleaf"><a href="https://www.overleaf.com/">Overleaf</a></h2>
 <p>Overleaf is a cloud-based LaTeX editor. It is a good choice for collaborative work and for those who do not want to
 install LaTeX on their local machine. It has a modern interface and supports real-time collaboration (paid feature).</p>
@@ -974,7 +983,7 @@ limited support for custom packages and some special packages are not supported.
 <p>However, it is a cloud-based editor and requires an internet connection to use. It has a free tier with limited features
 and a paid tier with more features. It supports multiple compilers on all tiers, although, if you need a compiler other
 than pdfLaTeX you will struggle to stay within the free tiers compile time for more complex documents.</p>
-<p><img alt="Overleaf" src="images/overleaf.png" /></p>
+<p><a class="glightbox" href="images/overleaf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Overleaf" src="images/overleaf.png" /></a></p>
 <h2 id="visual-studio-code"><a href="https://code.visualstudio.com/">Visual Studio Code</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -989,7 +998,7 @@ addons available through the marketplace.</p>
 has a built-in spell checker and supports multiple languages. It has a support for multiple compilers and engines
 although the setup can be more complex than other editors. It supports multiple version control systems and has good git
 support.</p>
-<p><img alt="Visual Studio Code" src="images/vscode.jpg" /></p>
+<p><a class="glightbox" href="images/vscode.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visual Studio Code" src="images/vscode.jpg" /></a></p>
 <h2 id="lyx"><a href="https://www.lyx.org/">LyX</a></h2>
 <p>LyX is a document processor that is more WYSIWYG than other LaTeX editors essentially being as close to word as you can
 get with LaTeX. It is open source and cross-platform. It has a modern interface built on top of the Qt framework.</p>
@@ -1000,12 +1009,12 @@ packages, or want to use templates from the internet; It tries to handle everyth
 to include templates.</p>
 <p>It abstracts the LaTeX code away from the user and can be a good choice for those who do not want to learn LaTeX but
 still want to use it.</p>
-<p><img alt="LyX" src="images/lyx.png" /></p>
+<p><a class="glightbox" href="images/lyx.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="LyX" src="images/lyx.png" /></a></p>
 <h2 id="texworks"><a href="https://www.tug.org/texworks/">TeXWorks</a></h2>
 <p>TeXWorks is a simple LaTeX editor. It is open source and cross-platform and is part of the TeX Live distribution. It has
 a barebones interface and is good for those who want a simple editor without a lot of features. But lacks some of the
 comforts of other editors such as code completion and spell checking.</p>
-<p><img alt="TeXWorks" src="images/texworks.png" /></p>
+<p><a class="glightbox" href="images/texworks.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TeXWorks" src="images/texworks.png" /></a></p>
 <h2 id="texifier"><a href="https://www.texifier.com/">TeXifier</a></h2>
 <p>TeXifier is a mac/ios specific LaTeX editor that provide real-time preview of the document. It is a good choice for 
 those who want to remove the hassle of compiling the document to see the changes. It provides modern features like 
@@ -1014,7 +1023,7 @@ document trees, syntax highlighting, code completion, and todo lists.</p>
 you are limited to the packages and versions that are available through the app.</p>
 <p>Lack of user package management can be a limitation for some users. But it remains a good choice for those who want a
 polished and fully-featured LaTeX editor with no compiling.</p>
-<p><img alt="TeXifier" src="images/texifier.png" /></p>
+<p><a class="glightbox" href="images/texifier.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TeXifier" src="images/texifier.png" /></a></p>
 
 
 
@@ -1151,5 +1160,7 @@ polished and fully-featured LaTeX editor with no compiling.</p>
         <script src="javascripts/tikzjax.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

@@ -63,7 +63,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -991,7 +1000,7 @@ provides better support for BibTeX files.</p>
 <p>Additionally, Zotero can be used to collaborate with others on research projects. You can share your library with
 others, and you can also create groups to collaborate on research projects. You can also use the Zotero web library
 to access your references from any device.</p>
-<p><img alt="Zotero" src="images/zotero.png" /></p>
+<p><a class="glightbox" href="images/zotero.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Zotero" src="images/zotero.png" /></a></p>
 <h4 id="better-bibtex"><a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX</a></h4>
 <p>Better BibTeX is a Zotero plugin that provides better support for BibTeX files. It can be used to export your Zotero
 library to a BibTeX file, and it can also be used to import BibTeX files into Zotero. It provides better handling of
@@ -1032,7 +1041,7 @@ viewing without leaving the software.</p>
 <p>You can also view journal impact factors, and other metrics, directly from the software.</p>
 <p>However, JabRef does not have the same level of integration with word processors as Zotero does, only supporting
 LibreOffice directly. It can still be used with Microsoft Word and Google Docs, but it requires a bit more manual work.</p>
-<p><img alt="jabref" src="images/jabref.png" /></p>
+<p><a class="glightbox" href="images/jabref.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="jabref" src="images/jabref.png" /></a></p>
 <h2 id="bibtex-vs-biblatex-biber-vs-natbib">BibTeX vs BibLaTeX &amp; biber vs natbib</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1224,5 +1233,7 @@ link to web pages, PDFs, and other online resources. It is a requirement for man
         <script src="javascripts/tikzjax.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

@@ -63,7 +63,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -970,7 +979,7 @@ document like this:</p>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\input</span><span class="nb">{</span>preamble<span class="nb">}</span>
 </span></code></pre></div>
 <p>This will be functionally equivalent to having the entire preamble in your document.</p>
-<p><img alt="Preamble Meme" src="images/g7mjxh2y68481.jpg" /></p>
+<p><a class="glightbox" href="images/g7mjxh2y68481.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Preamble Meme" src="images/g7mjxh2y68481.jpg" /></a></p>
 
 
 
@@ -1107,5 +1116,7 @@ document like this:</p>
         <script src="javascripts/tikzjax.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

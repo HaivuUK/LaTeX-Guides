@@ -63,7 +63,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -702,6 +711,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pgfplotsedt" class="md-nav__link">
+    <span class="md-ellipsis">
+      PGFPlotsEdt
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1151,6 +1169,9 @@ on how to use them that will be far more comprehensive than this guide:</p>
 </ul>
 <p>Like in Kolda's guide this page will focus on the most used features of TikZ and PGF and most relevant elements
 to producing graphics in a report, it will not cover every aspect of TikZ and PGF.</p>
+<p>If you find you don't want to code all the graphics yourself there are still some helpful tools that can do most of
+the work for you such as the PGFPlotsEdt tool found here <a href="https://logcreative.github.io/PGFPlotsEdt/">PGFPlotsEdt</a>
+<a href="https://github.com/LogCreative/PGFPlotsEdt">(Github)</a>.</p>
 <p>There can be some confusion around TikZ and PGF and how they relate to each other. TikZ is a frontend for PGF, which is
 a lower-level language for producing graphics in LaTeX. TikZ is a more user-friendly interface for PGF, and it is what
 most people use when creating graphics in LaTeX. However, PGF is more powerful and can be used to create more complex
@@ -1841,6 +1862,12 @@ Provides a simple way to convert SVG files and inkscape projects to TikZ code.</
 extension(ipelets) to export TikZ code. The extension is called <a href="https://github.com/QBobWatson/ipe2tikz">Ipe2TikZ</a>
 , although it has been out of development for a while it still works well, there is a more recently active fork
 available <a href="https://github.com/ThexXTURBOXx/ipe2tikz">here</a>.</p>
+<h3 id="pgfplotsedt"><a href="https://logcreative.github.io/PGFPlotsEdt/">PGFPlotsEdt</a></h3>
+<p><a href="https://logcreative.github.io/PGFPlotsEdt/">PGFPlotsEdt</a> is a tool that can be used to create TikZ code for PGFPlots. 
+It is a web-based tool that allows you to create plots and then export the TikZ code. It is particularly useful for
+creating plots quickly and easily or if you are not comfortable writing TikZ code by hand. It additionally allows you
+to upload data files to create plots from.</p>
+<p>As this is a web-based tool, just be cautious of the information you give it.</p>
 <h2 id="alternatives">Alternatives</h2>
 <h3 id="latex-picture-environment">LaTeX Picture Environment</h3>
 <p>The standard LaTeX {picture} environment allows you to create simple graphics, but little more.</p>
@@ -2002,5 +2029,7 @@ PGF, but it is easier to use and can be used to create complex graphics. However
         <script src="javascripts/tikzjax.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
