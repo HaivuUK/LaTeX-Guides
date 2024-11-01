@@ -17,6 +17,10 @@ on how to use them that will be far more comprehensive than this guide:
 Like in Kolda's guide this page will focus on the most used features of TikZ and PGF and most relevant elements
 to producing graphics in a report, it will not cover every aspect of TikZ and PGF.
 
+If you find you don't want to code all the graphics yourself there are still some helpful tools that can do most of
+the work for you such as the PGFPlotsEdt tool found here [PGFPlotsEdt](https://logcreative.github.io/PGFPlotsEdt/)
+[(Github)](https://github.com/LogCreative/PGFPlotsEdt).
+
 There can be some confusion around TikZ and PGF and how they relate to each other. TikZ is a frontend for PGF, which is
 a lower-level language for producing graphics in LaTeX. TikZ is a more user-friendly interface for PGF, and it is what
 most people use when creating graphics in LaTeX. However, PGF is more powerful and can be used to create more complex
@@ -775,6 +779,15 @@ Provides a simple way to convert SVG files and inkscape projects to TikZ code.
 extension(ipelets) to export TikZ code. The extension is called [Ipe2TikZ](https://github.com/QBobWatson/ipe2tikz)
 , although it has been out of development for a while it still works well, there is a more recently active fork
 available [here](https://github.com/ThexXTURBOXx/ipe2tikz).
+
+### [PGFPlotsEdt](https://logcreative.github.io/PGFPlotsEdt/)
+
+[PGFPlotsEdt](https://logcreative.github.io/PGFPlotsEdt/) is a tool that can be used to create TikZ code for PGFPlots. 
+It is a web-based tool that allows you to create plots and then export the TikZ code. It is particularly useful for
+creating plots quickly and easily or if you are not comfortable writing TikZ code by hand. It additionally allows you
+to upload data files to create plots from.
+
+As this is a web-based tool, just be cautious of the information you give it.
 
 ## Alternatives
 
