@@ -65,7 +65,7 @@ For example, to write the equation $E = mc^2$ on its own line you would write:
 \]
 ```
 
-To make particular elements of maths please refer to the following table:
+To make particular elements of maths please refer to the [Maths Cheat Sheet](maths.md) or the following table:
 
 |           Element            |              Syntax               |                             Example                              |                              Output                              |
 |:----------------------------:|:---------------------------------:|:----------------------------------------------------------------:|:----------------------------------------------------------------:|
