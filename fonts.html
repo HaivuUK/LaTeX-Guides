@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="index.html">
+        <link rel="prev" href="preamble.html">
       
       
-        <link rel="next" href="installation.html">
+        <link rel="next" href="figures.html">
       
       
       <link rel="icon" href="images/favi.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Quick Start - LaTeX Guides</title>
+        <title>Fonts - LaTeX Guides</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quickstart" class="md-skip">
+        <a href="#fonts" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              Fonts
             
           </span>
         </div>
@@ -299,30 +299,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Quick Start
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="quickstart.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="quickstart.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -331,80 +311,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-a-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creating a Document
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-content" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding Content
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding Sections
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-lists" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding Lists
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adding-math" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding Math
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#figure-tables-and-equation-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Figure, Tables, and Equation environments
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -513,10 +419,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="fonts.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="fonts.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -525,6 +440,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -987,100 +903,71 @@
   
 
 
-<h1 id="quickstart">Quickstart</h1>
-<p>If you want to jump right in to using LaTeX here is a quick summation of the basics you need to know.</p>
-<p>Trust LaTeX to do the formatting for you. You just need to focus on the content. This is the principal that LaTeX is
-built on.</p>
-<h2 id="creating-a-document">Creating a Document</h2>
-<p>To create a document you need to start with a preamble. This is where you define the type of document you are creating 
-and any packages you want to use. Here is an example of a simple preamble:</p>
+<h1 id="fonts">Fonts</h1>
+<p>Fonts are a key element of any written document and so you want to make sure you are utilising them effectively.</p>
+<p>LaTeX supports a wide range of fonts and has a number built in and designed specifically for it. However, you can also 
+use any font that is installed on your system.</p>
+<p>The main distinction is between TrueType (TTF), OpenType (OTF) and Type-1 fonts. TrueType and OpenType are the most 
+common and are supported by most modern systems. Type 1 fonts are an older format and are less common.</p>
+<p>Type-1 fonts were developed in the 1980s by Adobe and are still widely used in the publishing industry. Around the same
+time TrueType fonts were developed in the 1980s by Apple and then OpenType fonts were developed due to a failed attempt
+to license Apples typography technology in the 1990s developed by Microsoft and Adobe. 
+OpenType fonts are the most modern and are the most feature rich.</p>
+<p>The main difference between TrueType and OpenType fonts is that OpenType fonts are able to contain more glyphs and
+support more languages. They also have more advanced typographic features such as ligatures, small caps and old style
+figures.</p>
+<p>Type-1 fonts are the default in LaTeX and are still widely used. However, you can use TrueType and OpenType fonts in
+LaTeX.</p>
+<p>One of the greatest advantages of LaTeX is its management of typography compared to other document preparation systems.
+This is due to the fact that LaTeX is a typesetting system and not a word processor. This means that LaTeX is able to
+produce high quality typography that is consistent and professional.</p>
+<p>For example the handling of ligatures, kerning and hyphenation is much better in LaTeX than in other systems.</p>
+<figure>
+    <a class="glightbox" href="images/ligatures-tex.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ligatures TeX" src="images/ligatures-tex.png" style="width:200px" /></a>
+    <figcaption>Default Ligatures in LaTeX <em>(Computer Modern)</em></figcaption>
+</figure>
+<figure>
+    <a class="glightbox" href="images/ligatures-word.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ligatures Word" src="images/ligatures-word.png" style="width:200px" /></a>
+    <figcaption>Default ligatures in Word <em>(Times New Roman)</em></figcaption>
+</figure>
+<p>The default font in LaTeX is Computer Modern. This is a serif font and is designed to be easy to read. However, you may
+want to use a different font for your document. This can be done by using the <code>fontspec</code> package.</p>
+<p>The <code>fontspec</code> package allows you to use TrueType and OpenType fonts in LaTeX. It also allows you to set the font size,
+font weight and font style. However, you must use a compiler that supports the <code>fontspec</code> package such as <code>XeLaTeX</code> or
+<code>LuaLaTeX</code>.</p>
+<p>You need to be careful when using non-standard LaTeX fonts as they may not support all the features you require. In
+these cases you may need to find additionally packages to provide the features you need. This may include a different
+font for math mode or a different font for sans-serif text.</p>
+<p>To set the font for your document you need to load the package for the font, for example to use <code>Helvetica</code> the 
+<code>\usepackage{helvet}</code> command should be used. You can then set the font using the 
+<code>\renewcommand{\familydefault}{\sfdefault}</code> command.</p>
+<p>The following is an example of how to set the font to <code>Helvetica</code>:</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\usepackage</span><span class="nb">{</span>helvet<span class="nb">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\familydefault</span><span class="nb">}{</span><span class="k">\sfdefault</span><span class="nb">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>This is some text in Helvetica.
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
-<p>This preamble tells LaTeX that you are creating an article. You can also create other types of documents such as books, 
-reports.</p>
-<h2 id="adding-content">Adding Content</h2>
-<p>Once you have your preamble you can start adding content to your document. Here is an example of a simple document:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Hello, world!
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+<p>If you need to set your font a specific family (between <code>roman</code>, <code>sans</code> and <code>monospace</code>), you can use the following
+commands:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\familydefault</span><span class="nb">}{</span><span class="k">\rmdefault</span><span class="nb">}</span> <span class="c">% Roman</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\familydefault</span><span class="nb">}{</span><span class="k">\sfdefault</span><span class="nb">}</span> <span class="c">% Sans-serif</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\familydefault</span><span class="nb">}{</span><span class="k">\ttdefault</span><span class="nb">}</span> <span class="c">% Monospace</span>
 </span></code></pre></div>
-<p>This will create a document with the text "Hello, world!".</p>
-<h2 id="adding-sections">Adding Sections</h2>
-<p>You can add sections to your document using the <code>\section</code> command. Here is an example:</p>
+<p>This is specific to using LaTeX type fonts in <code>pdflatex</code>. If you are using <code>XeLaTeX</code> or <code>LuaLaTeX</code> you can use the
+<code>fontspec</code> package to set the font. For example to set the font to <code>Helvetica</code> you would use the following commands:</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Hello, world!
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">\usepackage</span><span class="nb">{</span>fontspec<span class="nb">}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\setmainfont</span><span class="nb">{</span>Helvetica<span class="nb">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>This is some text in Helvetica.
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
-<p>This will create a document with a section titled "Introduction" and the text "Hello, world!".</p>
-<p>You can also add subsections using the <code>\subsection</code> command, and subsubsections using the <code>\subsubsection</code> command.</p>
-<h2 id="adding-lists">Adding Lists</h2>
-<p>You can add lists to your document using the <code>itemize</code> and <code>enumerate</code> environments. Itemized lists are bullet points,
-and enumerated lists are numbered. Here is an example of an itemized list:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">\item</span> Item 1
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">\item</span> Item 2
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">\item</span> Item 3
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</span></code></pre></div>
-<p>This will create a document with an itemized list with three items.</p>
-<h2 id="adding-math">Adding Math</h2>
-<p>You can add math to your document using the <code>\[</code> and <code>\]</code> delimiters. Here is an example:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="sb">\[</span><span class="nb"> f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="s">\]</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</span></code></pre></div>
-<p>This will create a document with the math equation <span class="arithmatex">\(f(x) = x^2\)</span>.</p>
-<h2 id="figure-tables-and-equation-environments">Figure, Tables, and Equation environments</h2>
-<p>You can add figures, tables, and equations to your document using the <code>figure</code>, <code>table</code>, and <code>equation</code> environments.
-Here is an example of a figure:</p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">\centering</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">\includegraphics</span><span class="nb">{</span>example-image-a<span class="nb">}</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="k">\caption</span><span class="nb">{</span>An example image<span class="nb">}</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">\centering</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|c|c|c|<span class="nb">}</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="k">\hline</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        A <span class="nb">&amp;</span> B <span class="nb">&amp;</span> C <span class="k">\\</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="k">\hline</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        1 <span class="nb">&amp;</span> 2 <span class="nb">&amp;</span> 3 <span class="k">\\</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">\hline</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="k">\caption</span><span class="nb">{</span>An example table<span class="nb">}</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    f(x) = x<span class="nb">^</span>2
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</span></code></pre></div>
+<p>This will set the main font for the document to <code>Helvetica</code>. You can also set the font size, weight and style using the
+<code>fontspec</code> package.</p>
+<p>You can see it's a bit simpler to control fonts in the <code>XeLaTeX</code> and <code>LuaLaTeX</code> engines. However, you can still use
+<code>pdflatex</code> to use TrueType and OpenType fonts.</p>
 
 
 
@@ -1118,7 +1005,7 @@ Here is an example of a figure:</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="preamble.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Preamble">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -1128,20 +1015,20 @@ Here is an example of a figure:</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Preamble
               </div>
             </div>
           </a>
         
         
           
-          <a href="installation.html" class="md-footer__link md-footer__link--next" aria-label="Next: Installing LaTeX">
+          <a href="figures.html" class="md-footer__link md-footer__link--next" aria-label="Next: Figures">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Installing LaTeX
+                Figures
               </div>
             </div>
             <div class="md-footer__button md-icon">
