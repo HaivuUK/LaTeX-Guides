@@ -1,4 +1,10 @@
-# LaTeX-Guides
+<h1>
+LaTeX Guides |
+<img alt="GitHub commits since latest release (by date) for a branch" src="https://img.shields.io/github/commits-since/HaivuUK/LaTeX-Guides/latest">
+</h1>
+<p>
+A General Purpose Guide for Using LaTeX for Academic Writing
+</p>
 
 ## Introduction
 
