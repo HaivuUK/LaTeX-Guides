@@ -991,19 +991,43 @@ writing. It should not require changes to the document class, and should be able
 This should make a new project setup with the template files.</p>
 <h2 id="structure">Structure</h2>
 <p>The structure of the template is as follows:</p>
-<ul>
-<li><code>thesis-main.tex</code> - The main file for the thesis. This is where the document class is set and the document is built.</li>
-<li><code>chp1/</code> - A folder containing the first chapter of the thesis. Each chapter should be a separate folder for be management.</li>
-<li><code>chp2/</code> - A folder containing the second chapter of the thesis.</li>
-<li><code>preamble.tex</code> - A file containing the preamble for the document. This is where packages are loaded and settings are set.</li>
-<li><code>refs.bib</code> - A file containing the references for the document. This is where the bibliography is stored.</li>
-<li><code>guidethesis.cls</code> - A class file for the thesis. This is where the document class is defined.</li>
-<li><code>abstract.tex</code> - A file containing the abstract for the thesis. This is where the abstract is stored.</li>
-<li><code>acknowledgements.tex</code> - A file containing the acknowledgements for the thesis. This is where the acknowledgements are stored.</li>
-<li><code>dedication.tex</code> - A file containing the dedication for the thesis. This is where the dedication is stored.</li>
-<li><code>appendix1.tex</code> - A file containing the first appendix for the thesis. This is where the appendix is stored.</li>
-<li><code>appendix2.tex</code> - A file containing the second appendix for the thesis.</li>
-</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├─ guidethesis.cls                      # Class file for the thesis. This defines how the document should be formatted.
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─ thesis-main.tex                      # Main document. This is the main file where the document is organised.
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ chp1/                                # Subfolder for chapter 1. For simplicity each chapter is in its own folder.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   └─ doc1.tex                         # Subfile for chapter 1
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├─ chp2/                                # Subfolder for chapter 2
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └─ doc2.tex                         # Subfile for chapter 2
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├─ preamble.tex                         # Preamble for the document. This is where packages are loaded and settings are set.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├─ refs.bib                             # Bibliography file
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├─ abstract.tex                         # Abstract for the thesis
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├─ acknowledgements.tex                 # Acknowledgements for the thesis
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├─ dedication.tex                       # Dedication for the thesis
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├─ appendix1.tex                        # First appendix for the thesis
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>└─ appendix2.tex                        # Second appendix for the thesis
+</span></code></pre></div>
+<p>The structure inside the main document is as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>├─ Engine Declaration
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├─ Document Metadata Declaration
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├─ Document Class Declaration
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├─ Preamble
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├─ Bibliography Resources
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├─ Title Page Declarations
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├─ Document Start/
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   ├─ Make Title Command
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ├─ Dedication
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   ├─ Acknowledgements
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│   ├─ Abstract
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   ├─ Table of Contents
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   ├─ List of Figures
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   ├─ List of Tables
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   ├─ Chapter 1/
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│   │   └─ Chapter 1
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   ├─ Chapter 2/
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   │   └─ Chapter 2
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├─ Appendix 1
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   ├─ Appendix 2
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   └─ Bibliography
+</span></code></pre></div>
 <p>For more information on structuring the thesis please refer to <a href="../multifile-docs/">Multi-file Projects</a>.</p>
 <h2 id="features">Features</h2>
 <p>The template has a number of features that are designed to make writing a thesis easier. These include:</p>
