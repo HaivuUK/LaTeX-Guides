@@ -791,6 +791,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Writing a Thesis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="thesis.html" class="md-nav__link md-nav__link--active">
         
   
@@ -800,6 +811,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -924,10 +981,43 @@
 
 
 <h1 id="writing-a-thesis-in-latex">Writing a Thesis in LaTeX</h1>
-<p>You can do it.</p>
+<p>Here you will find a template for writing a thesis in LaTeX. This template is designed to be a starting point for
+writing. It should not require changes to the document class, and should be able to be used as is.</p>
+<p><center>
+<a class="md-button" download="Thesis Template" href="templates/template-for-guide.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"/></svg></span> Thesis Template</a>
+</center></p>
+<h2 id="usage">Usage</h2>
+<p>To use this template locally, download the zip file and extract it to a location on your computer. You can then open the
+<code>thesis-main.tex</code> file in your LaTeX editor and start writing your thesis from there.</p>
+<p>To use this template in Overleaf, download the zip file and start a new project in Overleaf by uploading the zip file.
+This should make a new project setup with the template files.</p>
+<h2 id="structure">Structure</h2>
+<p>The structure of the template is as follows:</p>
+<ul>
+<li><code>thesis-main.tex</code> - The main file for the thesis. This is where the document class is set and the document is built.</li>
+<li><code>chp1/</code> - A folder containing the first chapter of the thesis. Each chapter should be a separate folder for be management.</li>
+<li><code>chp2/</code> - A folder containing the second chapter of the thesis.</li>
+<li><code>preamble.tex</code> - A file containing the preamble for the document. This is where packages are loaded and settings are set.</li>
+<li><code>refs.bib</code> - A file containing the references for the document. This is where the bibliography is stored.</li>
+<li><code>guidethesis.cls</code> - A class file for the thesis. This is where the document class is defined.</li>
+<li><code>abstract.tex</code> - A file containing the abstract for the thesis. This is where the abstract is stored.</li>
+<li><code>acknowledgements.tex</code> - A file containing the acknowledgements for the thesis. This is where the acknowledgements are stored.</li>
+<li><code>dedication.tex</code> - A file containing the dedication for the thesis. This is where the dedication is stored.</li>
+<li><code>appendix1.tex</code> - A file containing the first appendix for the thesis. This is where the appendix is stored.</li>
+<li><code>appendix2.tex</code> - A file containing the second appendix for the thesis.</li>
+</ul>
+<p>For more information on structuring the thesis please refer to <a href="multifile-docs.html">Multi-file Projects</a>.</p>
+<h2 id="features">Features</h2>
+<p>The template has a number of features that are designed to make writing a thesis easier. These include:</p>
+<ul>
+<li>Allowance for multiple logos on the title page, predefined using the <code>setcustomlogo</code> command.</li>
+<li>Supervisor declaration, which switches between plural and singular depending on the number of supervisors.</li>
+<li>Predefined fix for subfix and bibliography autocompletion.</li>
+<li>etc</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This page in future will contain a template for writing a thesis in LaTeX.</p>
+<p>If you find any issues with the template, please raise an issue on the repository or contact the author.</p>
 </div>
 
 
