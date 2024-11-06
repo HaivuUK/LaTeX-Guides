@@ -12,7 +12,7 @@
 <div style="text-align: center;" markdown>
 [:fontawesome-brands-github: __GitHub__](https://github.com/){ .md-button }
 [:fontawesome-solid-envelope: __Contact__](mailto:GHAllison1@sheffield.ac.uk){ .md-button }
-[:fontawesome-solid-download: Thesis Template](templates/template-for-guide.zip){:download="Thesis Template" .md-button}
+[:fontawesome-solid-download: Thesis Template](https://github.com/HaivuUK/LaTeX-Guides/raw/refs/heads/main/docs/templates/template-for-guide.zip){:download="Thesis Template" .md-button}
 </div>
 
 ## Introduction

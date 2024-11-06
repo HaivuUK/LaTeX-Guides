@@ -4,7 +4,7 @@ Here you will find a template for writing a thesis in LaTeX. This template is de
 writing. It should not require changes to the document class, and should be able to be used as is.
 
 <center>
-[:fontawesome-solid-download: Thesis Template](templates/template-for-guide.zip){:download="Thesis Template" .md-button}
+[:fontawesome-solid-download: Thesis Template](https://github.com/HaivuUK/LaTeX-Guides/raw/refs/heads/main/docs/templates/template-for-guide.zip){:download="Thesis Template" .md-button}
 </center>
 
 ## Usage
