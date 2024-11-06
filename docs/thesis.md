@@ -1,5 +1,9 @@
 # Writing a Thesis in LaTeX
 
+!!! note
+    This template uses expl features in LaTeX3 and requires at least a 2024 distribution of LaTeX. Tested working on
+    Overleaf and TeXLive 2024 as of 06-November-2024.
+
 Here you will find a template for writing a thesis in LaTeX. This template is designed to be a starting point for
 writing. It should not require changes to the document class, and should be able to be used as is.
 
