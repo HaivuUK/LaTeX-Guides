@@ -19,17 +19,49 @@ This should make a new project setup with the template files.
 
 The structure of the template is as follows:
 
-- `thesis-main.tex` - The main file for the thesis. This is where the document class is set and the document is built.
-- `chp1/` - A folder containing the first chapter of the thesis. Each chapter should be a separate folder for be management.
-- `chp2/` - A folder containing the second chapter of the thesis.
-- `preamble.tex` - A file containing the preamble for the document. This is where packages are loaded and settings are set.
-- `refs.bib` - A file containing the references for the document. This is where the bibliography is stored.
-- `guidethesis.cls` - A class file for the thesis. This is where the document class is defined.
-- `abstract.tex` - A file containing the abstract for the thesis. This is where the abstract is stored.
-- `acknowledgements.tex` - A file containing the acknowledgements for the thesis. This is where the acknowledgements are stored.
-- `dedication.tex` - A file containing the dedication for the thesis. This is where the dedication is stored.
-- `appendix1.tex` - A file containing the first appendix for the thesis. This is where the appendix is stored.
-- `appendix2.tex` - A file containing the second appendix for the thesis.
+```tree
+├─ guidethesis.cls                      # Class file for the thesis. This defines how the document should be formatted.
+├─ thesis-main.tex                      # Main document. This is the main file where the document is organised.
+├─ chp1/                                # Subfolder for chapter 1. For simplicity each chapter is in its own folder.
+│   └─ doc1.tex                         # Subfile for chapter 1
+├─ chp2/                                # Subfolder for chapter 2
+│   └─ doc2.tex                         # Subfile for chapter 2
+├─ preamble.tex                         # Preamble for the document. This is where packages are loaded and settings are set.
+├─ refs.bib                             # Bibliography file
+├─ abstract.tex                         # Abstract for the thesis
+├─ acknowledgements.tex                 # Acknowledgements for the thesis
+├─ dedication.tex                       # Dedication for the thesis
+├─ appendix1.tex                        # First appendix for the thesis
+└─ appendix2.tex                        # Second appendix for the thesis
+```
+
+The structure inside the main document is as follows:
+
+```latex
+├─ Engine Declaration
+├─ Document Metadata Declaration
+├─ Document Class Declaration
+├─ Preamble
+├─ Bibliography Resources
+├─ Title Page Declarations
+├─ Document Start/
+│   ├─ Make Title Command
+│   ├─ Dedication
+│   ├─ Acknowledgements
+│   ├─ Abstract
+│   ├─ Table of Contents
+│   ├─ List of Figures
+│   ├─ List of Tables
+│   ├─ Chapter 1/
+│   │   └─ Chapter 1
+│   ├─ Chapter 2/
+│   │   └─ Chapter 2
+│   ├─ Appendix 1
+│   ├─ Appendix 2
+│   └─ Bibliography
+```
+
+
 
 For more information on structuring the thesis please refer to [Multi-file Projects](multifile-docs.md).
 
