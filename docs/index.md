@@ -40,6 +40,7 @@ Other useful resources include:
 - [LaTeX Font Catalogue](https://tug.org/FontCatalogue/)
 - [Not So Short Introduction to LaTeX](https://tobi.oetiker.ch/lshort/lshort.pdf)
 - [Not So Short Introduction to LaTeX 2e](https://mirror.ox.ac.uk/sites/ctan.org/info/lshort/english/lshort.pdf)
+- [Dr. Trefor Bazett YouTube Tutorials](https://www.youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73)
 - [MLModern](https://ctan.org/pkg/mlmodern) - A modern font for LaTeX that is similar to computer modern.
 - [NewComputerModern](https://ctan.org/pkg/newcomputermodern) - A modern expanded font for LaTeX that is similar to computer modern.
 - [TeXnique](https://texnique.xyz/) - A fun online game to practice writing equations in LaTeX.

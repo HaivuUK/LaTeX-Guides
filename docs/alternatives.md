@@ -1,5 +1,36 @@
 # Alternatives to LaTeX
 
+## Why LaTeX?
+
+Over the years the LaTeX typesetting system has become the gold standard for academic and scientific documents.
+However, in the same time word processors have become more powerful and easier to use. So why should you use LaTeX?
+
+Regardless of the progress of word processors, many still do not match the features or typesetting quality of LaTeX.
+
+Below are some deep dives into LaTeX compared to other document preparation or typesetting systems.
+
+- [On Typesetting Engines: A Programmer's Perspective](https://blog.ppresume.com/posts/on-typesetting-engines#cjk-character-set-is-huge)
+  * A recent comparison of LaTeX, Typst, HTML & CSS, LaTeX.js, and React-pdf.
+  * While the focus is on picking a typsetting engine for a resume builder the comparison is still useful.
+  
+| Typesetting Engine | Knuth Plass line breaking |   CJK   | Pagination | Instant Preview |
+|:------------------:|:-------------------------:|:-------:|:----------:|:---------------:|
+| HTML & CSS         |            No             |   Yes   |  Partial   |       Yes       |
+| LaTeX              |            Yes            |   Yes   |    Yes     |       No        |
+| LaTeX.js           |            No             |   Yes   |     No     |       Yes       |
+| Typst              |            Yes            | Partial |    Yes     |     Partial     |
+| React-pdf          |            Yes            |   No    |    Yes     |       Yes       |
+
+
+- [LaTeX vs. Word: Main Differences](https://www.baeldung.com/cs/latex-vs-word-main-differences)
+    * A fairly surface level comparison of LaTeX and Word.
+
+- [The Beauty of LaTeX](https://nitens.org/w/latex/)
+  * A deep dive in to the difference of word processors and LaTeX that focusing on typesetting quality.
+  * It a really strong comparison of the difference that may not be initially obvious but make LaTeX shine.
+  * The article has not been updated since 2015 and word processors have made progress since then but the 
+  information is still relevant.
+
 ## Markdown
 
 Markdown is a lightweight language with plain text formatting syntax. It is designed so that it can be converted to 
