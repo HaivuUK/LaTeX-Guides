@@ -12,6 +12,7 @@
 <div style="text-align: center;" markdown>
 [:fontawesome-brands-github: __GitHub__](https://github.com/){ .md-button }
 [:fontawesome-solid-envelope: __Contact__](mailto:GHAllison1@sheffield.ac.uk){ .md-button }
+[:fontawesome-solid-download: Thesis Template](templates/template-for-guide.zip){:download="Thesis Template" .md-button}
 </div>
 
 ## Introduction
@@ -43,6 +44,8 @@ Other useful resources include:
 - [NewComputerModern](https://ctan.org/pkg/newcomputermodern) - A modern expanded font for LaTeX that is similar to computer modern.
 - [TeXnique](https://texnique.xyz/) - A fun online game to practice writing equations in LaTeX.
 - [Detexify](http://detexify.kirelabs.org/classify.html) - A tool to find the LaTeX command for the symbol you want to write.
+
+A template for writing a thesis in LaTeX can be found [here](thesis.md).
 
 ## Contact
 
