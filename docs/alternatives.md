@@ -10,9 +10,10 @@ Regardless of the progress of word processors, many still do not match the featu
 Below are some deep dives into LaTeX compared to other document preparation or typesetting systems.
 
 - [On Typesetting Engines: A Programmer's Perspective](https://blog.ppresume.com/posts/on-typesetting-engines#cjk-character-set-is-huge)
-  * A recent comparison of LaTeX, Typst, HTML & CSS, LaTeX.js, and React-pdf.
-  * While the focus is on picking a typsetting engine for a resume builder the comparison is still useful.
-  
+    * A recent comparison of LaTeX, Typst, HTML & CSS, LaTeX.js, and React-pdf.
+    * While the focus is on picking a typsetting engine for a resume builder the comparison is still useful.
+
+
 | Typesetting Engine | Knuth Plass line breaking |   CJK   | Pagination | Instant Preview |
 |:------------------:|:-------------------------:|:-------:|:----------:|:---------------:|
 | HTML & CSS         |            No             |   Yes   |  Partial   |       Yes       |
@@ -26,10 +27,10 @@ Below are some deep dives into LaTeX compared to other document preparation or t
     * A fairly surface level comparison of LaTeX and Word.
 
 - [The Beauty of LaTeX](https://nitens.org/w/latex/)
-  * A deep dive in to the difference of word processors and LaTeX that focusing on typesetting quality.
-  * It a really strong comparison of the difference that may not be initially obvious but make LaTeX shine.
-  * The article has not been updated since 2015 and word processors have made progress since then but the 
-  information is still relevant.
+    * A deep dive in to the difference of word processors and LaTeX that focusing on typesetting quality.
+    * It a really strong comparison of the difference that may not be initially obvious but make LaTeX shine.
+    * The article has not been updated since 2015 and word processors have made progress since then but the 
+    information is still relevant.
 
 ## Markdown
 
