@@ -2,6 +2,10 @@
 
 Figures are generally easy to handle in LaTeX, a standard `figure` float will handle the majority of cases. 
 
+!!! note
+    Try to allow LaTeX to handle placement, it has an algorithm that will generally place the figure in the best place.
+    If this is not working for you, you can use the [placement options](figures.md/#figure-placement) to force the figure to be placed in a specific
+
 However, complexity can arise when you want to start adding sub-figures, 
 or having figures side-by-side. This document will cover the basics of adding figures to your LaTeX document, as well 
 as how to add sub-figures and have multiple figures side-by-side. Or maybe you have a single image file that has
@@ -182,3 +186,26 @@ want them to be referenced separately.
 This would look like the following:
 
 ![Single Image with Sub-Figures](images/subfigs-two.svg)
+
+## Figure Placement
+
+LaTeX has a built-in algorithm for placing figures, but sometimes you may want to force the figure to be placed in a
+specific location. You can do this by using the placement options in the `figure` environment.
+
+| Placement Option |                        Description                        |
+|:----------------:|:---------------------------------------------------------:|
+|       `h`        |            Place the figure here (if possible)            |
+|       `t`        |          Place the figure at the top of the page          |
+|       `b`        |        Place the figure at the bottom of the page         |
+|       `p`        |            Place the figure on a separate page            |
+|       `!`        |      Override the internal LaTeX placement algorithm      |
+|       `h!`       |    Place the figure here (even if it is not possible)     |
+|       `ht`       |      Place the figure here or at the top of the page      |
+|       `hb`       |    Place the figure here or at the bottom of the page     |
+|      `htb`       | Place the figure here or at the top or bottom of the page |
+
+LaTeX will try to place figure floats close to where they are defined or referenced in the text. If that placement is
+not possible LaTeX will try and place the float in the next available location that satisfies its placement rules.
+
+You should leave placement to LaTeX as much as possible; especially if you have not finished writing your document. 
+Once you have finished writing your document, you can then go back and adjust the placement of the figures if needed.
