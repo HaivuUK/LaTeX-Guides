@@ -546,6 +546,9 @@ the scheme of LaTeX packages.
 
 [<img src="images/boxplot.svg"/>](images/boxplot.svg)
 
+If you would like to use violin plots instead you will need the 
+[`tikzviolinplots`](https://ctan.org/pkg/tikzviolinplots?lang=en) package.
+
 
 ### Histograms
 

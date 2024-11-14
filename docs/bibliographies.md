@@ -130,9 +130,12 @@ To use BibLaTeX and biber in your LaTeX document, you will need to include the f
 You can also use the `\cite` command to cite a reference in your document. For example, `\cite{key}` will cite the
 reference with the key `key` in your bibliography.
 
-There are multiple citation commands available in BibLaTeX, such as `\textcite`, `\parencite`, `\footcite`, and
-`\autocite`. These commands provide different citation styles, such as author-year citations, numerical citations, and
-other citation styles.
+There are multiple citation commands available in BibLaTeX, such as `\textcite`, `\parencite`, `\footcite`,
+`\autocite`, `\autocites`, `\Autocite`, and `\Autocites`. 
+These commands provide different citation styles, such as author-year citations, numerical citations, and other 
+citation styles. 
+Using `\autocite` will automatically choose the appropriate citation style based on the overarching style, and will
+automatically arrange punctuation.
 
 You can also use the `\nocite` command to include a reference in your bibliography without citing it in your document.
 For example, `\nocite{*}` will include all references in your bibliography without citing them in your document.
@@ -145,6 +148,9 @@ author-year citations. There are standard group styles available, such as `style
 LaTeX will automatically generate the bibliography for you when you compile your document. You do not need to manually
 format the bibliography or the citations, as LaTeX will do this for you.
 
+Please refer to the [BibLaTeX Cheatsheat](https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf) or
+[BibLaTeX documentation](https://ctan.org/pkg/biblatex) for more information on how to use BibLaTeX and biber.
+
 ### hyperref
 
 hyperref provides better support for hyperlinks in your document, allowing you to easily navigate between sections, 
@@ -156,3 +162,25 @@ To use hyperref in your LaTeX document, you will need to include the following c
 ```latex
 \usepackage{hyperref}
 ```
+
+### Overextension in Bibliographies
+
+Overextended elements in bibliographies can be a problem, as they can cause the bibliography to extend beyond the 
+margins. When using biblatex, there are two solutions to this problem:
+
+1. Use the `xurl` package to break long URLs in the bibliography. To use the `xurl` package, you will need to include 
+    the following code in your preamble after the `biblatex` package:
+
+   ```latex
+   \usepackage{biblatex}
+   \usepackage{xurl}
+   ```
+   
+2. Use the built-in biblatex options to control it. Set the follwoing counters to control the penalties for breaking 
+    URLs setting this higher will generally solve the problem:
+   
+   ```
+    \setcounter{biburllcpenalty}{100} % Lowercase letters
+    \setcounter{biburlucpenalty}{200} % Uppercase letters
+    \setcounter{biburlnumpenalty}{100} % Numbers
+   ```

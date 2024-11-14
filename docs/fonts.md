@@ -169,7 +169,7 @@ The following table shows the available font sizes in LaTeX:
 
 ## Math Fonts
 
-Math fonts are a key part of any document that contains mathematical equations. LaTeX has a number of built in 
+Math fonts are a key part of any document that contains mathematical equations. LaTeX has a number of built-in 
 math fonts that are designed to be easy to read and to work well with the text fonts. However, you may want to use a
 different math font in your document.
 
