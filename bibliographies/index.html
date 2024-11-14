@@ -761,6 +761,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#overextension-in-bibliographies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overextension in Bibliographies
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1137,9 +1146,12 @@ For the older method of using BibTeX and natbib, please refer to the
 <code>\printbibliography</code> to print the bibliography at a specific location in your document.</p>
 <p>You can also use the <code>\cite</code> command to cite a reference in your document. For example, <code>\cite{key}</code> will cite the
 reference with the key <code>key</code> in your bibliography.</p>
-<p>There are multiple citation commands available in BibLaTeX, such as <code>\textcite</code>, <code>\parencite</code>, <code>\footcite</code>, and
-<code>\autocite</code>. These commands provide different citation styles, such as author-year citations, numerical citations, and
-other citation styles.</p>
+<p>There are multiple citation commands available in BibLaTeX, such as <code>\textcite</code>, <code>\parencite</code>, <code>\footcite</code>,
+<code>\autocite</code>, <code>\autocites</code>, <code>\Autocite</code>, and <code>\Autocites</code>. 
+These commands provide different citation styles, such as author-year citations, numerical citations, and other 
+citation styles. 
+Using <code>\autocite</code> will automatically choose the appropriate citation style based on the overarching style, and will
+automatically arrange punctuation.</p>
 <p>You can also use the <code>\nocite</code> command to include a reference in your bibliography without citing it in your document.
 For example, <code>\nocite{*}</code> will include all references in your bibliography without citing them in your document.</p>
 <p>Other styles can be used by changing the <code>style</code> option in the <code>\usepackage</code> command. For example, <code>style=numeric</code>
@@ -1148,12 +1160,32 @@ author-year citations. There are standard group styles available, such as <code>
 <code>style=chicago</code>.</p>
 <p>LaTeX will automatically generate the bibliography for you when you compile your document. You do not need to manually
 format the bibliography or the citations, as LaTeX will do this for you.</p>
+<p>Please refer to the <a href="https://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf">BibLaTeX Cheatsheat</a> or
+<a href="https://ctan.org/pkg/biblatex">BibLaTeX documentation</a> for more information on how to use BibLaTeX and biber.</p>
 <h3 id="hyperref">hyperref</h3>
 <p>hyperref provides better support for hyperlinks in your document, allowing you to easily navigate between sections, 
 figures, tables, and other elements in your document. It also provides better support for URLs, allowing you to easily
 link to web pages, PDFs, and other online resources. It is a requirement for many other referencing packages.</p>
 <p>To use hyperref in your LaTeX document, you will need to include the following code in your preamble:</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</span></code></pre></div>
+<h3 id="overextension-in-bibliographies">Overextension in Bibliographies</h3>
+<p>Overextended elements in bibliographies can be a problem, as they can cause the bibliography to extend beyond the 
+margins. When using biblatex, there are two solutions to this problem:</p>
+<ol>
+<li>Use the <code>xurl</code> package to break long URLs in the bibliography. To use the <code>xurl</code> package, you will need to include 
+    the following code in your preamble after the <code>biblatex</code> package:</li>
+</ol>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\usepackage</span><span class="nb">{</span>xurl<span class="nb">}</span>
+</span></code></pre></div>
+<ol>
+<li>Use the built-in biblatex options to control it. Set the follwoing counters to control the penalties for breaking 
+    URLs setting this higher will generally solve the problem:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> \setcounter{biburllcpenalty}{100} % Lowercase letters
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> \setcounter{biburlucpenalty}{200} % Uppercase letters
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> \setcounter{biburlnumpenalty}{100} % Numbers
 </span></code></pre></div>
 
 
