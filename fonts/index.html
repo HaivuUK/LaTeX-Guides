@@ -429,6 +429,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fonts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -438,6 +449,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#font-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Font Sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#font-size-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Font Size Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-fonts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Math Fonts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -986,6 +1043,161 @@ commands:</p>
 <code>fontspec</code> package.</p>
 <p>You can see it's a bit simpler to control fonts in the <code>XeLaTeX</code> and <code>LuaLaTeX</code> engines. However, you can still use
 <code>pdflatex</code> to use TrueType and OpenType fonts.</p>
+<h2 id="font-sizes">Font Sizes</h2>
+<p>Font sizes in LaTeX are defined using a scale of sizes. The default font size is <code>10pt</code>. The available font sizes are:</p>
+<ul>
+<li><code>10pt</code></li>
+<li><code>11pt</code></li>
+<li><code>12pt</code></li>
+</ul>
+<p>To control the font size you add an option in the <code>\documentclass</code> command. For example to set the font size to <code>12pt</code>
+you would use the following command:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span></code></pre></div>
+<p>If you want to use additional font sizes you need to make sure you are using a scalable font. You can then use the
+<code>extsizes</code> package or its specific classes like <code>extarticle</code> or <code>extreport</code> to use additional font sizes as a base.
+Although this is generally not recommended.</p>
+<p>If you want to use the standard <code>Computer Modern</code> font you can use the <code>fix-cm</code> package to allow for better scaling.</p>
+<p>If you want to change text size within the document you can use either the predefined size name commands or the
+fontsize command. For example:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">{</span><span class="k">\tiny</span> This is tiny text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{5}{6}\selectfont or 5pt font.</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nb">{</span><span class="k">\scriptsize</span> This is scriptsize text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{7}{8}\selectfont or 7pt font.</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nb">{</span><span class="k">\footnotesize</span> This is footnotesize text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{8}{10}\selectfont or 8pt font.</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nb">{</span><span class="k">\small</span> This is small text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{9}{11}\selectfont or 9pt font.</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nb">{</span><span class="k">\normalsize</span> This is normalsize text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{10}{12}\selectfont or 10pt font.</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nb">{</span><span class="k">\large</span> This is large text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{12}{14}\selectfont or 12pt font.</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nb">{</span><span class="k">\Large</span> This is Large text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{14.4}{17.28}\selectfont or 14.4pt font.</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nb">{</span><span class="k">\LARGE</span> This is LARGE text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{17.28}{20.74}\selectfont or 17.28pt font.</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nb">{</span><span class="k">\huge</span> This is huge text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{20.74}{24.88}\selectfont or 20.74pt font.</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="nb">{</span><span class="k">\Huge</span> This is Huge text.<span class="nb">}</span> <span class="c">% Equivalent to \fontsize{24.88}{29.86}\selectfont or 24.88pt font.</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="nb">{</span><span class="k">\fontsize</span><span class="nb">{</span>12<span class="nb">}{</span>14<span class="nb">}</span><span class="k">\selectfont</span> This is 12pt text.<span class="nb">}</span> <span class="c">% 12pt font with 14pt line spacing.</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="nb">{</span><span class="k">\fontsize</span><span class="nb">{</span>20<span class="nb">}{</span>24<span class="nb">}</span><span class="k">\selectfont</span> This is 20pt text.<span class="nb">}</span> <span class="c">% 20pt font with 24pt line spacing.</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>Then some normal text. <span class="c">% Back to normal size 10pt font.</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>Where <code>\fontsize{size}{skip}</code> is the command to set the font size and the skip is the space between the lines.</p>
+<h2 id="font-size-table">Font Size Table</h2>
+<p>The following table shows the available font sizes in LaTeX:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Line Spacing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>\tiny</code></td>
+<td style="text-align: center;">5pt</td>
+<td style="text-align: center;">6pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\scriptsize</code></td>
+<td style="text-align: center;">7pt</td>
+<td style="text-align: center;">8pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\footnotesize</code></td>
+<td style="text-align: center;">8pt</td>
+<td style="text-align: center;">10pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\small</code></td>
+<td style="text-align: center;">9pt</td>
+<td style="text-align: center;">11pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\normalsize</code></td>
+<td style="text-align: center;">10pt</td>
+<td style="text-align: center;">12pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\large</code></td>
+<td style="text-align: center;">12pt</td>
+<td style="text-align: center;">14pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\Large</code></td>
+<td style="text-align: center;">14.4pt</td>
+<td style="text-align: center;">17.28pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\LARGE</code></td>
+<td style="text-align: center;">17.28pt</td>
+<td style="text-align: center;">20.74pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\huge</code></td>
+<td style="text-align: center;">20.74pt</td>
+<td style="text-align: center;">24.88pt</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\Huge</code></td>
+<td style="text-align: center;">24.88pt</td>
+<td style="text-align: center;">29.86pt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="math-fonts">Math Fonts</h2>
+<p>Math fonts are a key part of any document that contains mathematical equations. LaTeX has a number of built in 
+math fonts that are designed to be easy to read and to work well with the text fonts. However, you may want to use a
+different math font in your document.</p>
+<p>The main math fonts in LaTeX are:</p>
+<ul>
+<li><code>Computer Modern</code> - The default math font in LaTeX.</li>
+<li><code>AMS</code> - The math font used by the American Mathematical Society.</li>
+<li><code>STIX</code> - A comprehensive math font that is designed to be compatible with Times New Roman.</li>
+</ul>
+<p>As with standard fonts, you are limited in your font choice by the engine you are using. If you are using <code>pdflatex</code> 
+you are limited to Type 1 fonts. If you are using <code>XeLaTeX</code> or <code>LuaLaTeX</code> you can use TrueType and OpenType fonts.</p>
+<p>By default, you will be using <code>Computer Modern</code>. To change the math font in your document you need to load the package 
+for the font. 
+For example to use the <code>STIX2</code> math font you would use the <code>\usepackage{stix2}</code> command. 
+However, this would also override the text font. 
+To only override the math font you can use the following option in the package command: <code>\usepackage[notext]{stix2}</code>.</p>
+<p>The following is an example of how to set the math font to <code>STIX2</code>:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\usepackage</span><span class="na">[notext]</span><span class="nb">{</span>stix2<span class="nb">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>This is some text in Computer Modern.
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sb">\[</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> y^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> z^</span><span class="m">2</span><span class="nb"> </span><span class="s">\]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will set the math font to <code>STIX2</code> while keeping the text font as <code>Computer Modern</code>.</p>
+<p>Some packages will not have the same nice options in package loading and so you may need to load them differently, and 
+this will be detailed in the package documentation.</p>
+<p>For example if you wanted to set math font to <code>Cambria Math</code> you would use the following commands:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c">% !TeX TS-program = lualatex</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">\usepackage</span><span class="nb">{</span>unicode-math<span class="nb">}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">\setmathfont</span><span class="nb">{</span>Cambria Math<span class="nb">}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>This is some text in Computer Modern.
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sb">\[</span><span class="nb"> x^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> y^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> z^</span><span class="m">2</span><span class="nb"> </span><span class="s">\]</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
 
 
 

@@ -581,6 +581,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#figure-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Figure Placement
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1049,6 +1058,11 @@
 
 <h1 id="figures-in-latex">Figures in LaTeX</h1>
 <p>Figures are generally easy to handle in LaTeX, a standard <code>figure</code> float will handle the majority of cases. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Try to allow LaTeX to handle placement, it has an algorithm that will generally place the figure in the best place.
+If this is not working for you, you can use the <a href="./#figure-placement">placement options</a> to force the figure to be placed in a specific</p>
+</div>
 <p>However, complexity can arise when you want to start adding sub-figures, 
 or having figures side-by-side. This document will cover the basics of adding figures to your LaTeX document, as well 
 as how to add sub-figures and have multiple figures side-by-side. Or maybe you have a single image file that has
@@ -1196,6 +1210,59 @@ want them to be referenced separately.</p>
 </span></code></pre></div>
 <p>This would look like the following:</p>
 <p><a class="glightbox" href="../images/subfigs-two.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Single Image with Sub-Figures" src="../images/subfigs-two.svg" /></a></p>
+<h2 id="figure-placement">Figure Placement</h2>
+<p>LaTeX has a built-in algorithm for placing figures, but sometimes you may want to force the figure to be placed in a
+specific location. You can do this by using the placement options in the <code>figure</code> environment.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Placement Option</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>h</code></td>
+<td style="text-align: center;">Place the figure here (if possible)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>t</code></td>
+<td style="text-align: center;">Place the figure at the top of the page</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>b</code></td>
+<td style="text-align: center;">Place the figure at the bottom of the page</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>p</code></td>
+<td style="text-align: center;">Place the figure on a separate page</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>!</code></td>
+<td style="text-align: center;">Override the internal LaTeX placement algorithm</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>h!</code></td>
+<td style="text-align: center;">Place the figure here (even if it is not possible)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ht</code></td>
+<td style="text-align: center;">Place the figure here or at the top of the page</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>hb</code></td>
+<td style="text-align: center;">Place the figure here or at the bottom of the page</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>htb</code></td>
+<td style="text-align: center;">Place the figure here or at the top or bottom of the page</td>
+</tr>
+</tbody>
+</table>
+<p>LaTeX will try to place figure floats close to where they are defined or referenced in the text. If that placement is
+not possible LaTeX will try and place the float in the next available location that satisfies its placement rules.</p>
+<p>You should leave placement to LaTeX as much as possible; especially if you have not finished writing your document. 
+Once you have finished writing your document, you can then go back and adjust the placement of the figures if needed.</p>
 
 
 
