@@ -105,3 +105,14 @@ Lack of user package management can be a limitation for some users. But it remai
 polished and fully-featured LaTeX editor with no compiling.
 
 ![TeXifier](images/texifier.png)
+
+## [Crixet](https://crixet.com/)
+
+!!! note
+    Crixet currently only supports chrome and chromium-based browsers. It only supports pdfLaTeX and does not support
+    XeLaTeX or LuaLaTeX yet.
+
+Crixet is a newer online LaTeX editor that provides a similar experience to Overleaf, but utilises AI to help users
+write LaTeX. It is very early in development and is missing some features but can still be a good choice.
+
+![Crixet](images/crixet.webp)
