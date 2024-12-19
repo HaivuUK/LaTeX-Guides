@@ -65,6 +65,9 @@ has a built-in spell checker and supports multiple languages. It has a support f
 although the setup can be more complex than other editors. It supports multiple version control systems and has good git
 support.
 
+If VSCode is not your preferred editor, there are other LaTeX extensions available for other major code editors such
+as JetBrains IDEs for which [TeXiFy-IDEA](https://plugins.jetbrains.com/plugin/9473-texify-idea) is a good choice.
+
 ![Visual Studio Code](images/vscode.jpg)
 
 ## [LyX](https://www.lyx.org/)

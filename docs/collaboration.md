@@ -23,6 +23,11 @@ create a pull request, which allows others to review your changes before they ar
 Git integrates well with nearly all LaTeX editors such as TeXstudio and Visual Studio Code. You can also use Git from
 the command line or a GUI client like Sourcetree or GitHub Desktop.
 
+Additionally, if you are using a tool like GitHub you can use GitHub Actions to automatically compile your LaTeX 
+document on a trigger you define, such as a push to the repository. This can be useful for a collaborative project
+where not everyone has LaTeX installed on their machine. 
+[GitHub Action To Compile LaTeX](https://github.com/marketplace/actions/compile-latex).
+
 For more information to get started with Git, see the following resources:
 
 - [official documentation](https://git-scm.com/doc)

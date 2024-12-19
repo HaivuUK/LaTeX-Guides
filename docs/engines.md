@@ -44,7 +44,7 @@ It is based on Lua, a powerful scripting language that is easy to learn and use.
 available and can be used for a wide range of projects. It is the slowest engine to compile but is the most powerful.
 
 ### **Tectonic**
-This is a modernized, complete, self-contained TeX/LaTeX engine that is based on XeTeX and TeXLive. It
+This is a modernised, complete, self-contained TeX/LaTeX engine that is based on XeTeX and TeXLive. It
 is used for more complex scripts and fonts. It is faster than XeLaTeX and LuaLaTeX and is actively developed. However,
 it is not as flexible as LuaLaTeX and does not support all the features of LuaLaTeX. It additionally acts as a
 package manager for LaTeX packages.
