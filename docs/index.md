@@ -13,6 +13,7 @@
 [:fontawesome-brands-github: __GitHub__](https://github.com/){ .md-button }
 [:fontawesome-solid-envelope: __Contact__](mailto:GHAllison1@sheffield.ac.uk){ .md-button }
 [:fontawesome-solid-download: Thesis Template](https://github.com/HaivuUK/LaTeX-Guides/raw/refs/heads/main/docs/templates/template-for-guide.zip){:download="Thesis Template" .md-button}
+[:fontawesome-solid-chart-simple: Lua Regression Package](https://ctan.org/pkg/lua-regression){ .md-button}
 </div>
 
 ## Introduction
@@ -24,6 +25,15 @@ looking to use LaTeX for academic writing and the transition from other word pro
 The guide is heavily influenced by the authors experience with LaTeX and the tools that they have found useful. It is
 intended to be a living document that will be updated as new tools and techniques are discovered. The guide is not
 intended to be a replacement for the official documentation, but rather a focused companion to it.
+
+Check out my LaTeX package: 
+[Lua-Regression CTAN](https://ctan.org/pkg/lua-regression) |
+[Lua-Regression GitHub](https://github.com/HaivuUK/lua-regression)
+
+A system for performing regression testing on CSV format data files in LaTeX, written purely in Lua for use with LuaLaTeX. 
+It includes the ability to fit polynomials of multiple orders to data, and plot the results using PGFPlots. 
+It offers some additional features such as the ability to generate confidence intervals and perform $R^2$ tests on the data.
+It is designed to perform similarly to the `regplot` function in Python's Seaborn library.
 
 The sources that helped to create this guide are:
 
