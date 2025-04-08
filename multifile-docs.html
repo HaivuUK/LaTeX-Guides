@@ -13,8 +13,10 @@
       
       
       
+        <link rel="prev" href="extending-latex.html">
       
-        <link rel="next" href="quickstart.html">
+      
+        <link rel="next" href="suggested-packages.html">
       
       
       <link rel="icon" href="images/favi.svg">
@@ -22,7 +24,7 @@
     
     
       
-        <title>LaTeX Guides</title>
+        <title>Multi-File Projects - LaTeX Guides</title>
       
     
     
@@ -89,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#multifile-documents-in-latex" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Multi-File Projects
             
           </span>
         </div>
@@ -277,28 +279,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -307,60 +291,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contact" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contact
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feedback-and-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      Feedback and Development
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      REFERENCES
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -769,10 +699,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="multifile-docs.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Multi-File Projects
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="multifile-docs.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -781,6 +731,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-subfiles-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the subfiles Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-standalone-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the standalone Package
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using \input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-include" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using \include
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1003,72 +1009,177 @@
   
 
 
-<h1 style="text-align: center;">
-  <div>
-    <a class="glightbox" href="images/logoadpat.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="images/logoadpat.svg" width="100%" alt="LaTeX Guides"></a>
-    </a>
-  </div>
-</h1>
-
-<h2 style="text-align: center;">
-  A General Purpose Guide for Using LaTeX for Academic Writing
-</h2>
-
-<div style="text-align: center;">
-<p><a class="md-button" href="https://github.com/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span> <strong>GitHub</strong></a>
-<a class="md-button" href="mailto:GHAllison1@sheffield.ac.uk"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg></span> <strong>Contact</strong></a>
-<a class="md-button" download="Thesis Template" href="https://github.com/HaivuUK/LaTeX-Guides/raw/refs/heads/main/docs/templates/template-for-guide.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"/></svg></span> Thesis Template</a>
-<a class="md-button" href="https://ctan.org/pkg/lua-regression"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M160 80c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48h-32c-26.5 0-48-21.5-48-48zM0 272c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48v160c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48zM368 96h32c26.5 0 48 21.5 48 48v288c0 26.5-21.5 48-48 48h-32c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48"/></svg></span> Lua Regression Package</a></p>
+<h1 id="multifile-documents-in-latex">MultiFile Documents in LaTeX</h1>
+<p>One of the very fun features of LaTeX is the ability to split your document into multiple files and work on each of
+them separately or even include them in multiple documents. This is particularly useful when you are working on a large
+document, such as a book or a thesis, and you want to keep your files organized or use certain chapters/sections for 
+other things.</p>
+<p>There are a few ways to do this in LaTeX, with two in built methods (using <code>\input</code> and <code>\include</code>) and a few package
+based methods (such as <code>subfiles</code> and <code>standalone</code>).</p>
+<p>The in-built methods are simpler and work well for most cases, but lack the elegance and flexibility of the package
+based methods. The package based methods are more powerful and provide additional features, such as the ability to
+handle folder structures and preamble sharing for you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>standalone</code> and <code>subfiles</code> packages should work together but may sometimes have issues. Make sure the
+<code>standalone</code> package is loaded before the <code>subfiles</code> package. And you need to call the standalone files with
+<code>\subfile</code> or <code>\subfileinclude</code> instead of <code>\input</code> or <code>\include</code>.</p>
 </div>
-<h2 id="introduction">Introduction</h2>
-<p>This guide is designed to provide a good starting point for those looking to use LaTeX for academic writing. It is not
-intended to be a comprehensive guide, but rather a general purpose guide that will provide a good foundation for those
-looking to use LaTeX for academic writing and the transition from other word processing software.</p>
-<p>The guide is heavily influenced by the authors experience with LaTeX and the tools that they have found useful. It is
-intended to be a living document that will be updated as new tools and techniques are discovered. The guide is not
-intended to be a replacement for the official documentation, but rather a focused companion to it.</p>
-<p>Check out my LaTeX package: 
-<a href="https://ctan.org/pkg/lua-regression">Lua-Regression CTAN</a> |
-<a href="https://github.com/HaivuUK/lua-regression">Lua-Regression GitHub</a></p>
-<p>A system for performing regression testing on CSV format data files in LaTeX, written purely in Lua for use with LuaLaTeX. 
-It includes the ability to fit polynomials of multiple orders to data, and plot the results using PGFPlots. 
-It offers some additional features such as the ability to generate confidence intervals and perform <span class="arithmatex">\(R^2\)</span> tests on the data.
-It is designed to perform similarly to the <code>regplot</code> function in Python's Seaborn library.</p>
-<p>The sources that helped to create this guide are:</p>
-<ul>
-<li><a href="#ref1">The LaTeX Project</a></li>
-<li><a href="#ref2">Overleaf Documentation</a></li>
-<li><a href="#ref3">Comprehensive TeX Archive Network</a></li>
-<li><a href="#ref4">Unofficial PGFPlots guide</a></li>
-</ul>
-<p>and other sources that will be referenced throughout the guide.</p>
-<p>Other useful resources include:</p>
-<ul>
-<li><a href="https://www.learnlatex.org/">Learn LaTeX</a></li>
-<li><a href="https://tug.org/FontCatalogue/">LaTeX Font Catalogue</a></li>
-<li><a href="https://tobi.oetiker.ch/lshort/lshort.pdf">Not So Short Introduction to LaTeX</a></li>
-<li><a href="https://mirror.ox.ac.uk/sites/ctan.org/info/lshort/english/lshort.pdf">Not So Short Introduction to LaTeX 2e</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73">Dr. Trefor Bazett YouTube Tutorials</a></li>
-<li><a href="https://ctan.org/pkg/mlmodern">MLModern</a> - A modern font for LaTeX that is similar to computer modern.</li>
-<li><a href="https://ctan.org/pkg/newcomputermodern">NewComputerModern</a> - A modern expanded font for LaTeX that is similar to computer modern. (Requires XeLaTeX or LuaLaTeX)</li>
-<li><a href="https://texnique.xyz/">TeXnique</a> - A fun online game to practice writing equations in LaTeX.</li>
-<li><a href="http://detexify.kirelabs.org/classify.html">Detexify</a> - A tool to find the LaTeX command for the symbol you want to write.</li>
-</ul>
-<p>A template for writing a thesis in LaTeX can be found <a href="thesis.html">here</a>.</p>
-<h2 id="contact">Contact</h2>
-<p>If you have any questions, please contact the authors:</p>
-<p>George H. Allison (<a href="mailto:GHAllison1@sheffield.ac.uk">Email</a> | <a href="https://www.linkedin.com/in/george-h-allison/">LinkedIn</a>)</p>
-<h2 id="feedback-and-development">Feedback and Development</h2>
-<p>This guide will be actively maintained for the foreseable future. If you have any feedback, please reach out or if the
-repository has been made public, please raise an issue or open a discussion on the repository.</p>
-<p>If you would like to contribute to the development of this guide, please reach out to the authors. Contributions are
-welcome, and the authors will be happy to discuss any changes you would like to make.</p>
-<p>Once the guide is made open-source Pull requests are welcome.</p>
-<h2 id="references">REFERENCES</h2>
-<p><a id='ref1'>1</a>: The LaTeX Project <a href="https://www.latex-project.org/">Link</a></p>
-<p><a id='ref2'>2</a>: Overleaf Documentation <a href="https://www.overleaf.com/learn">Link</a></p>
-<p><a id='ref3'>3</a>: Comprehensive TeX Archive Network <a href="https://ctan.org/">Link</a></p>
-<p><a id='ref4'>4</a>: Unofficial PGFPlots guide <a href="https://tikz.dev/pgfplots">Link</a></p>
+<h2 id="using-the-subfiles-package">Using the <code>subfiles</code> Package</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>subfiles</code> sometimes seems to struggle when you have your preamble in a <code>.sty</code> file. If you are having trouble
+with this, try saving your preamble as a <code>.tex</code> file instead.</p>
+</div>
+<p>The <code>subfiles</code> package is a popular choice for creating multi-file documents in LaTeX. It allows you to create a main
+document that includes multiple subfiles, each of which can be compiled independently, and pull their preamble from the
+main document. This makes it easy to work on different parts of a document separately and combine them later maintaining
+only one preamble.</p>
+<p>To use the <code>subfiles</code> package, you need to include it in your main document and use the <code>\subfile</code> command in each of
+your subfiles. Here is an example of how to use the <code>subfiles</code> package if you have the following file structure:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>├─ main.tex                                 # Main document
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─ chapter1/                                # Subfolder for chapter 1
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   └─ chapter1.tex                         # Subfile for chapter 1
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">% main.tex</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">\subfile</span><span class="nb">{</span>chapter1<span class="nb">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">\subfile</span><span class="nb">{</span>chapter2<span class="nb">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">% chapter1.tex</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">\documentclass</span><span class="na">[../main.tex]</span><span class="nb">{</span>subfiles<span class="nb">}</span> <span class="c">% Note the path to the main document ../ takes you up one level</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 1<span class="nb">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>This is chapter 1.
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>The <code>subfiles</code> package provides the <code>\subfile</code> command, which is used to include a subfile in the main document. The
+subfile should be a standalone LaTeX document that can be compiled on its own. When you compile the main document, the
+contents of the subfiles will be included in the output. It additionally provides the <code>\subfileinclude</code> which behave
+similar to <code>\include</code> but with the added benefit of being able to compile the subfile independently.</p>
+<p>If using a bibliography or some other external files, you may need to place them inside a special command in the main
+document to ensure they are included in the subfiles. This can be done using the <code>\subfix</code> and 
+<code>ifSubfilesClassLoaded</code> commands as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% main.tex</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\usepackage</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">\usepackage</span><span class="nb">{</span>subfiles<span class="nb">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\ifSubfilesClassLoaded</span><span class="nb">{</span><span class="c">%</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">\addbibresource</span><span class="nb">{</span><span class="k">\subfix</span><span class="nb">{</span>references.bib<span class="nb">}}</span>    <span class="c">% True case</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="nb">}{</span><span class="c">%</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">\addbibresource</span><span class="nb">{</span>references.bib<span class="nb">}</span>             <span class="c">% False case</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="nb">}</span>
+</span></code></pre></div>
+<p>This should allow all child documents to access the bibliography file and maintains autocomplete functionality.
+The <code>\subfix</code> command alone will also work. However, this has a tendency to break autocomplete functionality in some
+editors so play with it and find what works for your case.</p>
+<p>Or for example if you have a central data folder and want to access it from subfiles. For example if you had the
+following file structure:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>├─ main.tex                                 # Main document
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├─ preamble.tex                             # Preamble file
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├─ data/                                    # Subfolder for data
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│   └─ data.csv                             # Data file
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>├─ chapter1/                                # Subfolder for chapter 1
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>│   ├─ chapter1.tex                         # Subfile for chapter 1
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>│   ├─ digarams/                            # Subfolder for diagrams for chapter 1
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>│   │   └─ diagram1.tex                     # Subfile for diagram 1
+</span></code></pre></div>
+<p>You can access the data file from the subfiles by using the <code>\subfix</code> command as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">% diagram1.tex</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">\documentclass</span><span class="na">[../../main.tex]</span><span class="nb">{</span>subfiles<span class="nb">}</span>    <span class="c">% Note the path to the main document ../../ takes you up two levels</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">\def\datafile</span><span class="nb">{</span><span class="k">\subfix</span><span class="nb">{</span>../../data/data.csv<span class="nb">}}</span> <span class="c">% Defines the path as a command so we only need to subfix once</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">\pgfplotstableread</span><span class="na">[col sep=comma]</span><span class="nb">{</span><span class="k">\datafile</span><span class="nb">}</span><span class="k">\data</span>   <span class="c">% Reads the data file into a table</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">\begin</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">\addplot</span> table <span class="nb">{</span><span class="k">\data</span><span class="nb">}</span>;                     <span class="c">% Plots the data</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="k">\end</span><span class="nb">{</span>axis<span class="nb">}</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>If you wanted to make your diagram using the subfile package you would want to keep the formatting of the diagram
+document the same including the use of <code>\subfix</code> but you would need to change the preamble and class to the following:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c">% diagram1.tex</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\documentclass</span><span class="na">[tikz,crop]</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">\input</span><span class="nb">{</span>../../preamble.tex<span class="nb">}</span>                  <span class="c">% Include the preamble from the main document</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>....Rest of the document....
+</span></code></pre></div>
+<p>For more information on the <code>subfiles</code> package, see the <a href="https://ctan.org/pkg/subfiles">documentation</a>.</p>
+<h2 id="using-the-standalone-package">Using the <code>standalone</code> Package</h2>
+<p>The <code>standalone</code> package is another popular choice for creating multi-file documents in LaTeX. It allows you to create
+standalone versions of your subfiles that can be compiled independently and included in the main document. I find the
+focus of <code>standalone</code> to be on creating images and figures that can be included in multiple documents, but it can be
+used for other things as well.</p>
+<p>To use the <code>standalone</code> package, you need to include it in your main document and use the <code>\input</code> command to include
+the standalone versions of your subfiles. Here is an example of how to use the <code>standalone</code> package:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c">% main.tex</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">\usepackage</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">\input</span><span class="nb">{</span>chapter1<span class="nb">}</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">\input</span><span class="nb">{</span>diagram1<span class="nb">}</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">\input</span><span class="nb">{</span>chapter2<span class="nb">}</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c">% chapter1.tex</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">\documentclass</span><span class="na">[class=article]</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 1<span class="nb">}</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>This is chapter 1.
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c">% diagram1.tex</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">\documentclass</span><span class="na">[class=article,crop,tikz]</span><span class="nb">{</span>standalone<span class="nb">}</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">\draw</span> (0,0) -- (1,1);
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>The <code>standalone</code> package provides the <code>standalone</code> document class, which is used to create standalone versions of your
+subfiles. The <code>class</code> option is used to specify the class of the main document, and the <code>crop</code> option is used to crop the
+output to the size of the content. The <code>tikz</code> option is used to load the <code>tikz</code> package, which is commonly used for
+creating diagrams and figures.</p>
+<p>You may want to look at using the <code>import</code> package if you have a more complex file structure that has multiple levels of
+folders. Or you can use the <code>subfiles</code> package in conjunction with the <code>standalone</code> package to get the best of both
+worlds.</p>
+<p>For more information on the <code>standalone</code> package, see the <a href="https://ctan.org/pkg/standalone">documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the methods listed below you will need to make sure the document preamble is included in each file. This is
+because each file is compiled separately and does not have access to the preamble of the main document.
+The main document should also contain any packages that are used in the included files.</p>
+</div>
+<h2 id="using-input">Using <code>\input</code></h2>
+<p>The <code>\input</code> command is the simplest way to include another file in your document. It is used as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\input</span><span class="nb">{</span>filename<span class="nb">}</span>
+</span></code></pre></div>
+<p>This will include the contents of <code>filename.tex</code> in your document at the point where the command is called. The file
+extension (<code>.tex</code>) is optional, and if not provided, LaTeX will look for a file with the given name and a <code>.tex</code> 
+extension.</p>
+<p>The <code>\input</code> command is useful when you want to include the contents of another file as is, without any additional
+formatting or separation. It is commonly used to include chapters or sections of a larger document.</p>
+<h2 id="using-include">Using <code>\include</code></h2>
+<p>The <code>\include</code> command is similar to <code>\input</code> but provides some additional features. It is used as follows:</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">\include</span><span class="nb">{</span>filename<span class="nb">}</span>
+</span></code></pre></div>
+<p>The main difference between <code>\input</code> and <code>\include</code> is that <code>\include</code> forces a page break before and after the included
+file. This can be useful when you want to include chapters or sections that should start on a new page, but can sometimes
+be undesirable if you want to include smaller snippets of text.</p>
+<p>Another feature of <code>\include</code> is that it allows you to use the <code>\includeonly</code> command to include only specific files in
+your document. This can be useful when working on a large document, and you only want to compile certain parts.</p>
 
 
 
@@ -1105,15 +1216,31 @@ welcome, and the authors will be happy to discuss any changes you would like to 
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="extending-latex.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Extending LaTeX">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Extending LaTeX
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="quickstart.html" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Start">
+          <a href="suggested-packages.html" class="md-footer__link md-footer__link--next" aria-label="Next: Suggested Packages">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Quick Start
+                Suggested Packages
               </div>
             </div>
             <div class="md-footer__button md-icon">
